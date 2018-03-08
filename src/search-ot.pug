@@ -1,0 +1,40 @@
+extends _layouts/_inicio
+
+block variables
+  - var isSearchOT = true
+
+block content
+  include _parts/_modals
+  include _parts/_header
+
+  .page-content
+    .container.main-container
+      .row.row-flex
+        .col-md-9.col-sm-8
+          .page-type
+            ol.breadcrumb
+              li
+                a(href='index.html') 
+                  span.icon-house
+              li.active Revisa el estado de tu envío
+            h3 Revisa el estado de tu envío
+            p.text-instruction Haz el seguimiento o tracking de tus envíos ingresando un máximo de
+              strong  10 números de orden de transporte (OT)
+              |  o números de retiro, separados por comas.
+            .search-ot-container
+              form
+                .search-ot-component
+                  input.search-ot-input(type='number', name="inputOT", min ="2", maxlength="12", pattern="\d*")
+            h6.text-after-search-ot Si tienes más de un número de OT, ingrésalos separados por comas.
+            .text-center
+              button.btn.cxp-btn.secondary(type="submit", disabled="" onclick='location.href="shipment-status.html"')
+                | REVISAR ESTADO
+        .col-md-3.col-sm-4
+          .sidebar-type
+            include _parts/_sidebar/_info
+            include _parts/_sidebar/_tips-tracking
+
+    include _parts/_columns-news
+
+  //- Aqui va el footer
+  include _parts/_footer

@@ -1,0 +1,220 @@
+- var legendEOL = "Acepto que los precios están sujetos a variación de acuerdo a las dimensiones y pesos reales, entre otros."
+- var legendGOL = "Acepto que los precios podrían sufrir variación de acuerdo a la ciudad o estado de destino."
+- var formId = '1';
+
+.verdiv
+.tool-box#toolBox
+  .bdr-icon-simplebox.ecommerce
+    a.no-event(href="#toolBox")
+      .icon.icon-simplebox
+  .btn-back.hidden.ecommerce
+      span.icon.icon-arrow-left
+  #main-box.box.withAnimation.active
+    if !isHome
+      span.icon-close.toolbox-close
+    .box-search-ot
+      h3.title-main ¿Qué quieres hacer?
+      h5.sub-title-main Revisa el estado de tus envíos
+      .search-ot-toolbox
+        input.form-control.search-ot(aria-label='Buscar OT', placeholder='Ingresa número de orden', type='number', pattern="\d*")
+        .input-group-btn
+          button.toolbox-search-btn.btn.btn-default.rounded(aria-label='Execute search', type='button') Buscar
+        .error-ot.empty
+          span.icon-warning
+          p Debes ingresar un número de 
+            strong  orden de transporte
+        // input-group-btn
+      // input-group
+      small.small Ej: 1234567890. Revisa hasta 10 OT separadas por comas.
+      a.link.o-mt-xs( data-toggle='modal', data-target='#ModalOt') ¿Qué es una orden de transporte?
+      a.link.o-mt-sm( data-toggle='modal', data-target='#ModalOtMultiple') ¿Tienes más de una orden de transporte?
+    .box-services
+      ul.list-unstyled
+        li
+          a.toolbox-quotation-btn(data-target='#toolBox')
+            span.icon.icon-calculator(aria-hidden='true')
+            | Quiero cotizar
+        li
+          a.toolbox-send-package-btn(href='javascript:;')
+            span.icon.icon-lidded-box(aria-hidden='true')
+            | Hacer un envío
+        li
+          a.toolbox-send-document-btn(data-target='#toolBox')
+            span.icon.icon-dialog-truck(aria-hidden='true')
+            | Solicitar un retiro
+        li
+          a.toolbox-send-money-btn(data-target='#toolBox')
+            span.icon.icon-dialog-speed-square(aria-hidden='true')
+            | Cotizar fulfillment
+    // box-services
+  // main-box
+  #first-box.box.form-box
+    if !isHome
+      span.icon-close.toolbox-close
+    .header-box
+      h4.header-box-title Hacer cotización
+    // box-header
+    .toolbox-custom-tab
+      fieldset.choice.c-field.toolbox-menu-tab
+        legend.o-fieldset__legend ¿Qué quieres enviar?
+        .btn-group(aria-label='...', role='group')
+          button.btn.btn-default.active-tab(data-tab='first', disabled='disabled', type='button')
+            span.icon.icon-lidded-box
+            | Encomienda
+          button.btn.btn-default(data-tab='second', type='button')
+            span.icon.icon-document
+            | Documento
+          button.btn.btn-default(data-tab='third', type='button')
+            span.icon.icon-valise
+            | Valija
+      .tab-zone.first-tab
+        include _toolbox/_send-package
+      .tab-zone.second-tab
+        include _toolbox/_send-document
+      .tab-zone.third-tab
+        include _toolbox/_send-valise
+
+    // body-footer
+
+  - var formId = '2';
+  // first-box
+  #second-box.box.form-box
+    if !isHome
+      span.icon-close.toolbox-close
+    .header-box
+      h4.header-box-title Enviar encomienda
+    include _toolbox/_send-package
+  // second-box
+  #third-box.box.form-box
+    if !isHome
+      span.icon-close.toolbox-close
+    .header-box
+      h4.header-box-title Enviar documento
+    include _toolbox/_send-document
+  // third-box
+  #fourth-box.box.form-box
+    if !isHome
+      span.icon-close.toolbox-close
+    .header-box
+      h4.header-box-title Enviar valija
+    include _toolbox/_send-money
+  // fourth-box
+  #fifth-box.box
+    if !isHome
+      span.icon-close.toolbox-close
+    .header-box
+      ul
+        li Orden: 
+          strong  Nº 645435642341
+        li Tipo: 
+          strong  Documento
+        li Servicio: 
+          strong  Día Hábil Siguiente
+        li Origen: 
+          strong  Santiago
+        li Destino: 
+          strong  Temuco
+        li Estado: 
+          strong 
+            span
+            |  En tránsito
+      
+    // box-header
+    .body-box
+      #timeline
+        .timeline-titles
+          .time-title-left Fecha / Hora
+          .time-title-right Actividad
+        .timeline-item
+          .timeline-icon.icon--now
+          .timeline-content.time--time
+            p Martes 28 de mayo 12:00 hrs.
+          .timeline-content.time--where
+            p Disponible en oficina para retiro
+        .timeline-item
+          .timeline-icon
+          .timeline-content.time--time
+            p Martes 28 de mayo 12:00 hrs.
+          .timeline-content.time--where
+            p Pieza en trásnsito al destino. Sucursal Chilexpress 
+              strong Merced Santiago
+        .timeline-item
+          .timeline-icon
+          .timeline-content.time--time
+            p Martes 28 de mayo 12:00 hrs.
+          .timeline-content.time--where
+            p Pieza recibida en Chilexpress
+    // body-box
+    .body-footer.text-center
+      a(href='shipment-status.html#!/?otdetail=645435647') Ver más detalle
+      
+    // body-footer
+
+  // fifth-box-error-exist
+  #fifth-box-error-exist.box
+    if !isHome
+      span.icon-close.toolbox-close
+    .header-box
+      h4.header-box-title No hemos encontrado resultados de búsqueda para la orden de transporte 
+        strong  "123111111111"
+    // box-header
+    .body-box.o-pt-xs
+      //
+      .box-search-ot.open-ot-input
+        .input-group.input-group-lg.input-group-full.is-error
+          input.form-control.search-ot.only-numbers(value='123111111111', aria-label='Buscar OT', placeholder='Ingresa número de orden', type='number')
+          .input-group-btn.full-btn
+            button.toolbox-search-btn.btn.btn-default.rounded(aria-label='Execute search', type='button') Buscar
+          .error-ot.empty
+            p Debes ingresar un número de 
+              strong orden de transporte
+          .error-ot.invalid
+            p Número de seguimiento no válido
+          // input-group-btn
+        // input-group
+        small.small Ej: 1234567890. Revisa hasta 10 OT separadas por comas.
+        .clearfix
+      h6 Sugerencias:
+      ul
+        li Revisa que el número de la orden de transporte esté bien escrito.
+        li El número de OT tiene entre 10 y 12 dígitos, sin espacios ni letras
+        li Para más información, revisa 
+          a.link(href="javascript:;", data-toggle='modal', data-target='#ModalOt')  ¿Qué es una orden de transporte?
+    .body-footer
+  // fifth-box-exist
+
+  // fifth-box-expired
+  #fifth-box-error-expired.box
+    if !isHome
+      span.icon-close.toolbox-close
+    .header-box
+      h4.header-box-title  La orden de transporte 
+        strong &nbsp;"456111111111"&nbsp;
+        | ha expirado.
+    // box-header
+    .body-box
+      //
+      .box-search-ot.open-ot-input
+        .input-group.input-group-lg.input-group-full.is-expired
+          input.form-control.search-ot.only-numbers(value='456111111111', aria-label='Buscar OT', placeholder='Ingresa número de orden', type='number')
+          .input-group-btn.full-btn
+            button.toolbox-search-btn.btn.btn-default.rounded(aria-label='Execute search', type='button') Buscar
+          .error-ot.empty
+            p Debes ingresar un número de
+              strong orden de transporte
+          .error-ot.expired
+            p Número de seguimiento expirado
+          // input-group-btn
+        // input-group
+        small.small Ej: 1234567890. Revisa hasta 10 OT separadas por comas.
+      h6 Sugerencias:
+      ul
+        li Si realizaste el envio hace menos de tres meses, revisa que tu orden de transporte esté bien escrita.
+        li Si la orden de transporte expiró, 
+          a.link(href="javascript:;")  comunícate con nosotros
+          |  para saber el estado de tu pieza.
+    // body-box
+    .body-footer
+    // body-footer
+  // fifth-box-expired
+// tool-box

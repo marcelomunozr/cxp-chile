@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="description" content="Chilexpress, empresa de Courier Nacional e Internacional, encomiendas y envíos.">
+    <meta name="keywords" content="Chilexpress, encomiendas, envíos, nacional, internacional, courier">
+    <meta name="author" content="2Brains">
+    <meta name="format-detection" content="telephone=no">
+    <meta property="fb:app_id" content="122320888099099">
+    <meta property="og:url" content="http://www.chilexpress.com">
+    <meta property="og:title" content="Chilexpress">
+    <meta property="og:image" content="assets/img/logo.png">
+    <meta property="og:description" content="Chilexpress, empresa de Courier Nacional e Internacional, encomiendas y envíos.">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link href="assets/css/main.css?v=1.0.28" rel="stylesheet">
+    <title>Chilexpress, empresa de Courier Nacional e Internacional, encomiendas y envíos. - Registro</title>
+    <script src="assets/js/angular.js"></script>
+    <script src="assets/js/angular-route.js"></script>
+    <script src="assets/js/angular-sanitize.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <!--script(src= pathRoot + 'js/jquery-ui.min.js')-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.validate.js"></script>
+    <script src="assets/js/jquery.Rut.min.js"></script>
+    <script src="assets/js/bowser.js"></script>
+    <script src="assets/js/app.js?v=1.0.28"></script>
+    <script src="assets/js/selectize.js"></script>
+    <script src="assets/js/cxp-validations.js?v=1.0.28"></script>
+    <script src="assets/js/scripts.js?v=1.0.28"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+  </head>
+  <body>
+    <div class="is-register">
+      <form id="registerForm" action="" method="post">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-md-10 col-md-offset-1">
+              <div class="box-shadow-register">
+                <div class="options-register">
+                  <div class="entry-options">
+                    <div class="col-sm-4">
+                      <div class="option"><img class="img-responsive" src="assets/img/op1.svg"></div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="option"><img class="img-responsive" src="assets/img/op2.svg"></div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="option bg-primary"><img class="img-responsive" src="assets/img/op3.svg"></div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="option"><img class="img-responsive" src="assets/img/op4.png"></div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="option bg-secondary"><img class="img-responsive" src="assets/img/op5.svg"></div>
+                    </div>
+                  </div>
+                  <div class="desc-options"><span class="single-sign-on">Single sign on</span>
+                    <p>Crea una cuenta y podrás acceder a la red de sitios de Chilexpress sin tener que loguearte cada vez.</p><br>Ahorra tiempo gestionando tus envíos, obtén información clara y oportuna de tus servicios, y guarda tus datos para usarlos en el futuro.
+                  </div>
+                </div>
+                <div class="login-register">
+                  <div class="head text-center">
+                    <div class="back-arrow"><a onClick="history.go(-1); return false;"><span class="icon-arrow-left"></span></a><a class="hide" data-step="1"><span class="icon-arrow-left"></span></a></div>
+                    <div class="logo"><a class="logo-link" href="javascript();"><span class="logo-image"></span></a></div>
+                  </div>
+                  <div class="register-tabs">
+                    <div class="steps step-1 step-active">
+                      <div class="body"><span class="title-section">Crea tu cuenta</span>
+                        <div class="form-group">
+                          <label for="rut">rut</label>
+                          <input class="cxp-input input-rut" id="rut" type="text" name="rut" placeholder="Ingresa tu rut">
+                          <h6>Rut sin puntos ni guiones</h6>
+                        </div>
+                        <div class="form-group">
+                          <label for="email">email</label>
+                          <input class="cxp-input" id="email" type="email" name="email" placeholder="Ingresa tu email">
+                          <h6>ej: nombre@correo.com</h6>
+                        </div>
+                        <div class="form-group">
+                          <label for="pass">contraseña</label>
+                          <input class="cxp-input" id="pass" type="password" name="pass" placeholder="Ingresa contraseña"><span class="icon-padlock"></span>
+                          <h6>Mínimo 6 caracteres</h6>
+                        </div>
+                        <div class="form-group">
+                          <label for="confirmPass">confirma contraseña</label>
+                          <input class="cxp-input" id="confirmPass" type="password" name="confirmPass" placeholder="Ingresa contraseña nuevamente">
+                          <h6>Mínimo 6 caracteres</h6>
+                        </div>
+                      </div>
+                      <div class="foot text-center">
+                        <button class="btn cxp-btn" disabled="disabled" type="button" data-step="2">Continuar</button>
+                        <hr>
+                        <p>¿Ya tienes una cuenta?</p><a class="btn link uppercase" href="login.html">Ingresa</a>
+                      </div>
+                    </div>
+                    <div class="steps step-2">
+                      <div class="body"><span class="title-section">Ya casi finalizamos</span>
+                        <div class="form-group">
+                          <label for="name">nombre</label>
+                          <input class="cxp-input" id="name" type="text" name="name" placeholder="Ingresa tu nombre">
+                        </div>
+                        <div class="form-group">
+                          <label for="firstName">apellido paterno</label>
+                          <input class="cxp-input" id="firstName" type="text" name="firstName" placeholder="Ingresa tu apellido paterno">
+                        </div>
+                        <div class="form-group">
+                          <label for="lastName">apellido materno</label>
+                          <input class="cxp-input" id="lastName" type="text" name="lastName" placeholder="Ingresa tu apellido materno">
+                        </div>
+                        <div class="form-group">
+                          <label for="phone">teléfono de contacto (opcional)</label>
+                          <div class="row">
+                            <div class="col-xs-5">
+                              <select class="custom-select prefix-select" id="prefix" name="prefixPhone" placeholder="+56 9"></select>
+                            </div>
+                            <div class="col-xs-7" id="input-phone-contain">
+                              <input class="cxp-input" id="phone" type="tel" name="phone" placeholder="Ej: 6545 7762">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group"></div>
+                        <div class="g-recaptcha" data-sitekey="6LdQPy8UAAAAAC8FFQusPSuCHKzZcItOAWmyAY-X" data-size="100%" data-callback="captcha_callback"></div>
+                      </div>
+                      <div class="foot">
+                        <div class="text-center">
+                          <button class="btn cxp-btn" disabled="disabled" type="submit">Guardar datos</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="steps step-3">
+                      <div class="body">
+                        <div class="text-center"><span class="check-register"></span>
+                          <h3 class="book">¡Hemos finalizado!</h3>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-10 col-xs-offset-1">
+                            <p><strong>Ya eres parte de la red de sitios de Chilexpress.</strong></p>
+                            <div class="separate-reg"></div>
+                            <p class="small">En tu perfil privado podrás:</p>
+                            <ul>
+                              <li><span class="icon-circle-check"></span>Hacer seguimiento personalizado de tus envíos.</li>
+                              <li><span class="icon-circle-check"></span>Guardar direcciones y destinatarios frecuentes.</li>
+                              <li><span class="icon-circle-check"></span>Repetir envíos que hayas realizado en el pasado.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="foot">
+                        <div class="text-center"><a class="btn cxp-btn secondary" href="index.html">Aceptar</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <footer class="footer">
+      <div class="container footer-content">
+        <div class="footer-col contact">
+          <h4 class="footer-title">Contáctanos</h4>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item"><i class="icon icon-mobile-phone"></i><a class="phone" href="tel:+56-22355-2500">(+56 2) 2355 2500</a></li>
+            <li class="footer-contact-item"><i class="icon icon-envelope"></i><a href="contact.html">contacto@chilexpress.cl</a></li>
+            <li class="footer-contact-item address"><i class="icon icon-pin"></i>
+              <div class="address">Av. José Joaquín Pérez 1376, Parque Industrial ENEA, Pudahuel, Santiago, Chile</div>
+            </li>
+            <li class="footer-contact-item"><a class="map" href="www.google.cl/maps/place/Jos%C3%A9+Joaqu%C3%ADn+P%C3%A9rez+1376,+Pudahuel,+Regi%C3%B3n+Metropolitana/@-33.4229792,-70.7804746,17z/data=!4m13!1m7!3m6!1s0x9662c1882696a219:0x2cf18f179fffcf7f!2sJos%C3%A9+Joaqu%C3%ADn+P%C3%A9rez+1376,+Pudahuel,+Regi%C3%B3n+Metropolitana!3b1!8m2!3d-33.4229837!4d-70.7782859!3m4!1s0x9662c1882696a219:0x2cf18f179fffcf7f!8m2!3d-33.4229837!4d-70.7782859" target="_blank">Ver mapa</a></li>
+            <li class="footer-contact-item"><i class="icon icon-phone"></i><a class="phone" href="tel:+566002000102">600 2000 102</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-nav-mobile">
+            <input id="footer-accordion-1" name="footer-accordion" type="radio" checked="">
+            <label class="footer-title" for="footer-accordion-1">Corporativo<span class="icon icon-chevron-right"></span></label>
+            <ul class="footer-nav">
+              <li class="footer-item"><a class="footer-link">La compañía</a></li>
+              <li class="footer-item"><a class="footer-link">Reportes de sostenibilidad</a></li>
+              <li class="footer-item"><a class="footer-link">Programa de ética y providad</a>
+                <ul class="footer-subnav">
+                  <li class="footer-nav-item"><a class="footer-sublink">Canal de denuncias</a></li>
+                </ul>
+              </li>
+              <li class="footer-item"><a class="footer-link">Trabaja con nosotros</a></li>
+            </ul>
+          </div>
+          <div class="footer-nav-mobile">
+            <input id="footer-accordion-2" name="footer-accordion" type="radio">
+            <label class="footer-title" for="footer-accordion-2">Comunicación interna<span class="icon icon-chevron-right"></span></label>
+            <ul class="footer-nav">
+              <li class="footer-item"><a class="footer-link">Nuestra Net</a></li>
+              <li class="footer-item"><a class="footer-link">Acceso RRHH</a></li>
+              <li class="footer-item"><a class="footer-link">Mesa de ayuda</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-col footer-nav-mobile">
+          <input id="footer-accordion-3" name="footer-accordion" type="radio">
+          <label class="footer-title" for="footer-accordion-3">Ecosistema digital<span class="icon icon-chevron-right"></span></label>
+          <ul class="footer-nav">
+            <li class="footer-item"><a class="footer-link">Redes sociales</a></li>
+            <li class="footer-item"><a class="footer-link">Blogs</a></li>
+            <li class="footer-item"><a class="footer-link">App Móvil</a></li>
+            <li class="footer-item"><a class="footer-link">Pickup</a></li>
+            <li class="footer-item"><a class="footer-link">Voy</a>
+              <ul class="footer-subnav">
+                <li class="footer-nav-item"><a class="footer-sublink">Términos y condiciones</a></li>
+                <li class="footer-nav-item"><a class="footer-sublink">Políticas de privacidad</a></li>
+              </ul>
+            </li>
+            <li class="footer-item"><a class="footer-link">Llave única (SSO)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col footer-nav-mobile">
+          <input id="footer-accordion-4" name="footer-accordion" type="radio">
+          <label class="footer-title" for="footer-accordion-4">Servicio al cliente<span class="icon icon-chevron-right"></span></label>
+          <ul class="footer-nav">
+            <li class="footer-item"><a class="footer-link" href="branch-office-search.html">Sucursales</a></li>
+            <li class="footer-item"><a class="footer-link">Cobertura</a></li>
+            <li class="footer-item"><a class="footer-link">Preguntas frecuentes</a></li>
+            <li class="footer-item"><a class="footer-link" href="contact.html">Contacto</a></li>
+            <li class="footer-item"><a class="footer-link">Términos y condiciones</a></li>
+            <li class="footer-item"><a class="footer-link">Guía de servicios</a></li>
+            <li class="footer-item"><a class="footer-link">Tarifas</a></li>
+            <li class="footer-item"><a class="footer-link">Normas de transporte</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="footer-bottom-col left">
+            <div class="copyright">© Chilexpress  2018.</div><a>Brand center</a>
+          </div>
+          <div class="footer-bottom-col right"><a>Políticas de privacidad</a>
+            <div class="footer-rs"><span class="footer-rs-label">Síguenos en:</span><a href="#"><span class="icon-circle-facebook"></span></a><a href="#"><span class="icon-circle-twitter"></span></a><a href="#"><span class="icon-youtube"></span></a></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

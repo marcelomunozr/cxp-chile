@@ -1,0 +1,60 @@
+- var versionDocs = '1.0.28'
+
+head
+  meta(charset="utf-8")
+  //- Viewport for Mobile
+  meta(http-equiv="X-UA-Compatible", content="IE=edge")
+  meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0")
+  meta(name="description" content= pageDesc)
+  meta(name="keywords" content= pageKeywords + ', encomiendas, envíos, nacional, internacional, courier')
+  meta(name = "author", content= "2Brains")
+  meta(name="format-detection", content="telephone=no")
+  meta(property= "fb:app_id", content= "122320888099099")
+  meta(property= "og:url", content= "http://www.chilexpress.com")
+  meta(property= "og:title", content= "Chilexpress")
+  meta(property= "og:image", content=  pathRoot + 'img/logo.png')
+  meta(property= "og:description", content= "Chilexpress, empresa de Courier Nacional e Internacional, encomiendas y envíos.")
+  link(rel= "icon", type="image/x-icon", href= pathRoot +  'img/favicon.ico')
+  //- Stylesheets
+  link(href= pathRoot + 'css/main.css?v=' + versionDocs, rel="stylesheet")
+  if pageTitle
+    title Chilexpress, empresa de Courier Nacional e Internacional, encomiendas y envíos. - #{pageTitle}
+  else
+    title Chilexpress, empresa de Courier Nacional e Internacional, encomiendas y envíos.
+  //- JavaScript
+  if isShipmentStatus || isBranchOfficeSingle
+    script(src= pathRoot + 'js/clipboard.min.js?v=' + versionDocs)
+  script(src= pathRoot + 'js/angular.js')
+  script(src= pathRoot + 'js/angular-route.js')
+  script(src= pathRoot + 'js/angular-sanitize.js')
+  script(src= pathRoot + 'js/jquery.min.js')
+  //script(src= pathRoot + 'js/jquery-ui.min.js')
+  script(src= pathRoot + 'js/bootstrap.min.js')
+  //- if isRegisterPage || isLoginPage
+  script(src= pathRoot + 'js/jquery.validate.js')
+  script(src= pathRoot + 'js/jquery.Rut.min.js')
+  script(src= pathRoot + 'js/bowser.js')
+  script(src= pathRoot + 'js/app.js?v=' + versionDocs)
+
+  if isContact
+    script(src= pathRoot + 'js/contact.js?v=' + versionDocs)
+    
+  if isShipmentStatus
+    script(src='https://maps.google.com/maps/api/js?key=AIzaSyAh05o_q3rKroDzoJkCRH_6nEl6Z0zFcU8&libraries=places', type='text/javascript')
+    script(src= pathRoot + 'js/shipment-status.js?v=' + versionDocs)
+
+  if isSearchOT
+    script(src= pathRoot + 'js/search-ot.js?v=' + versionDocs)
+
+  if isHome || isBranchOfficeSearch
+    script(src='https://maps.google.com/maps/api/js?key=AIzaSyAh05o_q3rKroDzoJkCRH_6nEl6Z0zFcU8&libraries=places', type='text/javascript')
+    script(src= pathRoot + 'js/load-maps.js?v=' + versionDocs)
+
+  if isBranchOfficeSingle
+    script(src='https://maps.google.com/maps/api/js?key=AIzaSyAh05o_q3rKroDzoJkCRH_6nEl6Z0zFcU8&libraries=places', type='text/javascript')
+    script(src= pathRoot + 'js/load-maps-office.js?v=' + versionDocs)
+
+  script(src= pathRoot + 'js/selectize.js')
+  script(src= pathRoot + 'js/cxp-validations.js?v=' + versionDocs)
+  script(src= pathRoot + 'js/scripts.js?v=' + versionDocs)
+  script(src= 'https://www.google.com/recaptcha/api.js')

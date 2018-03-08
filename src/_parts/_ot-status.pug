@@ -1,0 +1,34 @@
+
+.ot-status.ot-invalid(ng-if="errorCase.indexOf('invalid') != -1")
+  .status-head
+    span.icon.icon-octagon-ban
+    .status-desc
+      span(ng-if="totalErrors!=1")
+        |No hemos encontrado resultados de búsqueda para las órdenes de transporte:
+      span(ng-if="totalErrors==1")
+        |No hemos encontrado resultados de búsqueda para la orden de transporte: 
+      .error-ot-list(ng-if="totalErrors!=1") “730009432842” “730009432842” “730009432842” “730009432842” “730009432842” “730009432842” “730009432842” “730009432842” “730009432842” “730009432842”.
+      .error-ot-list(ng-if="totalErrors==1") “730009432842”
+      
+    span.icon-close.close-status(ng-if="totalErrors!=1")
+  .status-foot
+    .txt
+      .sug Sugerencia: 
+      | Revisa que el número esté bien escrito. El número de OT tiene entre 10 y 12 dígitos, sin espacios ni letras.
+
+.ot-status.ot-expired(ng-if="errorCase.indexOf('expired') != -1")
+  .status-head
+    span.icon.icon-circle-alert
+    .status-desc
+      span(ng-if="totalErrors!=1")
+        |Las siguientes órdenes de transporte han expirado:
+      span(ng-if="totalErrors==1")
+        |La órden de transporte ha expirado:  
+      .error-ot-list(ng-if="totalErrors!=1") 730009432” “943000043”
+      .error-ot-list(ng-if="totalErrors==1") "730009432”
+    span.icon-close.close-status(ng-if="totalErrors!=1")
+  .status-foot
+    .txt
+      .sug Sugerencia: 
+      | Las ordenes de transporte tienen una duración de tres meses. Si la orden de transporte expiró, 
+      a.link(href="#")  comunícate con nosotros.

@@ -1,0 +1,128 @@
+extends _layouts/_login-register
+
+block variables
+  - var pageTitle = "Registro"
+  - var pageDesc = "Chilexpress, empresa de Courier Nacional e Internacional, encomiendas y envíos."
+  - var pageKeywords = "Chilexpress"
+  - var isRegisterPage = true
+
+block login_register
+  .is-register
+    form#registerForm(action="", method="post")
+      .container
+        .row
+          .col-xs-12.col-md-10.col-md-offset-1
+            .box-shadow-register
+              .options-register
+                .entry-options
+                  .col-sm-4
+                    .option
+                      img.img-responsive(src="assets/img/op1.svg")
+                  .col-sm-4
+                    .option
+                      img.img-responsive(src="assets/img/op2.svg")
+                  .col-sm-4
+                    .option.bg-primary
+                      img.img-responsive(src="assets/img/op3.svg")
+                  .col-sm-4
+                    .option
+                      img.img-responsive(src="assets/img/op4.png")
+                  .col-sm-4
+                    .option.bg-secondary
+                      img.img-responsive(src="assets/img/op5.svg")
+                .desc-options
+                  span.single-sign-on Single sign on
+                  p Crea una cuenta y podrás acceder a la red de sitios de Chilexpress sin tener que loguearte cada vez.
+                  br
+                  | Ahorra tiempo gestionando tus envíos, obtén información clara y oportuna de tus servicios, y guarda tus datos para usarlos en el futuro.
+              .login-register
+                .head.text-center
+                  .back-arrow
+                    a(onClick="history.go(-1); return false;")
+                      span.icon-arrow-left
+                    a(data-step="1" class="hide")
+                      span.icon-arrow-left
+                  .logo
+                    a.logo-link(href="javascript();")
+                      span.logo-image
+                .register-tabs
+                  .steps.step-1.step-active
+                    .body
+                      span.title-section Crea tu cuenta
+                      .form-group
+                        label(for="rut") rut
+                        input#rut.cxp-input.input-rut(type="text", name="rut", placeholder="Ingresa tu rut")
+                        h6 Rut sin puntos ni guiones
+                      .form-group
+                        label(for="email") email
+                        input#email.cxp-input(type="email", name="email", placeholder="Ingresa tu email")
+                        h6 ej: nombre@correo.com
+                      .form-group
+                        label(for="pass") contraseña
+                        input#pass.cxp-input(type="password", name="pass", placeholder="Ingresa contraseña")
+                        span.icon-padlock
+                        h6 Mínimo 6 caracteres
+                      .form-group
+                        label(for="confirmPass") confirma contraseña
+                        input#confirmPass.cxp-input(type="password", name="confirmPass", placeholder="Ingresa contraseña nuevamente")
+                        h6 Mínimo 6 caracteres
+                    .foot.text-center
+                      button.btn.cxp-btn(disabled='disabled', type='button', data-step='2')
+                        | Continuar
+                      hr
+                      p ¿Ya tienes una cuenta?
+                      a.btn.link.uppercase(href="login.html")
+                        | Ingresa
+                  .steps.step-2
+                    .body
+                      span.title-section Ya casi finalizamos
+                      .form-group
+                        label(for="name") nombre
+                        input#name.cxp-input(type="text", name="name", placeholder="Ingresa tu nombre")
+                      .form-group
+                        label(for="firstName") apellido paterno
+                        input#firstName.cxp-input(type="text", name="firstName", placeholder="Ingresa tu apellido paterno")
+                      .form-group
+                        label(for="lastName") apellido materno
+                        input#lastName.cxp-input(type="text", name="lastName", placeholder="Ingresa tu apellido materno")
+                      .form-group
+                        label(for="phone") teléfono de contacto (opcional)
+                        .row
+                          .col-xs-5
+                            select#prefix.custom-select.prefix-select(name='prefixPhone', placeholder='+56 9')
+                          .col-xs-7#input-phone-contain
+                            input#phone.cxp-input(type="tel", name="phone", placeholder="Ej: 6545 7762")
+                      .form-group
+                      .g-recaptcha(data-sitekey="6LdQPy8UAAAAAC8FFQusPSuCHKzZcItOAWmyAY-X",data-size="100%", data-callback="captcha_callback")
+                    .foot
+                      .text-center
+                        button.btn.cxp-btn(disabled='disabled', type='submit')
+                          | Guardar datos
+                  .steps.step-3
+                    .body
+                      .text-center
+                        span.check-register
+                        h3.book ¡Hemos finalizado!
+                      .row
+                        .col-xs-10.col-xs-offset-1
+                          p
+                            strong Ya eres parte de la red de sitios de Chilexpress.
+                          .separate-reg
+                          p.small En tu perfil privado podrás:
+                          ul
+                            li
+                              span.icon-circle-check
+                              | Hacer seguimiento personalizado de tus envíos.
+                            li
+                              span.icon-circle-check
+                              | Guardar direcciones y destinatarios frecuentes.
+                            li
+                              span.icon-circle-check
+                              | Repetir envíos que hayas realizado en el pasado.
+                    .foot
+                      .text-center
+                        a.btn.cxp-btn.secondary(href="index.html")
+                          | Aceptar
+
+  //- Aqui va el footer
+  include _parts/_footer

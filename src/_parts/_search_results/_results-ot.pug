@@ -1,0 +1,30 @@
+- var resultado = "645435642341"
+h3.results-title Resultados para
+  strong  “#{resultado}”
+
+include _search-form
+
+h4.subtitle Mostrando
+  b  1
+  |  resultado
+
+.results-ot
+  .details-ot
+    .column
+      span Orden:
+        b  Nº 645435642341
+      span Tipo:
+        b  Documento
+    .column
+      span Servicio:
+        b  Día Hábil Siguiente
+      span Origen:
+        b  Santiago
+    .column
+      span Destino:
+        b  Temuco
+      span Estado:
+        <!-- Se puede cambiar el estado de la orden agregando a la clase uno de los 4 estados definidos: transito | retenida | entregada | recepcionada -->
+        b.status.transito  En tránsito
+  .align-link
+    a.link(href="#") Ver detalle

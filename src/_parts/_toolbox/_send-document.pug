@@ -1,0 +1,62 @@
+form.form-send-document
+    .body-box
+        fieldset.choice.c-field
+            legend.o-fieldset__legend ¿Qué tipo de envío es?
+            .radio
+                input.toolbox-send-type(checked='checked', name='documentRadio', type='radio', value='nationalValue', id='nationalDocument' + formId)
+                label.radio-label(for='nationalDocument' + formId) Nacional
+            .radio
+                input.toolbox-send-type(name='documentRadio', type='radio', value='internationalValue', id='internationalDocument' + formId)
+                label.radio-label(for='internationalDocument' + formId) Internacional
+        // choice
+        fieldset.choice.c-field
+            .form-vertical
+                .form-group
+                    label.o-fieldset__legend(for='originNationalDocumentSend' + formId) ¿Cuál es su origen?
+                    select.select-custom.national-select(name='originNationalDocumentSend', placeholder='Selecciona origen', type='text', id='originNationalDocumentSend' + formId)
+                .form-group
+                    .is-national
+                        label.o-fieldset__legend(for='destinyNationalDocumentSend' + formId) ¿Cuál es su destino?
+                        select.select-custom.national-select(name='destinyNationalDocumentSend', placeholder='Selecciona destino', type='text', id='destinyNationalDocumentSend' + formId)
+                    .is-international
+                        label.o-fieldset__legend(for='destinyInternationalDocumentSend' + formId) ¿Cuál es su destino?
+                        select.select-custom.international-select(name='destinyInternationalDocumentSend', placeholder='Selecciona destino', type='text', id='destinyInternationalDocumentSend' + formId)
+        fieldset.choice.c-field
+            legend.o-fieldset__legend ¿Cómo es tu documento?
+            .row
+                .col-md-12
+                    .is-national
+                        select.select-custom.sizes-select.size-document(name='sizeDocument', id="sizeNationalDocument" + formId, placeholder="Selecciona un tamaño")
+                            option(value="", selected="selected")
+                            option(data-subtext='option subtext', value='1') Muy liviano
+                            option(value='2') Liviano
+                    .is-international
+                        select.select-custom.sizes-select.size-document(name='sizeDocument', id="sizeInternationalDocument" + formId, placeholder="Selecciona un tamaño")
+                            option(value="", selected="selected")
+                            option(data-subtext='option subtext', value='1') Muy liviano
+                            option(value='2') Liviano
+        fieldset
+            .checkbox.checkbox-warning
+                input.isAccept(type='checkbox', id="isAcceptSendDocument" + formId)
+                label(for="isAcceptSendDocument" + formId) #{legendEOL}
+
+    .body-footer
+        .row
+            .col-xs-8.col-sm-7.col-md-7.col-lg-8.wrapper-price
+                .total.text-left.is-national
+                    p Costo desde
+                    h4
+                        span $
+                        span.price 0
+                .total.text-left.is-international
+                    p Costo entre
+                    h4
+                        span.international-prince-box
+                            span $
+                            span.price 0
+                        span.international-prince-box
+                            span $
+                            span.price 0
+            .col-xs-4.col-sm-5.col-md-5.col-lg-4.wrapper-btn
+                button.btn.btn-block.btn-continue(disabled='disabled', type='button', data-toggle='modal', data-target='#ModalRegister')
+                    | Hacer el envío

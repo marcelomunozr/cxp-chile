@@ -1,0 +1,48 @@
+{
+  "name": "chilexpress-cl",
+  "version": "1.0.0",
+  "description": "Bootstrap + Pug + Sass project using Gulp for task automation",
+  "main": "gulpfile.js",
+  "author": {
+    "name": "OliverMonterrosa",
+    "email": "oliverastro@gmail.com",
+    "url": "https://github.com/oliverastro"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "angular": "^1.6.6",
+    "angular-route": "^1.6.6",
+    "angular-sanitize": "^1.6.6",
+    "bootstrap-sass": "^3.3.7",
+    "bowser": "^1.8.1",
+    "gulp-cli": "^2.0.1",
+    "jquery": "^1.11.1",
+    "node-sass": "^4.7.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.15.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-pug": "^3.0.4",
+    "gulp-sass": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://OliverMonterrosa@bitbucket.org/2brainschile/chilexpress-chilexpress_cl-pug-sass.git"
+  },
+  "keywords": [
+    "pug",
+    "gulp",
+    "sass",
+    "browsersync",
+    "jquery",
+    "bootstrap",
+    "autoprefixer",
+    "angular"
+  ]
+}

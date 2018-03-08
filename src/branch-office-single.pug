@@ -1,0 +1,107 @@
+extends _layouts/_inicio
+
+block variables
+  - var isBranchOfficeSingle = true
+
+block content
+  include _parts/_modals
+  include _parts/_header
+
+  .page-content.page-branch-office-single
+    .container.main-container
+      .page-type
+        a.back-office-single.link(href="javascript:history.back(1)")
+          span.icon.icon-chevron-left
+          | volver
+        .office-wrapper
+          .body-office
+            .section-info
+              .info-head
+                .distance
+                  span.icon-result-distance
+                .intro
+                  .tag Sucursal Express
+                  h4 Chilexpress San Francisco de Asís
+                  p Av. Las Condes 12340-9, Vitacura, Lo Barnechea, Región Metropolitana, Chile
+                  a.map(href="-33.3724492,-70.51757570000001?q=Av. Las Condes 12340-9, Vitacura, Lo Barnechea, Región Metropolitana, Chile") Av. Las Condes 12340-9, Vitacura, Lo Barnechea, Región Metropolitana, Chile
+              .info-body
+                .timetable
+                  ul.list-unstyled
+                    li Lunes a Viernes:
+                      strong  09:00 - 19:00
+                    li Sábado:
+                      strong  10:00 - 13:00
+                    li Domingo:
+                      strong  Cerrado
+                  span.icon-phone
+                  a.link(href="tel:+56223243221") +56223243221
+                  a.c-button.c-button--phantom.hidden-md(href="#") Solicitar ticket de atención
+                  a.c-button.c-button--phantom.hidden-md(href="#") Reserva de hora
+                  .visible-sm-link
+                    span.icon.icon-pin
+                    a.link.map(href="-33.3724492,-70.51757570000001?q=Av. Las Condes 12340-9, Vitacura, Lo Barnechea, Región Metropolitana, Chile") Ver mapa
+                .services
+                  .services-title Servicios de sucursal
+                  ul.list-services
+                    li
+                      span.icon-single-check
+                      | Envíos
+                    li
+                      span.icon-single-check
+                      | Pago de cuentas
+                    li
+                      span.icon-single-check
+                      | Recargas
+                    li
+                      span.icon-single-check
+                      | Giro de dinero
+                    li
+                      span.icon-single-check
+                      | Envíos por pagar
+                    li
+                      span.icon-single-check
+                      | Informe Comercial Platinum
+
+              a.c-button.c-button--phantom.visible-sm-flex(href="#") Solicitar ticket de atención
+              a.c-button.c-button--phantom.visible-sm-flex(href="#") Reserva de hora
+
+            .section-map
+              #mapSingle
+          .footer-office
+            a.blueLink.share(data-toggle="modal", data-target="#modalSharedTracking")
+              span.icon.icon-share
+              | COMPARTIR
+
+        .near-office-wrapper
+          .near-office-title Sucursales cercanas
+          .near-office-container
+            .near-office
+              a.box(href="#")
+                .distance
+                  span.icon-result-distance
+                .intro
+                  .tag Sucursal Express
+                  h4 Chilexpress San Francisco de Asís
+                  p Av. Las Condes 12340-9, Vitacura, Lo Barnechea, Región Metropolitana, Chile
+            .near-office
+              a.box(href="#")
+                .distance
+                  span.icon-result-distance
+                .intro
+                  .tag Sucursal Express
+                  h4 Chilexpress San Francisco de Asís
+                  p Av. Las Condes 12340-9, Vitacura, Lo Barnechea, Región Metropolitana, Chile
+            .near-office
+              a.box(href="#")
+                .distance
+                  span.icon-result-distance
+                .intro
+                  .tag Sucursal Express
+                  h4 Chilexpress San Francisco de Asís
+                  p Av. Las Condes 12340-9, Vitacura, Lo Barnechea, Región Metropolitana, Chile
+
+
+
+
+
+  include _parts/_footer

@@ -1,0 +1,280 @@
+.sidebar-type {
+  background: $white;
+  padding: 16px 8px 8px;
+  position: relative;
+  display: block;
+  margin-bottom: 16px;
+  height: 100%;
+
+  @include media-breakpoint-up(md) {
+    padding: 16px 16px 8px;
+  }
+  .sidebar-row {
+    margin-top: -3px;
+
+    @media (min-width: $md-device) {
+      margin-left: -6px;
+      margin-right: -6px;
+    }
+
+    @media (max-width: $sm-device) {
+      margin-bottom: 24px;
+    }
+  }
+  .side-info {
+    padding: 0;
+    list-style: none;
+    margin-bottom: 8px;
+    li {
+      a {
+        @include transition-property(background);
+        @include transition-timing-function(ease-out);
+        @include transition-duration(300ms);
+        font-size: 16px;
+        color: $mine-shaft;
+        font-family: $font-family-sans-serif;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        float: none;
+        padding: 12px 8px 18px;
+        background: none;
+        &:hover,
+        &:focus,
+        &:active {
+          background: $gallery;
+          text-decoration: none;
+        }
+      }
+      span {
+        width: 30px;
+        margin-right: 8px;
+        font-size: 30px;
+        height: 30px;
+        position: relative;
+        color: $mine-shaft;
+        &.icon-circle-twitter {
+          top: -3px;
+        }
+        &.icon-circle-facebook {
+          top: -3px;
+        }
+        &.icon-phone {
+          color: $yellow-sea;
+        }
+      }
+      &:first-child {
+        border-bottom: 1px solid $alto;
+      }
+      &.call-us {
+        border: 1px solid $alto;
+        border-radius: 3px;
+        a:hover {
+          background: none;
+        }
+        span {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  h3 {
+    font-family: $font-family-US-SemiBold;
+    font-size: 22px;
+    color: $mine-shaft;
+    @include media-breakpoint-up(md) {
+      font-size: 22px;
+    }
+    @include media-mobile {
+      padding-left: 8px;
+    }
+  }
+  .side-faqs {
+    .panel {
+      @include box-shadow(none);
+      margin-bottom: 0;
+      border-radius: 0;
+      border: 0px;
+      border-top: 1px solid $alto;
+      cursor: pointer;
+
+      &:last-child{
+        border-bottom: 1px solid $alto;
+      }
+
+      .head {
+        h4 {
+          margin-top: 16px;
+          color: $mine-shaft;
+          font-family: $font-family-sans-serif;
+          font-size: 16px;
+          padding-right: 32px;
+          position: relative;
+          font-weight: normal;
+          span {
+            position: absolute;
+            right: 0;
+            font-size: 18px;
+            line-height: 100%;
+            top: 32%;
+            height: 18px;
+            display: block;
+            &:before {
+              transition: 100ms linear easy-out;
+            }
+          }
+          &:hover {
+            span {
+              -webkit-transform: rotate(180deg);
+              -moz-transform: rotate(180deg);
+              -ms-transform: rotate(180deg);
+              -o-transform: rotate(180deg);
+              transform: rotate(180deg);
+              top: 26%;
+              @include media-desktop() {}
+              &:before {
+                content: "\e807";
+              }
+            }
+          }
+          &[aria-expanded="true"],
+          &[aria-expanded="true"]:hover {
+            span {
+              -webkit-transform: rotate(0deg);
+              -moz-transform: rotate(0deg);
+              -ms-transform: rotate(0deg);
+              -o-transform: rotate(0deg);
+              transform: rotate(0deg);
+              top: 32%;
+              &:before {
+                content: "\e807";
+              }
+            }
+          }
+        }
+      }
+      // .collapse,
+      // .collapsing {
+      //   padding-bottom: 8px;
+      // }
+      p {
+        margin-bottom: 8px;
+        color: $gray;
+      }
+    }
+  }
+  .sidebar-news {
+    @include media-mobile {
+      //display: none;
+    }
+    .caption {
+      padding: 11px 20px 32px;
+      background: $tundora;
+    }
+    h3 {
+      color: $white;
+      margin-top: 0;
+      margin-bottom: 13px;
+    }
+    p {
+      color: $white;
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+}
+
+// tabs faqs sidebar in contact page... visible by input radio
+.sidebar-tabs {
+  position: relative;
+  margin-top: 16px;
+  .faq-panel {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    @include transition(opacity 300ms ease-out);
+    &.is-active {
+      visibility: visible;
+      opacity: 1;
+      position: relative;
+    }
+  }
+}
+
+.faq-general {
+  margin-top: 20px;
+  @include media-mobile {
+    margin-top: 0px;
+  }
+  h3 {
+    margin-top: 0px;
+    margin-bottom: 16px;
+  }
+  .sidebar-row {
+    @media (max-width: $md-device) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  .faq-general-list {
+    list-style: none;
+    margin-bottom: 0;
+    li {
+      border-bottom: 1px solid $alto;
+      &:last-child {
+        border: none;
+      }
+    }
+    a.linked {
+      @include transition-property(background);
+      @include transition-timing-function(ease-out);
+      @include transition-duration(300ms);
+      @include flexbox();
+      @include justify-content(flex-start);
+      @include align-items(center);
+      padding: 16px 16px 16px 8px;
+
+      &:hover {
+        text-decoration: none;
+        background: $gallery;
+      }
+
+      @media (max-width: $sm-device){
+        padding: 16px 16px 16px 8px;
+      }
+      span {
+        line-height: 100%;
+        color: $mine-shaft;
+      }
+      .icon-faq {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        width: 24px;
+        margin-right: 16px;
+      }
+      .faq-title {
+        @include flex-grow(1);
+        font-family: $font-family-sans-serif;
+        font-size: 16px;
+        line-height: 18px;
+      }
+      .icon-chevron-right {
+        margin-left: 16px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.is-contact{
+  .sidebar-type{
+    padding: 16px 10px 10px;
+
+    @include media-breakpoint-up(md) {
+      padding: 16px 10px 10px;
+    }
+  }
+}

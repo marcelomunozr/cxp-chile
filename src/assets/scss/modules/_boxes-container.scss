@@ -1,0 +1,117 @@
+.boxes-container{
+  margin: 0;
+
+  @media (min-width: $tablet-size-port){
+    margin: 0 0 50px;
+  }
+
+  .bg1{
+    background: $yellow-sea;
+  }
+
+  .bg2{
+    background: $chelsea-cucumber;
+  }
+
+  .bg3{
+    background: $gray;
+  }
+
+  h1{
+    font-family: $font-family-main;
+    color: $mine-shaft;
+    font-size: 22px;
+    line-height: 1.14;
+    margin-top: 16px;
+    margin-bottom: 32px;
+
+    @media (min-width: $tablet-size-port){
+      font-size: 32px;
+      line-height: 42px;
+    }
+  }
+
+  .row-boxes{
+    @include flexbox();
+    @include align-items(stretch);
+    @include flex-wrap(wrap);
+    margin-right: -8px;
+    margin-left: -8px;
+    margin-top: 16px;
+  }
+
+  .card-container{
+    background: $white;
+    align-self: stretch;
+
+    @media (min-width: $tablet-size-port){
+      min-height: 100%;
+    }
+  }
+
+  .box-single{
+    width: 100%;
+    padding: 0 8px;
+    margin-bottom: 16px;
+    position: relative;
+
+    @media (min-width: $tablet-size-port){
+      width: 33.33%;
+      margin-bottom: 0;
+    }
+
+    &:after{
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: inline-block;
+      background: $white;
+      height: 100%;
+      margin: 0 8px;
+      z-index: -1;
+    }
+
+    figure{
+      width: 100%;
+      height: 150px;
+      overflow: hidden;
+      padding: 13px 0;
+      text-align: center;
+
+      img{
+        display: inline-block;
+
+        @media (min-width: $tablet-size-port){
+          max-width: 100%;
+        }
+      }
+    }
+
+    figcaption{
+      padding: 16px 24px;
+      position: relative;
+      min-height: 200px;
+
+      h2{
+        font-family: $font-family-US-SemiBold;
+        font-size: 22px;
+        line-height: 28px;
+        color: $mine-shaft;
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      p{
+        text-overflow: ellipsis;
+        font-family: $font-family-sans-serif;
+        font-size: 16px;
+        line-height: 25px;
+        color: $mine-shaft;
+        margin-bottom: 16px;
+      }
+    }
+
+  }
+}

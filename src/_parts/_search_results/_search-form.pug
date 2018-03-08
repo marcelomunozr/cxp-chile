@@ -1,0 +1,16 @@
+.search-component
+  h6
+    strong ¿Qué deseas buscar?
+  form#searched(action='', method='post')
+    .search-element
+      label(for='search-input')
+        span.icon-search
+      input#search-input.search-box(value=resultado, name='', placeholder='¿Qué estás buscando?', type='text')
+      button.button-element.search-submit(placeholder='Buscar', type='button') Buscar
+  div(ng-show="search === '123456789' || search === 'marciano1'")
+    span.suggest-title Sugerencias si se trata de una OT:
+    ul.suggest-list
+      li Revisa que el número de la orden de transporte esté escrito correctamente.
+      li El número de la orden de transporte tiene de
+        strong  10 a 12 dígitos y no contiene letras.
+        |  Por ejemplo: 12345678900.

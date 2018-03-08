@@ -1,0 +1,50 @@
+form.form-send-document
+    .body-box
+        // choice
+        fieldset.choice.c-field
+            .form-vertical
+                .form-group
+                    label.o-fieldset__legend(for='originNationalValiseSend' + formId) ¿Cuál es su origen?
+                    select.select-custom.national-select(name='originNationalValiseSend', placeholder='Selecciona origen', type='text', id='originNationalValiseSend' + formId)
+                .form-group
+                    .is-national
+                        label.o-fieldset__legend(for='destinyNationalValiseSend' + formId) ¿Cuál es su destino?
+                        select.select-custom.national-select(name='destinyNationalValiseSend', placeholder='Selecciona destino', type='text', id='destinyNationalValiseSend' + formId)
+                    .is-international
+                        label.o-fieldset__legend(for='destinyInternationalValiseSend' + formId) ¿Cuál es su destino?
+                        select.select-custom.international-select(name='destinyInternationalValiseSend', placeholder='Selecciona destino', type='text', id='destinyInternationalValiseSend' + formId)
+        fieldset.choice.c-field
+            legend.o-fieldset__legend ¿Cómo es tu valija?
+            .row
+                .col-md-12
+                    .is-national
+                        select.select-custom.sizes-select.size-valise(name='sizeValise', id="sizeNationalValise" + formId, placeholder="Selecciona un tamaño")
+                            option(value="", selected="selected")
+                            option(data-subtext='option subtext', value='1') Muy liviana
+                            option(value='2') Liviana
+                            option(value='3') Pesada 
+        fieldset
+            .checkbox.checkbox-warning
+                input.isAccept(type='checkbox', id="isAcceptSendValise" + formId)
+                label(for="isAcceptSendValise" + formId) #{legendEOL}
+
+    .body-footer
+        .row
+            .col-xs-8.col-sm-7.col-md-7.col-lg-8.wrapper-price
+                .total.text-left.is-national
+                    p Costo desde
+                    h4
+                        span $
+                        span.price 0
+                .total.text-left.is-international
+                    p Costo entre
+                    h4
+                        span.international-prince-box
+                            span $
+                            span.price 0
+                        span.international-prince-box
+                            span $
+                            span.price 0
+            .col-xs-4.col-sm-5.col-md-5.col-lg-4.wrapper-btn
+                button.btn.btn-block.btn-continue(disabled='disabled', type='button', data-toggle='modal', data-target='#ModalRegister')
+                    | Hacer el envío

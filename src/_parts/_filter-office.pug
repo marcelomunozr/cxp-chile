@@ -1,0 +1,96 @@
+.section-box-filter
+  .head-filter
+    a.link.filter-back(href="#")
+      span.icon-chevron-left
+      | VOLVER
+  .filters-selection
+    h3.page-title Filtrar por:
+    .filter-container-parent
+      .filter-content
+        .filter-content-head
+          span.section-title Servicios
+          span.icon-chevron-down
+        .filter-content-body
+          .wrapp
+            .checkbox
+              input(type='checkbox', id="envio-encomienda")
+              label(for="envio-encomienda") Envío encomiendas
+            .checkbox
+              input(type='checkbox', id="envio-por-pagar")
+              label(for="envio-por-pagar") Envío por pagar
+            .checkbox
+              input(type='checkbox', id="giro-de-dinero")
+              label(for="giro-de-dinero") Giro de dinero
+            .checkbox
+              input(type='checkbox', id="informe-comercial")
+              label(for="informe-comercial") Informe comercial
+            .checkbox
+              input(type='checkbox', id="envio-documentos")
+              label(for="envio-documentos") Envío de documentos
+            .checkbox
+              input(type='checkbox', id="recarga-celulares")
+              label(for="recarga-celulares") Recarga de celulares
+            .checkbox
+              input(type='checkbox', id="pago-cuentas")
+              label(for="pago-cuentas") Pago de cuentas
+
+      .filter-content
+        .filter-content-head
+          span.section-title Puntos de referencia
+          span.icon-chevron-down
+        .filter-content-body
+          .wrapp
+            .checkbox
+              input(type='checkbox', id="metro")
+              label(for="metro") Metro
+                span.mini  (Sólo Santiago)
+            .checkbox
+              input(type='checkbox', id="street-center")
+              label(for="street-center") Street center
+            .checkbox
+              input(type='checkbox', id="colegio")
+              label(for="colegio") Colegio
+            .checkbox
+              input(type='checkbox', id="mall")
+              label(for="mall") Mall
+            .checkbox
+              input(type='checkbox', id="Hospital")
+              label(for="Hospital") Hospital
+
+      .filter-content
+        .filter-content-head
+          span.section-title Horarios de atención
+          span.icon-chevron-down
+        .filter-content-body
+          .wrapp
+            .checkbox
+              input(type='checkbox', id="l-v-9")
+              label(for="l-v-9") Lunes a Viernes desde las 09:00 hrs.
+            .checkbox
+              input(type='checkbox', id="l-v-18")
+              label(for="l-v-18") Lunes a Viernes después de las 18:00 hrs.
+            .checkbox
+              input(type='checkbox', id="abierto-sabados")
+              label(for="abierto-sabados") Abierto los Sábados
+            .checkbox
+              input(type='checkbox', id="abierto-domingos")
+              label(for="abierto-domingos") Abierto los Domingos
+
+      .filter-content
+        .filter-content-head
+          span.section-title Número de atención
+          span.icon-chevron-down
+        .filter-content-body
+          .wrapp
+            .checkbox
+              input(type='checkbox', id="ticket")
+              label(for="ticket") Ticket de atención
+            .checkbox
+              input(type='checkbox', id="reserva")
+              label(for="reserva") Reserva de hora de atención
+
+  .btn-bottom-zone
+    .cancel-btn.btn-in-filter
+      | Cancelar
+    .filter-btn.btn-in-filter.show-all-offices.disabled
+      | Filtrar

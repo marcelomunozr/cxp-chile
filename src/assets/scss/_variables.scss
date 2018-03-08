@@ -1,0 +1,100 @@
+// Variables
+// Typography
+$font-family-sans-serif: "Roboto",
+sans-serif;
+$font-family-base: $font-family-sans-serif;
+$font-family-navbar-left: 'UniSansRegularItalicItalic',
+sans-serif !default;
+$font-family-US-Reg-Reg: 'UniSansRegularRegular',
+sans-serif !default;
+$font-family-US-SemiBold: 'UniSansSemiBoldRegular',
+sans-serif !default;
+$font-family-US-Bold: 'UniSansBoldRegular',
+sans-serif !default;
+$font-family-main: "UniSansBookRegular",
+sans-serif !default;
+$font-family-main-active: "UniSansSemiBoldRegular",
+sans-serif,
+sans-serif !default;
+
+//Final colors
+$white: #FFFFFF;
+$black: #000000;
+//yellow
+$yellow-sea: #FFB002;
+$orange-peel: #E79F00;
+$egg-sour: #FFF8E8;
+//green
+$chelsea-cucumber: #7AB546;
+$sushi: #6EA33F;
+//red
+$thunderbird: #D12E12;
+$cinderella: #FDE9E5;
+//blue
+$cornflower-blue: #4483E5;
+//grays
+$mine-shaft: #373737;
+$gray: #838383;
+$nobel: #B6B6B6;//TODO disabled buttons
+$alto: #D0D0D0;
+$gallery: #EFEFEF;
+$tundora: #4B4B4B;
+//misc
+$black-c: #1D1D1D; //boton secondary hover
+$entrepreneurs: #004976;//emprendedores
+$ecommerce: #00b2b2;//ecommerce
+$negative-hover: #B92910;//hover btn negative rojo
+//caritas
+$enojado: #DE6C59;
+$triste: #DE8D59;
+$serio: #FFC74D;
+$alegre: #C5D08F;
+$super-feliz: #A6D08F;
+
+
+
+// Responsive
+$lg-device: 1199px; // 1200px
+$md-device: 991px; // 970px
+$sm-device: 767px; // 768px
+$xs-device: 479px; // 480px
+$xs-md-device: 360px; // 360px
+$xsm-device: 320px; // 480px
+
+$tablet-size-port: 768px;
+$tablet-size-land: 992px;
+$desktop-size: 1200px;
+
+@media screen and(max-width: $xs-device) {
+  .hidden-xsm {
+    display: none !important;
+  }
+  .visible-xsm {
+    display: block !important;
+  }
+}
+
+// Typography
+$font-family-sans-serif: "Roboto", sans-serif;
+a {
+  cursor: pointer;
+}
+
+.img-responsive {
+  width: 100%;
+}
+
+$img-xs: 30px;
+$img-sm: $img-xs * 2;
+$img-md: $img-sm * 2;
+$img-lg: $img-md * 2;
+// margin
+$mgn-xs: 8px;
+$mgn-sm: $mgn-xs * 2;
+$mgn-md: $mgn-xs * 3;
+$mgn-lg: $mgn-xs * 4;
+// padding
+$pdg-xs: 8px;
+$pdg-sm: $pdg-xs * 2;
+$pdg-md: $pdg-sm * 3;
+$pdg-lg: $pdg-md * 4;

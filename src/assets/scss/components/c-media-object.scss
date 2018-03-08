@@ -1,0 +1,39 @@
+.Media {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1em;
+}
+
+.Media-figure {
+  margin-right: 1em;
+}
+
+.Media-figure .icon {
+  display: flex;
+  font-size: 24px;
+}
+
+.Media-body {
+  flex: 1;
+  text-align: left;
+}
+.Media-body,
+.Media-body :last-child {
+  margin-bottom: 0;
+  p {
+    font-size: 16px;
+  }
+}
+
+.Media-title {
+  margin: 0 0 .5em;
+}
+
+.Media--center {
+  align-items: center;
+}
+
+.Media--reverse > .Media-figure {
+  order: 1;
+  margin: 0 0 0 1em;
+}

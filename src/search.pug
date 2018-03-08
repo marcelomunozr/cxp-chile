@@ -1,0 +1,43 @@
+extends _layouts/_inicio
+
+block variables
+  - var pageTitle = "Resultados de Búsqueda"
+  - var pageDesc = "Chilexpress, empresa de Courier Nacional e Internacional, encomiendas y envíos."
+  - var pageKeywords = "Chilexpress"
+  - var isSearch = true
+
+block content
+  include _parts/_modals
+  include _parts/_header
+
+  .page-content
+    .container.main-container
+      .row(ng-class="{'row-flex':search==='645435642341'}")
+        .col-md-9.col-sm-8
+          .page-type.min-height(ng-switch="search")
+            <!-- resultado búsqueda exitosa -->
+            div(ng-switch-when="guia")
+              include _parts/_search_results/_results
+            <!-- es una posible OT, ya que tiene números que son envíos nacionales y tiene un ejemplo "marciano1" el cual puede ser el caso para una búsqueda de OT internacional que contiene letras y numeros -->
+            div(ng-switch-when="123456789")
+              include _parts/_search_results/_no-ot
+            div(ng-switch-when="marciano1")
+              include _parts/_search_results/_no-ot
+            <!-- búsqueda exitosa de una OT -->
+            div(ng-switch-when="645435642341")
+              include _parts/_search_results/_results-ot
+            <!-- busqueda marciano o cualquier otra cosa que no exista -->
+            div(ng-switch-default)
+              include _parts/_search_results/_no-results
+
+        .col-md-3.col-sm-4
+          .sidebar-type
+            include _parts/_sidebar/_news
+            include _parts/_sidebar/_faq-general
+      .row
+        .col-xs-12
+          include _parts/_information-footer
+
+
+  //- Aqui va el footer
+  include _parts/_footer

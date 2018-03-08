@@ -1,0 +1,662 @@
+.form-control:focus {
+  border: 2px solid $yellow-sea;
+}
+
+body {
+  background-color: red;
+}
+
+$tlOpen: 0.6s; // transition length
+$tl: 0.3s; // transition length
+// } // for more-graceful falling back (:not browsers likely support indent)
+.search-wrapper {
+  position: relative;
+  float: right;
+  top: 1px;
+}
+
+.search-container {
+  position: absolute;
+  right: 10px;
+  height: auto;
+  z-index: 1063;
+
+  .search-box {
+    transition: width $tl, border-radius $tl, background $tl, box-shadow $tl;
+    width: 42px;
+    height: 42px;
+    border-radius: 20px;
+    border: 1px solid $alto;
+    cursor: pointer;
+    background: $white;
+    &:hover {
+      &+label .search-icon {
+        color: white
+      }
+      &+label+.search-submit{
+        background: $black-c;
+      }
+    }
+  }
+  .search-icon {
+    position: absolute;
+    left: 0;
+    color: $white;
+    cursor: pointer;
+    top: 0;
+    padding: 10px 13px;
+    z-index: 2;
+    font-size: 17px;
+  }
+  .search-submit {
+    @include transition-property(background, border, color);
+    @include transition-timing-function(ease-out);
+    @include transition-duration(200ms);
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    background: $mine-shaft;
+    padding: 4px 16px;
+    height: 36px;
+    width: 36px;
+    font-size: 16px;
+    outline: 0;
+
+    &:hover{
+      background: $black-c;
+    }
+  }
+  span.text {
+    opacity: 0;
+    visibility: hidden;
+    // transition: all .1s;
+  }
+  .selectize-input {
+    @include media-breakpoint-up(md) {
+      opacity: 0;
+    }
+    transition: all 400ms ease;
+    overflow: hidden;
+  }
+  &.is-active {
+    .selectize-input {
+      opacity: 1;
+    }
+    .search-box {
+      transition: width tlOpen cubic-bezier(0, 1.22, .66, 1.39), border-radius tlOpen, background tlOpen;
+      border: 1px solid $alto;
+      outline: none;
+      box-shadow: none;
+      padding-left: 40px;
+      cursor: text;
+      width: 732px;
+      border-radius: auto;
+      background: $white;
+      color: black;
+      @include media-breakpoint-up(lg) {
+        width: 832px;
+        .sticky &{
+          width: 840px;
+          color: black;
+        }
+      }
+      &+label .search-icon {
+        color: black;
+      }
+    }
+    .search-submit {
+      width: 100px;
+      z-index: 2;
+    }
+    span.text {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &#searchBox {
+    overflow: inherit!important;
+    height: auto;
+  }
+}
+
+.c-radio-buttons {}
+
+.o-fieldset,
+.o-fieldset.c-list {
+  display: block;
+  width: 100%;
+  margin: .5em 0;
+  padding: 0;
+  border: 0;
+}
+
+.o-fieldset__legend {
+  border: none;
+  color: $mine-shaft;
+  cursor: pointer;
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  padding: 0;
+  text-align: left;
+  text-transform: uppercase;
+  width: 100%;
+  letter-spacing: 1px;
+}
+
+.o-fieldset--bold {
+  font-family: $font-family-base;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+// Money Spins
+.input-group--double {
+  .input-group-addon {
+    border-radius: 20px;
+    &:first-child {
+      background-color: $white;
+      border-radius: 20px 0 0 20px;
+      min-width: 45px;
+    }
+    &:last-child {
+      background-color: $gray;
+      border-radius: 0 20px 20px 0;
+      color: $white;
+      font-size: 10px;
+      min-width: 80px;
+      text-align: left;
+      white-space: normal;
+    }
+  }
+}
+
+.c-field .radio {
+  display: inline-block;
+  margin: 8px 24px 0 0;
+  float: left;
+  &:first-child {}
+  &:last-child {
+    float: right;
+    margin-right: 0;
+    @include media-breakpoint-up(sm) {
+      float: left;
+    }
+    // margin-right: 16px
+  }
+  // &:nth-child(1) {
+  //     float: right;
+  // }
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    +.radio-label {
+      padding-left: 0;
+      font-size: 16px;
+      color: $white;
+      &:before {
+        content: '';
+        background: $white;
+        border-radius: 100%;
+        // border: 1px solid darken($white, 25%);
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        // top: -0.2em;
+        margin-right: 8px;
+        vertical-align: top;
+        cursor: pointer;
+        text-align: center;
+        transition: all 250ms ease;
+      }
+    }
+    &:checked {
+      +.radio-label {
+        &:before {
+          box-shadow: inset 0 0 0 5px $white;
+        }
+      }
+    }
+    &:focus {
+      +.radio-label {
+        &:before {
+          outline: none;
+          border-color: $mine-shaft;
+        }
+      }
+    }
+    &:disabled {
+      +.radio-label {
+        &:before {
+          box-shadow: inset 0 0 0 4px $white;
+          border-color: darken($white, 25%);
+          background: darken($white, 25%);
+        }
+      }
+    }
+    +.radio-label {
+      &:empty {
+        &:before {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+// Select Custom
+.select-custom {
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  display: block;
+  padding: 12px 14px;
+  outline: 0;
+  -webkit-appearance: none;
+  width: 100%;
+  text-align: center;
+  &:after {}
+  option {
+    -webkit-appearance: none;
+    background-color: red;
+    color: $white;
+  }
+  option[selected] {
+    /* value not val */
+    background: rgba(100, 100, 100, 0.3);
+  }
+}
+
+.select-custom {
+  font-size: 16px;
+  padding: 0;
+
+  &.size-valise{
+  }
+}
+
+.selectize-control.single .selectize-input {
+  box-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid $gray;
+  color: $white;
+  text-align: left;
+}
+
+.selectize-input>input::placeholder {
+  @include media-breakpoint-up(sm) {
+    font-size: 13px;
+  }
+  @include media-breakpoint-up(md) {
+    font-size: 16px;
+  }
+}
+
+.selectize-input>.item[data-value="0"] {
+  color: $gray;
+  font-style: italic;
+}
+
+.selectize-input.dropdown-active::before {
+  background-color: transparent;
+}
+
+.selectize-dropdown-content {
+  margin-top: 2px;
+}
+
+.selectize-dropdown [data-selectable] {
+  background-color: $white;
+  color: $mine-shaft;
+  padding: 4px 12px 4px;
+  text-align: left;
+  line-height: 25px;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.selectize-dropdown {
+  &.sizes-select {
+    [data-selectable] {
+      &:after {
+        content: '';
+        color: $gray;
+        font-style: italic;
+        font-size: 10px;
+        margin-left: 0px;
+        display: block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100%;
+        overflow: hidden;
+        @media(min-width: $xs-md-device) {
+          font-size: 12px;
+        }
+        @media(max-width: $sm-device) {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+.is-national {
+  .selectize-dropdown {
+    &.sizes-select {
+      [data-selectable] {
+        &[data-value="0"] {
+          display: none;
+        }
+        &[data-value="1"]:after {
+          content: '0 a 1,5 KG (Ej: Un celular)';
+        }
+        &[data-value="2"]:after {
+          content: '1,51 a 3 KG (Ej: Un notebook)';
+        }
+        &[data-value="3"]:after {
+          content: '3,01 a 6 KG (Ej: PlayStation 4)';
+        }
+        &[data-value="4"]:after {
+          content: '6,01 a 10 KG (Ej: LED 32 pulgadas)';
+        }
+        &[data-value="5"]:after {
+          content: '10,01 a 15 KG (Ej: Un microondas)';
+        }
+        &[data-value="6"]:after {
+          content: '(Ej: LED 55 pulgadas)';
+        }
+      }
+    }
+  }
+}
+
+.is-national {
+  .selectize-dropdown {
+    &.sizes-select {
+      &.size-valise {
+        [data-selectable] {
+          &[data-value="0"] {
+            display: none;
+          }
+          &[data-value="1"]:after {
+            content: '(0 A 3 KG)';
+          }
+          &[data-value="2"]:after {
+            content: '(3,01 A 6 KG)';
+          }
+          &[data-value="3"]:after {
+            content: '(6,01 A 10 KG)';
+          }
+        }
+      }
+    }
+  }
+}
+
+.is-international {
+  .selectize-dropdown {
+    &.sizes-select {
+      [data-selectable] {
+        &[data-value="0"] {
+          display: none;
+        }
+        &[data-value="1"]:after {
+          content: '0 a 2 kgs (Ej: Un celular, un libro)';
+        }
+        &[data-value="2"]:after {
+          content: '2,01 a 6 kgs (Ej: Un notebook)';
+        }
+        &[data-value="3"]:after {
+          content: '6,1 a 18 kgs (Ej: Equipos electrónicos medianos)';
+        }
+        &[data-value="4"]:after {
+          content: '18,1 a 24 kgs (Ej: Un repuesto automotriz)';
+        }
+        &[data-value="5"]:after {
+          content: '24,1 a 30 kgs (Ej: Equipos médicos grandes)';
+        }
+        &[data-value="6"]:after {
+          content: '30,1 a 70 kgs (Ej: Cargamento mediano de miel)';
+        }
+        &[data-value="7"]:after {
+          content: 'Más de 70 kilos (Ej: Cargamento grande de vinos)';
+        }
+      }
+    }
+  }
+}
+
+.is-national {
+  .size-document {
+    &~.selectize-control {
+      .selectize-dropdown {
+        &.sizes-select {
+          [data-selectable] {
+            &[data-value="1"]:after {
+              content: '0 A 0,5 KG (Ej: Una carta)';
+            }
+            &[data-value="2"]:after {
+              content: '0,51 A 1,5 KG (Ej: Una revista delgada)';
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.is-international {
+  .size-document {
+    &~.selectize-control {
+      .selectize-dropdown {
+        &.sizes-select {
+          [data-selectable] {
+            &[data-value="1"]:after {
+              content: '0 a 1,5 kg (Ej: Un contrato)';
+            }
+            &[data-value="2"]:after {
+              content: '1,51 a 2,5 kg (Ej: un estudio o una investigación)';
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.selectize-dropdown-content .option:hover {
+  background-color: $alto;
+}
+
+.selectize-input,
+.selectize-control.single .selectize-input.input-active {
+  background-color: transparent;
+  border-bottom: 2px solid $yellow-sea;
+  font-size: 16px;
+}
+
+.selectize-control.single .selectize-input:after {
+  border: none;
+  font-family: "chilexpress";
+  content: "\e804";
+  font-size: 12px;
+  top: 40%;
+  right: 20px;
+}
+
+.selectize-control.single .selectize-input.dropdown-active:after {
+  border: none;
+  font-family: "chilexpress";
+  content: "\e803";
+  font-size: 12px;
+}
+
+/*.is-error+label+.selectize-control.single .selectize-input:after {
+  display: none;
+}*/
+
+.form-control {
+  box-shadow: none;
+}
+
+.form-control::placeholder {
+  font-style: italic;
+}
+
+.form--rounded {
+  border: 1px solid $alto;
+  border-radius: 20px;
+  min-height: 40px;
+  // box-shadow: none;
+}
+
+.form--simple {
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid $gallery;
+  &:focus {
+    border: none;
+    border-bottom: 1px solid $yellow-sea;
+    box-shadow: none;
+  }
+}
+
+.login-search {
+  .search-wrapper {
+    .selectize-control.single .selectize-input:after {
+      display: none;
+    }
+    .selectize-control {
+      .selectize-input {
+        border: 0;
+        input {
+          color: $mine-shaft;
+          height: 24px;
+          left: 0!important;
+          position: relative!important;
+        }
+        div {
+          height: 24px;
+        }
+        div span {
+          height: 24px;
+          color: $mine-shaft;
+        }
+        div+input{
+          width: 0;
+        }
+      }
+       ::-webkit-input-placeholder {
+        color: $gray;
+        font-size: 12px;
+        font-family: $font-family-sans-serif;
+        font-style: italic;
+        @include media-breakpoint-up(md) {
+          font-size: 14px;
+        }
+      }
+       ::-moz-placeholder {
+        color: $gray;
+        font-size: 12px;
+        font-family: $font-family-sans-serif;
+        font-style: italic;
+        @include media-breakpoint-up(md) {
+          font-size: 14px;
+        }
+      }
+       :-ms-input-placeholder {
+        color: $gray;
+        font-size: 12px;
+        font-family: $font-family-sans-serif;
+        font-style: italic;
+        @include media-breakpoint-up(md) {
+          font-size: 14px;
+        }
+      }
+       :-moz-placeholder {
+        color: $gray;
+        font-size: 12px;
+        font-family: $font-family-sans-serif;
+        font-style: italic;
+        @include media-breakpoint-up(md) {
+          font-size: 14px;
+        }
+      }
+    }
+    .selectize-input,
+    .selectize-control.single .selectize-input.input-active {
+      border: 0;
+    }
+    .selectize-dropdown.single.searchtize.search-box {
+      z-index: 100;
+      // display: block!important;
+      background: #fff;
+      -webkit-border-radius: 16px;
+      border-radius: 16px;
+      border: 0;
+      margin-top: 8px;
+      height: auto;
+      padding: 0;
+      border: 1px solid #D0D0D0!important;
+      width: 100%!important;
+      left: 0!important;
+      opacity: 0;
+
+      .is-active &{
+        opacity: 1;
+      }
+
+      [data-selectable] {
+        padding: 16px;
+        border-bottom: 1px solid #D0D0D0;
+        @include transition-property(background);
+        @include transition-timing-function(ease-out);
+        @include transition-duration(200ms);
+
+        &:hover{
+          background: $gallery;
+        }
+
+        &:last-child {
+          border: 0;
+        }
+      }
+      .selectize-dropdown-content{
+        border-radius: 16px;
+        margin-top: 0;
+
+        &:before{
+          content: "TE SUGERIMOS";
+          font-family: $font-family-sans-serif;
+          color: $gray;
+          font-size: 10px;
+          line-height: 11px;
+          padding: 8px 16px 0;
+          display: block;
+        }
+      }
+      span {
+        color: $mine-shaft;
+        font-size: 14px;
+        &.label {
+          font-size: 14px;
+          color: $mine-shaft;
+          padding: 0 8px 0 0;
+        }
+      }
+    }
+    .is-active .selectize-dropdown.single.searchtize.search-box{
+      opacity: 1;
+    }
+  }
+}

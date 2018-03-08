@@ -1,0 +1,63 @@
+.navbar-controls.pull-right
+    button#searchMobileButton.c-button.c-button--secondary.c-button--rounded(aria-label='Execute search', onclick='openNav()', type='button')
+        span.icon.icon-search(aria-hidden='true')
+
+    a.c-button.c-button--emphasis.c-button--rounded(id="btnLoginMobile", ng-if="!logged")
+        span.icon.icon-person(aria-hidden='true')
+
+    .dropdown.pull-right.user-menu(ng-if="logged")
+        // atributo avatar-letter contiene la letra del Avatar
+        a.c-button.c-button--emphasis.c-button--rounded(avatar-letter="J", aria-expanded='false', aria-haspopup='true', data-toggle='dropdown')
+            span.badge(ng-if="userNotifications>0")
+                | {{userNotifications}}
+
+        ul.dropdown-menu.options.pull-right
+            li.user-menu-header
+                a.cxp-logo(href='javascript:;')
+                a.user-menu-close-btn
+                    i.icon-close(aria-hidden='true')
+            li.divider(role='separator')
+            li.user-menu-info
+                .pull-right.text-left(avatar-letter="J", aria-expanded='false', aria-haspopup='true', data-toggle='dropdown', type='button', id='dropdownUser')
+                    span
+                        | Hola
+                        br
+                        span.name
+                            | Juan Pablo Andrés Schwarzenegger
+            li.withNotification
+                a(href='javascript:;')
+                    | NOTIFICACIONES
+                    span
+                      span.badge {{userNotifications}}
+                      i.icon.icon-chevron-right
+            li.divider(role='separator')
+            li
+                a(href='javascript:;')
+                    | RESUMEN
+            li
+                a(href='javascript:;')
+                    | MIS DIRECCIONES
+            li
+                a(href='javascript:;')
+                    | MIS ENVÍOS
+            li
+                a(href='javascript:;')
+                    | MIS PAGOS
+            li
+                a(href='javascript:;')
+                    | MI CUENTA
+            li.divider(role='separator')
+            li
+                a(href='javascript:;')
+                    span.menuIcon.icon.icon-gear
+                    | AJUSTES
+            li
+                a(href='index.html')
+                    span.menuIcon.icon.icon-circle-close
+                    | CERRAR SESIÓN
+
+        .user-menu-notify
+          .user-menu-notify-header
+            a.user-menu-notify-close-btn.icon.icon-chevron-right
+            h4.user-menu-notify-header-title NOTIFICACIONES
+          include _header/_nofity-list

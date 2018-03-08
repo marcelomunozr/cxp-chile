@@ -1,0 +1,156 @@
+#section-slide {
+  position: relative;
+  transition: all 200ms;
+  @include media-breakpoint-up(sm) {
+    margin-top: 0;
+  }
+  .container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+    .container {
+      padding: 0;
+      @include media-breakpoint-up(sm) {
+        position: relative;
+      }
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+      }
+    }
+  }
+  .carousel {
+    height: 58rem;
+    @media screen and(max-width: $xs-device) {
+      display: none;
+    }
+  }
+  .carousel-inner {
+    height: 100%;
+  }
+  .carousel-inner>.item,
+  .carousel-inner>.item.next.left,
+  .carousel-inner>.item.prev.right,
+  .carousel-inner>.item.active {
+    height: 100%;
+  }
+  .carousel-inner>.item>img,
+  .carousel-inner>.item>a>img {
+    margin: 0 auto;
+  }
+  .fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
+}
+
+.carousel .container {
+  position: relative;
+}
+
+// Carrousel
+.carousel-indicators {
+  left: inherit;
+  right: 24px;
+  top: 52rem;
+  width: 6rem;
+}
+
+.carousel-indicators li,
+.carousel-indicators li.active {
+  height: 15px;
+  width: 15px;
+  margin: 0px;
+  background-color: white;
+}
+
+.carousel-indicators li.active{
+  background-color: $mine-shaft;
+}
+.carousel-control {
+  background-image: none;
+  border: 3px solid $white;
+  border-radius: 100%;
+  height: 41px;
+  opacity: 1;
+  top: 78%;
+  width: 41px;
+  z-index: 2;
+  &.left {
+    left: 384px;
+    background-image: none;
+    margin-left: 24px;
+    @include media-breakpoint-up(md) {
+      left: 50%;
+      margin-left: 0px;
+    }
+    @include media-breakpoint-up(lg) {
+      margin-left: -48px;
+    }
+  }
+  &.right {
+    right: 24px;
+    background-image: none;
+    @media (min-width: 992px) {
+      right: auto;
+      left: 50%;
+      margin-left: 430px;
+    }
+    @media (min-width: 1200px) {
+      margin-left: 510px;
+    }
+  }
+  .glyphicon {
+    text-shadow: none;
+    top: 18%;
+  }
+}
+
+.carousel-caption {
+  left: 50%;
+  right: auto;
+  padding-bottom: 0;
+  text-align: left;
+  bottom: 126px;
+  width: 391px;
+  padding-left: 24px;
+  @include media-breakpoint-up(sm) {
+    left: 384px;
+    padding-right: 24px;
+  }
+  @include media-breakpoint-up(md) {
+    width: 476px;
+    left: 50%;
+    padding-left: 0px;
+    padding-bottom: 10px;
+  }
+  @include media-breakpoint-up(lg) {
+    width: 550px;
+    margin-left: -48px;
+  }
+  h2 {
+    font-family: $font-family-main;
+    font-size: 62px;
+    line-height: 1.16;
+    margin-bottom: 6px;
+
+    @media (max-width: $md-device){
+      font-size: 42px;
+      line-height: 1.24;
+    }
+
+    strong {
+      font-family: $font-family-US-SemiBold;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.6);
+      margin-left: 10px;
+    }
+  }
+  h4 {
+    font-family: $font-family-US-Reg-Reg;
+    font-size: 22px;
+    line-height: 25px;
+  }
+}

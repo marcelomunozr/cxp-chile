@@ -1,0 +1,128 @@
+extends _layouts/_inicio
+
+block variables
+  - var isContact = true
+
+block content
+  include _parts/_modals
+  include _parts/_header
+
+  .page-content.is-contact
+    .container.main-container
+      .row
+        .col-md-9.col-sm-8
+          .page-type
+            ol.breadcrumb
+              li
+                a(href='index.html') 
+                  span.icon-house
+              li.active Servicio al cliente
+            h3 Formulario de contacto
+            .contact-tabs
+              .step.step-form.is-active
+                form#contactForm(name="contactForm")
+                  label ¿Qué tipo de cliente eres?
+                  ul.type-client
+                    li.activate
+                      input#persona.radio-clien(type="radio" value="Persona" name="typeClient" checked="checked")
+                      label.radio-label(for="persona") 
+                        span.icon-person
+                        |Persona
+                    li
+                      input#empresas.radio-clien(type="radio" value="Empresas" name="typeClient")
+                      label.radio-label(for="empresas") 
+                        span.icon-building
+                        |Empresas
+                    li
+                      input#emprendedores.radio-clien(type="radio" value="Emprendedores" name="typeClient")
+                      label.radio-label(for="emprendedores") 
+                        span.icon-light-bulb
+                        |Emprendedores
+                    li
+                      input#ecommerce.radio-clien(type="radio" value="E-commerce" name="typeClient")
+                      label.radio-label(for="ecommerce") 
+                        span.icon-bag
+                        |E commerce
+                  .row
+                    .col-md-6.col-sm-12
+                      .form-group
+                        label(for="servicio") SERVICIO O PRODUCTO
+                        select#servicio.custom-select.servicio-select(name="servicio", placeholder="Selecciona un servicio o producto")
+                    .col-md-6.col-sm-12
+                      .form-group
+                        label(for="motivo") MOTIVO
+                        select#motivo.custom-select.motivo-select(name="motivo", placeholder="Selecciona un motivo")
+                    .col-sm-12
+                      h4.subtitle-contact Ingresa tus datos
+                    .col-md-6.col-sm-12
+                      .form-group
+                        label(for="rut") RUT
+                        input#rut.cxp-input.input-rut(type="text", name="rut", placeholder="Ingresa tu rut",)
+                        h6.description-contact Rut sin puntos ni guiones
+                    .col-md-6.col-sm-12
+                      .form-group.number
+                        label(for="orden") NÚMERO DE OT
+                          .h6 (OPCIONAL)
+                        input#orden.cxp-input.input-orden(type="number", pattern="[0-9]*" name="orden", placeholder="Ingresa número de orden de transporte")
+                    .col-md-6.col-sm-12
+                      .form-group
+                        label(for="name") nombre
+                        input#name.cxp-input(type="text", name="name", placeholder="Ingresa tu nombre")
+                    .col-md-6.col-sm-12
+                      .form-group
+                        label(for="firstName") apellido paterno
+                        input#firstName.cxp-input(type="text", name="firstName", placeholder="Ingresa tu apellido paterno")
+                    .col-md-6.col-sm-12
+                      .form-group
+                        label(for="lastName") apellido materno
+                        input#lastName.cxp-input(type="text", name="lastName", placeholder="Ingresa tu apellido materno")
+                    .col-md-6.col-sm-12
+                      .form-group
+                        label(for="email") email
+                        input#email.cxp-input(type="email", name="email", placeholder="Ingresa tu email")
+                        h6.description-contact ej: nombre@correo.com
+                    .col-md-6.col-sm-12
+                      .form-group
+                        label(for="phone") teléfono de contacto (opcional)
+                        .row
+                          .col-md-4.col-sm-5.col-xs-5
+                            select#prefix.custom-select.prefix-select(name='prefixPhone', placeholder='+56 9')
+                          .col-md-8.col-sm-7.col-xs-7#input-phone-contain
+                            input#phone.cxp-input(type="tel", name="phone", placeholder="Ej: 6545 7762")
+                    .col-sm-12
+                      .form-group
+                        label(for="comentarios") CUÉNTANOS CÓMO PODEMOS AYUDARTE...
+                        textarea#comentarios.cxp-textarea(name="comentarios", placeholder="Déjanos un comentario", maxlength="400",  ng-model='comentarios' ng-maxlength="400")
+                        label
+                          .h6 Has escrito 
+                            .chars {{contactForm.comentarios.$viewValue.length || 0}} 
+                            | caracteres de un máximo de 400.
+                    .foot
+                      .col-md-6.col-sm-12
+                        .g-recaptcha(data-sitekey="6LdQPy8UAAAAAC8FFQusPSuCHKzZcItOAWmyAY-X",data-size="100%", data-callback="captcha_contact")
+                      .col-md-6.col-sm-12.text-right.text-center-sm
+                        button.btn.cxp-btn.secondary(type="submit", disabled="")
+                          | Enviar
+
+              .step.step-message
+                .alert.alert-warning
+                  span.check-register
+                  h4 Tu mensaje ha sido enviado exitosamente. El código de tu solicitud es el 
+                    strong 1234567890.
+                    br
+                    span.book Nos pondremos en contacto contigo a la brevedad.
+                .row
+                  .foot.foot-flex.text-center
+                    .col-sm-5.col-sm-offset-1
+                      a.link.contact-link(href="contact.html") VOLVER AL FORMULARIO
+                    .col-sm-5
+                      a.btn.cxp-btn.secondary(href="#")
+                        | Servicio al cliente
+
+        .col-md-3.col-sm-4
+          .sidebar-type
+            include _parts/_sidebar/_info
+            include _parts/_sidebar/_faq-contact
+        
+  //- Aqui va el footer
+  include _parts/_footer

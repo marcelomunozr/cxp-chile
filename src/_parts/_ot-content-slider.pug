@@ -1,0 +1,408 @@
+.ot-content-slider(ng-class="{'appear':otdetail!='' || showSliderDetails}") 
+  //--bloque de detalles (contenido) de la OT--      
+  .otDetailsBlock(ng-if="ot.type=='simple' || ot.type=='child' || otdetail!=''") 
+    a.goBack.blueLink(ng-if="otdetail=='' && ot.type=='simple'", ng-click="gobackToOTList()")
+      span.icon.icon-chevron-left
+      |Volver
+      
+    //este vuelve a la busqueda y no a una lista inicial  
+    a.goBack.toIndex.blueLink(ng-if="otdetail!=''", href="index.html")
+      span.icon.icon-chevron-left
+      |Volver
+      
+
+    //este vuelve a la lista de ot hijas 
+    a.goBack.toIndex.blueLink(ng-if="ot.type=='child'", ng-click="getOtContent(992233777,'parent')")
+      span.icon.icon-chevron-left
+      |Volver
+      
+    .ot-results
+
+      .ot-results-header.headerOfList(ng-if="ot.type=='child'")
+        .ot-results-header-date-and-type
+          .date 26 
+            span mar
+          span.otType.icon.icon-pallet
+        .ot-results-header-info 
+          .identification
+            span.label Nº OT: {{ot.number}} - OT PADRE 
+            span.desc Insumos para Puerto Natales de segunda 1
+      
+      
+      .ot-results-header.headerOfList(ng-class="{'isAChild':ot.type=='child'}")
+        .ot-results-header-date-and-type
+          .date(ng-if="ot.type!='child'") 12 
+            span ene
+          span.otType.icon.icon-lidded-box
+        .ot-results-header-info 
+          .identification
+            span.label Nº OT: 
+            span.desc {{ot.number}}
+              span(ng-if="otdetail!=''") 645435647
+              span.head-caret.icon.icon-pencil
+          .status(class='{{ot.status}}', ng-class="{'kept-between-steps-2':otdetail!=''}")
+            span.label ESTADO
+            span.desc
+              span(ng-if="ot.status=='transit'")
+                | En tránsito
+              span(ng-if="ot.status=='received'")
+                | Recepcionada
+              span(ng-if="ot.status=='delivered'")
+                | Entregada
+              span(ng-if="ot.status=='kept-between-steps-1' || ot.status=='kept-between-steps-2' || ot.status.indexOf('kept')!=-1")
+                | Pieza retenida  
+
+    .ot-detail-container
+      .positive-alert-msg(ng-if="ot.status=='delivered'")  
+        .icon
+          span.success.icon.icon-single-check
+        .msg
+          .msgWrapper
+            h3 Tu envío fue entregado al destinatario.
+            p
+              | Gracias por preferirnos
+          .eval.text-right
+            a.blueLink(data-toggle="modal" data-target="#ModalDeliveryCertificate" ng-if="logged") Ver certificado de entrega
+            a.blueLink(data-toggle="modal" data-target="#ModalEvalService") Evalúa nuestro servicio
+
+      .negative-alert-msg(ng-if="ot.status.indexOf('kept')!=-1")
+        .icon
+          span.error.icon.icon-alert
+        .msg
+          h3 Tu envío ha sido retenido en el centro de distribución.
+          p
+            | Escríbenos a 
+            a.blueLink(href='mailto:chilexpress@chilexpress.cl') chilexpress@chilexpress.cl 
+            | agregando el número de orden de transporte para poder entregarte más información.
+
+      .timeline
+        //Div .steps debe llegar clase con el estado (received/transit/delivered)
+        .steps(class="{{ot.status}} {{ot.destiny}}", ng-class="{'kept-between-steps-2':otdetail!=''}")
+          .stepWrapper
+            span.step
+              span.indicator
+            .desc Recepcionado
+          .stepWrapper
+            span.point.icon-single-check
+            .desc Al centro de distribución
+          .stepWrapper
+            span.step
+              span.indicator
+            .desc(ng-if="ot.destiny != 'international'") En tránsito
+            .desc(ng-if="ot.destiny === 'international'") En tránsito al destino
+              strong  área internacional
+          .stepWrapper
+            span.point.icon-single-check
+            .desc Al centro de distribución
+          .stepWrapper
+            span.step(ng-class="{'international':ot.destiny==='international'}")
+              span.indicator
+            .desc(ng-if="ot.destiny != 'international'") Entregado
+            .desc.international(ng-if="ot.destiny === 'international'") Entregado a
+              br.hide-md
+              |  Courier Internacional
+      .otMap
+        .otMapDetails
+          .title Origen y destino
+          label.ot-label Origen
+          p(ng-if="ot.destiny != 'international'") Los Payares, 890, Arica, Arica y Parinacota, Chile
+          p(ng-if="ot.destiny === 'international'") Miami, West Park, 3309
+          label.ot-label Destino
+          p Oficina Chilexpress MERCED, Santiago
+          p.timeLeftDelivery
+            span.icon.icon-clock
+            |Tiempo estimado de entrega 5 días
+
+        .routeMap
+          .title LA RUTA INDICADA ES REFERENCIAL
+          #routeMap(ng-bind="getOtRouteMap(-33.4408767, -70.6521545)") 
+
+      hr.sep
+
+      .ot-timeline-header
+        .title
+          label.ot-label Fecha / Hora
+        .title
+          label.ot-label Actividad
+
+      .ot-timeline-dates
+        .event-date.selected
+          | Martes 28 de mayo
+          .event-date-hour 12:00 hrs.
+        .event-desc
+          | Condimentum Cursus Egestas Risus Nibh Vestibulum id ligula porta felis euismod semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        .event-date
+          | Martes 28 de Enero
+          .event-date-hour 12:00 hrs.
+        .event-desc
+          | Ornare Sollicitudin Parturient Nullam Nibh
+        .event-date
+          | Martes 28 de Septiembre
+          .event-date-hour 12:00 hrs.
+        .event-desc(ng-class="{'last-remove':ot.destiny!='international'}")
+          | Parturient Vehicula Inceptos Consectetur Sollicitudin
+
+      //tracking international status
+      .ot-timeline-dates.international-tracking(ng-if="ot.destiny === 'international'")
+        .float-link
+          a.link(href="#") VER ESTADO EN COURIER INTERNACIONAL
+            span.icon-chevron-right
+        .event-date
+          | Martes 28 de mayo
+          .event-date-hour 12:00 hrs.
+        .event-desc
+          | Condimentum Cursus Egestas Risus Nibh Vestibulum id ligula porta felis euismod semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        .event-date
+          | Martes 28 de Enero
+          .event-date-hour 12:00 hrs.
+        .event-desc
+          | Ornare Sollicitudin Parturient Nullam Nibh
+        .event-date
+          | Martes 28 de Septiembre
+          .event-date-hour 12:00 hrs.
+        .event-desc
+          | Parturient Vehicula Inceptos Consectetur Sollicitudin
+
+      .ot-timeline-dates(ng-if="ot.destiny === 'international'")
+        .event-date
+          | Martes 28 de mayo
+          .event-date-hour 12:00 hrs.
+        .event-desc
+          | Condimentum Cursus Egestas Risus Nibh Vestibulum id ligula porta felis euismod semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+        .event-date
+          | Martes 28 de Enero
+          .event-date-hour 12:00 hrs.
+        .event-desc
+          | Ornare Sollicitudin Parturient Nullam Nibh
+        .event-date
+          | Martes 28 de Septiembre
+          .event-date-hour 12:00 hrs.
+        .event-desc
+          | Parturient Vehicula Inceptos Consectetur Sollicitudin
+
+      hr.sep
+
+      .ot-summary
+        .ot-summary-col.ot-type
+          label.ot-label.mobile producto
+          .wrapper
+            img(src='assets/img/tracking/doc_tracking-big.svg')
+          .wrapper
+            label.ot-label.desktop producto
+            .field Documento
+            .field 20 cm x 34 cm
+            .field 0,1 kg.
+        .ot-summary-col
+          label.ot-label Nº ORDEN TANSPORTE
+          .field 645435642
+          label.ot-label SERVICIO
+          .field Día hábil siguiente
+        .ot-summary-col
+          label.ot-label CONTACTO
+          .field Fernando Blanco
+            br
+            | fernandoblancov@gmail.com
+
+      .save-and-share
+        a.blueLink.save(data-toggle="modal", data-target="#ModalSaveOT")
+          span.icon.icon-document-check
+          |GUARDAR
+        a.blueLink.share(data-toggle="modal", data-target="#modalSharedTracking")
+          span.icon.icon-share
+          |COMPARTIR
+    
+    
+  //--bloque de lista de OT hijas--      
+  .oTchildrenListBlock(ng-if="ot.type=='parent'")
+    a.goBack.blueLink(ng-click="gobackToOTList()")
+      span.icon.icon-chevron-left
+      |Volver
+
+    .listWrapper
+      .ot-results
+        
+        .ot-results-header.headerOfList
+          .ot-results-header-date-and-type
+            .date 26 
+              span mar
+            span.otType.icon.icon-pallet
+          .ot-results-header-info 
+            .identification
+              span.label Nº OT: {{ot.number}} - OT PADRE 
+              span.desc Insumos para Puerto Natales de segunda 1
+                span.head-caret.icon.icon-pencil
+        
+        .filter-component
+          label.filter-component-label Ver
+          .filter-component-content
+            .filter-component-list-wrapper
+              ul.filter-component-list
+                li.active
+                  | Todos
+                  span.filter-component-badge 750
+                  i.select-icon.icon-chevron-down
+                li
+                  | Recepcionadas
+                  span.filter-component-badge 238
+                  i.select-icon.icon-chevron-down
+                li
+                  | Entregadas
+                  span.filter-component-badge 404
+                  i.select-icon.icon-chevron-down
+                li
+                  | En tránsito
+                  span.filter-component-badge 108
+                  i.select-icon.icon-chevron-down
+                li
+                  | Retenidas
+                  span.filter-component-badge 108
+                  i.select-icon.icon-chevron-down
+            span.filter-component-detail
+          
+        
+        p Mostrando 
+          b  15 
+          | OT´s de
+          b  750
+        //---------------OT hija-----------
+        .ot-results-header(ng-click="getOtContent(5555511111,'child', 'transit')")  
+          .ot-results-header-date-and-type
+            span.otType.icon.icon-document
+          .ot-results-header-info 
+            .identification
+              span.label Nº OT: 
+              span.desc 5555511111
+            .status.transit  
+              span.label ESTADO
+              span.desc Pieza en tránsito
+          .ot-results-header-caret
+            span.head-caret.icon.icon-chevron-right
+            
+        //---------------OT hija-----------
+        .ot-results-header(ng-click="getOtContent(8888855555,'child', 'received')")
+          .ot-results-header-date-and-type
+            span.otType.icon.icon-lidded-box
+          .ot-results-header-info 
+            .identification
+              span.label Nº OT: 8888855555
+              span.desc Insumos para Puerto Natales de segunda 1
+            .status.received  
+              span.label ESTADO
+              span.desc Pieza recepcionada
+          .ot-results-header-caret
+            span.head-caret.icon.icon-chevron-right
+
+        //---------------OT hija-----------
+        .ot-results-header(ng-click="getOtContent(7777755555,'child', 'transit')")
+          .ot-results-header-date-and-type
+            span.otType.icon.icon-lidded-box
+          .ot-results-header-info 
+            .identification
+              span.label Nº OT: 7777755555
+              span.desc Insumos para Puerto Natales de segunda 1
+            .status.transit  
+              span.label ESTADO
+              span.desc Pieza en tránsito
+          .ot-results-header-caret
+            span.head-caret.icon.icon-chevron-right
+
+        //---------------OT hija-----------
+        .ot-results-header(ng-click="getOtContent(9999900000,'child', 'received')")
+          .ot-results-header-date-and-type
+            span.otType.icon.icon-lidded-box
+          .ot-results-header-info 
+            .identification
+              span.label Nº OT: 9999900000
+              span.desc Insumos para Puerto Natales de segunda 1
+            .status.received  
+              span.label ESTADO
+              span.desc Pieza recepcionada
+          .ot-results-header-caret
+            span.head-caret.icon.icon-chevron-right
+
+        //---------------OT hija-----------
+        .ot-results-header(ng-click="getOtContent(3333377777,'child', 'transit')")
+          .ot-results-header-date-and-type
+            span.otType.icon.icon-lidded-box
+          .ot-results-header-info 
+            .identification
+              span.label Nº OT: 3333377777
+              span.desc Insumos para Puerto Natales de segunda 1
+            .status.transit  
+              span.label ESTADO
+              span.desc Pieza en tránsito
+          .ot-results-header-caret
+            span.head-caret.icon.icon-chevron-right
+
+        //---------------OT hija-----------
+        .ot-results-header(ng-click="getOtContent(2222233333,'child', 'transit')")
+          .ot-results-header-date-and-type
+            span.otType.icon.icon-lidded-box
+          .ot-results-header-info 
+            .identification
+              span.label Nº OT: 2222233333
+              span.desc Insumos para Puerto Natales de segunda 1
+            .status.transit  
+              span.label ESTADO
+              span.desc Pieza en tránsito
+          .ot-results-header-caret
+            span.head-caret.icon.icon-chevron-right
+
+        //---------------OT hija-----------
+        .ot-results-header(ng-click="getOtContent(4444477777,'child', 'received')")
+          .ot-results-header-date-and-type
+            span.otType.icon.icon-lidded-box
+          .ot-results-header-info 
+            .identification
+              span.label Nº OT: 4444477777
+              span.desc Insumos para Puerto Natales de segunda 1
+            .status.received  
+              span.label ESTADO
+              span.desc Pieza recepcionada
+          .ot-results-header-caret
+            span.head-caret.icon.icon-chevron-right
+
+        //---------------OT hija-----------
+        .ot-results-header(ng-click="getOtContent(8888811111,'child', 'delivered')")
+          .ot-results-header-date-and-type
+            span.otType.icon.icon-lidded-box
+          .ot-results-header-info 
+            .identification
+              span.label Nº OT: 8888811111
+              span.desc Insumos para Puerto Natales de segunda 1
+            .status.delivered  
+              span.label ESTADO
+              span.desc Pieza entegada
+          .ot-results-header-caret
+            span.head-caret.icon.icon-chevron-right
+            
+        //---------------OT hija-----------
+        .ot-results-header(ng-click="getOtContent(8888811111,'child', 'transit')")
+          .ot-results-header-date-and-type
+            span.otType.icon.icon-lidded-box
+          .ot-results-header-info 
+            .identification
+              span.label Nº OT: 8888811111
+              span.desc Insumos para Puerto Natales de segunda 1
+            .status.transit  
+              span.label ESTADO
+              span.desc Pieza en tránsito
+          .ot-results-header-caret
+            span.head-caret.icon.icon-chevron-right
+
+        //---------------OT hija-----------
+        .ot-results-header(ng-click="getOtContent(7777766666,'child', 'received')")
+          .ot-results-header-date-and-type
+            span.otType.icon.icon-lidded-box
+          .ot-results-header-info 
+            .identification
+              span.label Nº OT: 7777766666
+              span.desc Insumos para Puerto Natales de segunda 1
+            .status.received  
+              span.label ESTADO
+              span.desc Pieza recepcionada
+          .ot-results-header-caret
+            span.head-caret.icon.icon-chevron-right
+            
+    //------------Paginacion------------
+    include _paginator/_paginator

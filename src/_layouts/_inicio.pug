@@ -1,0 +1,19 @@
+- var pathRoot = "assets/"
+- var app = "Chilexpress"
+
+block variables
+
+doctype html
+
+html(lang="es", ng-app= app)
+
+  include ../_parts/_head
+
+
+  body
+
+    div.fullheight.fondo-inicio(data-role="page")
+      block content
+        
+    ng-view
+    

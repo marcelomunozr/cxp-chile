@@ -1,0 +1,219 @@
+section.section-services
+    .container-fluid.first
+        .container
+            // SECTION TYPES CLIENTS
+            .row
+                .col-md-12
+                    h2.text-center Conoce más de nuestros servicios
+            .type-clients.center-block
+                ul#nav-tabs-services.responsive-tabs.services.nav-tabs(role='tablist')
+                    li.active(role='presentation')
+                        a(data-toggle='tab', href='#peopleService', role='tab') Cliente persona
+                    li(role='presentation')
+                        a(data-toggle='tab', href='#bussinessService', role='tab') Empresas
+                    li(role='presentation')
+                        a.last(data-toggle='tab', href='#entrepreneusService', role='tab') Emprendedores
+                    li(role='presentation')
+                        a.last(data-toggle='tab', href='#ecommerceService', role='tab') E commerce
+    .container-fluid.last
+        .container
+            .tab-content
+                #peopleService.tab-pane.fade.in.active(role='tab')
+                    .row.services-people
+                        .col-xs-12.col-sm-6.col-md-4
+                            img.img-responsive.image-top(alt='chilebox banner', src='assets/img/chilebox-da-banner.png')
+                        
+                        .col-xs-12.col-sm-6.col-md-4.col-thumbnail
+                            .thumbnail
+                                img.img-responsive(alt='image', src='assets/img/money-spin.jpg')
+                                .caption
+                                    h3 Giros de dinero
+                                    p
+                                        | Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.
+                        
+                        .col-xs-12.col-sm-12.col-md-4.two-images
+                            img.img-responsive.image-top(alt='embalaje banner', src='assets/img/package-type-da-banner.png')
+                            img.img-responsive(alt='track banner', src='assets/img/track-da-banner.png')
+
+                    .row
+                        .col-xs-12.col-sm-12.col-md-8
+                            .equal-columns.services-national
+                                h3.text-left.title-main
+                                    | Servicios nacionales
+                                    strong (Express)
+                                .row.vdivide
+                                    .col-sm-4.text-center.col-vertical
+                                        .equal-columns-image.bottom
+                                            img.img-responsive.banner(alt='', src='assets/img/svg/cycle-icon.svg')
+                                        h4 Servicios Urbanos
+                                        p Cras quis nulla commodo
+                                    .col-sm-4.text-center.col-vertical
+                                        .equal-columns-image
+                                            img.img-responsive.banner(alt='', src='assets/img/svg/clock-icon.svg')
+                                        h4 2 horas
+                                        p Cras quis nulla commodo
+                                    .col-sm-4.text-center.col-vertical
+                                        .equal-columns-image
+                                            img.img-responsive.banner(alt='', src='assets/img/svg/clouds-icon.svg')
+                                        h4 Overnight
+                                        p Cras quis nulla commodo
+
+                                a.all-products.hidden-xs(href='#') Ver todos los productos express
+                        .col-xs-12.col-sm-12.col-md-4
+                            .services-other
+                                h3 Otros servicios
+                                ul.list-group
+                                    li.list-group-item.first
+                                        a(href='#')
+                                            span Equifax
+                                            span.icon.icon-chevron-right(aria-hidden='true')
+                                    li.list-group-item
+                                        a(href='#')
+                                            span Pago de cuentas
+                                            span.icon.icon-chevron-right(aria-hidden='true')
+                                    li.list-group-item
+                                        a(href='#')
+                                            span Recargas
+                                            span.icon.icon-chevron-right(aria-hidden='true')
+
+                #bussinessService.tab-pane.fade.in(role='tab')
+                    .row.services-people
+                        .col-xs-12.col-sm-6.col-md-4.service-banner.bottom
+                            .service-banner-content
+                                h4.service-banner-title Courier Nacional
+                                .service-banner-desc Envía documentos y encomiendas a través de nuestra cobertura en todo el territorio nacional.
+                            img.img-responsive.image-top(alt='Courier nacional', src='assets/img/courier-national.jpg')
+                        .col-xs-12.col-sm-6.col-md-4.service-banner
+                            .service-banner-content
+                                h4.service-banner-title Courier Internacional
+                                .service-banner-desc Envía documentos y encomiendas a través de nuestra cobertura en todo el territorio nacional.
+                            img.img-responsive.image-top(alt='Courier internacionales', src='assets/img/courier-international.jpg')
+                        .col-xs-12.col-sm-12.col-md-4.two-images
+                            img.img-responsive.image-top(alt='international deliveries', src='assets/img/boussines-executive.png')
+                            img.img-responsive.image-top(alt='track banner', src='assets/img/chilexpress-card.png')
+                    .services
+                        .row.equal-heights
+                            .col-xs-12.col-sm-12.col-md-8
+                                .equal-columns.services-ecommerce
+                                    h3.text-left
+                                        | E Commerce
+                                        strong (Express)
+                                    .row.vdivide
+                                        .col-sm-4.text-center.col-vertical
+                                            .equal-columns-image
+                                                img.banner(alt='', src='assets/img/ecommerce-1.png')
+                                            h4 Fulfillment
+                                            p
+                                                | Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.
+                                        .col-sm-4.text-center.col-vertical
+                                            .equal-columns-image
+                                                img.banner(alt='', src='assets/img/ecommerce-2.png')
+                                            h4 Gestión de órdenes
+                                            p
+                                                | Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.
+                                        .col-sm-4.text-center.col-vertical
+                                            .equal-columns-image
+                                                img.banner(alt='', src='assets/img/ecommerce-3.png')
+                                            h4 Plataforma
+                                            p
+                                                | Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.
+                                    a.all-products(href='#') Saber más sobre E commerce
+                            .col-xs-12.col-sm-12.col-md-4
+                                .thumbnail
+                                    img.img-responsive(alt='Envios internacionales', src='assets/img/schedule-retreat.png')
+                                    .caption
+                                        h3 Envios internacionales
+                                        p
+                                            | Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.
+
+                #entrepreneusService.tab-pane.fade.in(role='tab')
+                    .row.services-people.equal-heights
+                        .col-xs-12.col-sm-6.col-md-4
+                            img.img-responsive.image-top(alt='chilebox banner', src='assets/img/chilebox-da-banner.png')
+                        .col-xs-12.col-sm-6.col-md-4.col-thumbnail
+                            .thumbnail
+                                img.img-responsive(alt='image', src='assets/img/shipment-payable.png')
+                                .caption
+                                    h3 Envios por pagar
+                                    p
+                                        | Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.
+                        .col-xs-12.col-sm-12.col-md-4.two-images
+                            img.img-responsive.track-banner.image-top(alt='track banner', src='assets/img/track-da-banner.png')
+                            img.img-responsive.package(alt='embalaje banner', src='assets/img/package-type-da-banner.png')
+                    .services
+                        .row
+                            .col-md-8
+                                .equal-columns.services-testimonial
+                                    h3.text-left
+                                        | Servicios nacionales
+                                        strong (Express)
+                                    .row.vdivide
+                                        .col-sm-4.text-center.col-vertical
+                                            img(alt='', src='assets/img/testimonial-1.png')
+                                            h4 La Tetera Labs
+                                            p
+                                                | “Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.”
+                                        .col-sm-4.text-center.col-vertical
+                                            img(alt='', src='assets/img/testimonial-2.png')
+                                            h4 Shikan Importadores
+                                            p
+                                                | “Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.”
+                                        .col-sm-4.text-center.col-vertical
+                                            img(alt='', src='assets/img/testimonial-3.png')
+                                            h4 Vip Pets
+                                            p
+                                                | “Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.”
+                                    a.all-products(href='#') Ver más testimonios
+                            .col-md-4
+                                .thumbnail
+                                    img.img-responsive(alt='image', src='assets/img/mercado-libre.png')
+                                    .caption
+                                        h3 ¿Vendes en Mercado Libre? ¡Haz tus despachos con Mercado Envíos y Chilexpress!
+                                        p
+                                            | ¿Eres vendedor en Mercado Libre? ¿Alguna vez te quedaste esperando durante horas a un comprador a la salida del metro o en…
+
+                #ecommerceService.tab-pane.fade.in(role='tab')
+                    .row.services-people.equal-heights
+                        .col-xs-12.col-sm-6.col-md-4
+                            img.img-responsive.image-top(alt='chilebox banner', src='assets/img/chilebox-da-banner.png')
+                        .col-xs-12.col-sm-6.col-md-4.col-thumbnail
+                            .thumbnail
+                                img.img-responsive(alt='image', src='assets/img/shipment-payable.png')
+                                .caption
+                                    h3 Envios por pagar
+                                    p
+                                        | Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.
+                        .col-xs-12.col-sm-12.col-md-4.two-images
+                            img.img-responsive.track-banner.image-top(alt='track banner', src='assets/img/track-da-banner.png')
+                            img.img-responsive.package(alt='embalaje banner', src='assets/img/package-type-da-banner.png')
+                    .services
+                        .row
+                            .col-md-8
+                                .equal-columns.services-testimonial
+                                    h3.text-left
+                                        | Servicios nacionales
+                                        strong (Express)
+                                    .row.vdivide
+                                        .col-sm-4.text-center.col-vertical
+                                            img(alt='', src='assets/img/testimonial-1.png')
+                                            h4 La Tetera Labs
+                                            p
+                                                | “Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.”
+                                        .col-sm-4.text-center.col-vertical
+                                            img(alt='', src='assets/img/testimonial-2.png')
+                                            h4 Shikan Importadores
+                                            p
+                                                | “Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.”
+                                        .col-sm-4.text-center.col-vertical
+                                            img(alt='', src='assets/img/testimonial-3.png')
+                                            h4 Vip Pets
+                                            p
+                                                | “Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.”
+                                    a.all-products(href='#') Ver más testimonios
+                            .col-md-4
+                                .thumbnail
+                                    img.img-responsive(alt='image', src='assets/img/mercado-libre.png')
+                                    .caption
+                                        h3 ¿Vendes en Mercado Libre? ¡Haz tus despachos con Mercado Envíos y Chilexpress!
+                                        p
+                                            | ¿Eres vendedor en Mercado Libre? ¿Alguna vez te quedaste esperando durante horas a un comprador a la salida del metro o en…

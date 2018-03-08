@@ -1,0 +1,50 @@
+// Safari 10
+.tool-box .search-box .btn:not(*:root) {
+  font-weight: 700;
+}
+
+_::-webkit-full-page-media,
+_:future,
+ :root #navbar-height-col.inverse {
+  width: 260px;
+}
+
+// @media screen and(max-width: $sm-device) {
+//   @media not all and (min-resolution:.001dpcm) { @media { #navbar-height-col.inverse { width: 80%; } } }
+// }
+// #navbar-height-col.inverse:not(*:root) {
+//   width: 80%;
+// }
+// How to hide autofill safari icon in input field
+input::-webkit-contacts-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+
+// Firefox 52
+@media screen and (min--moz-device-pixel-ratio:0) {
+  .input-group-btn>.btn .fa-search {
+    top: -1px;
+    position: relative;
+  }
+  .tool-box {
+    @media screen and(max-width: lg-device) {
+      left: -40%;
+    }
+  }
+  .nav-menu .subnav .container .col-md-2 .dropdown .button-tools {
+    padding-bottom: 6px;
+  }
+  #navbar-height-col.inverse {
+    width: 80%;
+  }
+  #slide-nav.navbar-inverse #slidemenu {
+    width: 79.6%;
+    @include media-breakpoint-up(md) {
+      width: 100%;
+    }
+  }
+}

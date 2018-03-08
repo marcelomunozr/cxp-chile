@@ -1,0 +1,67 @@
+extends _layouts/_login-register
+
+block variables
+  - var pageTitle = "Inicio de Sesión"
+  - var pageDesc = "Chilexpress, empresa de Courier Nacional e Internacional, encomiendas y envíos."
+  - var pageKeywords = "Chilexpress"
+  -var isLoginPage = true
+
+block login_register
+  .is-login
+    form#loginForm
+      .login-register
+        .alert.alert-warning.alert-dismissible.o-mb-s(role='alert')
+          .container
+            button.close.close--md(type='button')
+              span.icon.icon-close(aria-hidden='true')
+            p.alert-text
+              El email o RUT y la contraseña que ingresaste no coinciden con nuestros registros. Por favor, revisa e inténtalo de nuevo
+        .head.text-center
+          .back-arrow
+            a(href="#" onClick="history.go(-1); return false;")
+              span.icon-arrow-left
+          .logo
+            span.logo-image
+        .body
+          span.title-section Ingreso
+          .form-group
+            label(for="loginUser") email o rut
+            input.cxp-input#loginUser(type="text", name="loginUser", placeholder="Ingresa tu email o rut")
+            h6 Rut sin puntos ni guiones
+          .form-group
+            label(for="loginPass") contraseña
+            input.cxp-input#loginPass(type="password", name="loginPass", placeholder="Ingresa tu contraseña")
+            span.icon-padlock
+            h6 Mínimo 6 caracteres
+        .foot
+          .text-center
+            a(href="forgot-password.html") Olvidé mi contraseña
+            button.btn.cxp-btn.btn-login(disabled='disabled', type='submit')
+              | Ingresar
+
+            p ¿Aún no tienes una cuenta?
+            a.link.uppercase(href="register.html")
+              | Regístrate
+
+  #ModalLogin.modal.fade(tabindex='-1', role='dialog', aria-labelledby='labelModal')
+    .modal-dialog.modal--height-medium(role='document')
+      .modal-content
+        .modal-header
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span.icon.icon-close(aria-hidden='true')
+          h4#labelModal.modal-title Tu RUT ya está asociado a una cuenta Chilebox. Ingresa y accede a tu cuenta privada.
+
+        .modal-body
+          .text-center
+            span.user-exist
+          
+        .modal-footer
+          a.c-button.init(href='logged.html') Ingresar
+          hr
+          button#enableButton.cancel.c-button(type='submit', data-dismiss='modal') Cancelar
+          .text-center
+            a(href="forgot-password.html") Olvidé mi contraseña
+
+        
+  //- Aqui va el footer
+  include _parts/_footer

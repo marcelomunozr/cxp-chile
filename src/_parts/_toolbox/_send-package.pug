@@ -1,0 +1,78 @@
+form.form-send-package
+    .body-box
+        fieldset.choice.c-field
+            legend.o-fieldset__legend ¿Qué tipo de envío es?
+            .radio
+                input.toolbox-send-type(checked='checked', name='deliveryRadio', type='radio', value='nationalValue', id='QuotationNationalDelivery' + formId)
+                label.radio-label(for='QuotationNationalDelivery' + formId) Nacional
+            .radio
+                input.toolbox-send-type(name='deliveryRadio', type='radio', value='internationalValue', id='QuotationInternationalDelivery' + formId)
+                label.radio-label(for='QuotationInternationalDelivery' + formId) Internacional
+        // choice
+        fieldset.choice.c-field
+            .form-vertical
+                .form-group
+                    label.o-fieldset__legend(for='originNationalDelivery' + formId) ¿Cuál es su origen?
+                    select.select-custom.national-select(name='originNationalDelivery', placeholder='Selecciona origen', id='originNationalDelivery' + formId)
+                .form-group
+                    .is-national
+                        label.o-fieldset__legend(for='destinyNationalDelivery' + formId) ¿Cuál es su destino?
+                        select.select-custom.national-select(name='destinyNationalDelivery', placeholder='Selecciona destino', id='destinyNationalDelivery' + formId)
+                    .is-international
+                        label.o-fieldset__legend(for='destinyInternationalDelivery' + formId) ¿Cuál es su destino?
+                        select.select-custom.international-select(name='destinyInternationalDelivery', placeholder='Selecciona destino', id='destinyInternationalDelivery' + formId)
+        fieldset.choice.c-field
+            legend.o-fieldset__legend ¿Cómo es tu pieza?
+            .row
+                .col-md-12
+                    .is-national
+                        select.select-custom.sizes-select(name='sizeDelivery', id="sizeNationalDelivery" + formId, placeholder='Selecciona un tamaño')
+                            option(value="", selected="selected")
+                            option(data-subtext='option subtext', value='1') Muy liviana
+                            option(value='2') Liviana
+                            option(value='3') Mediana
+                            option(value='4') Pesada
+                            option(value='5') Muy pesada
+                            option(value='6') Más de 15 kilos
+
+                    .is-international
+                        select.select-custom.sizes-select(name='sizeDelivery', id="sizeInternationalDelivery" + formId, placeholder='Selecciona un tamaño')
+                            option(value="", selected="selected")
+                            option(data-subtext='option subtext', value='1') Muy Liviana
+                            option(value='2') Liviana
+                            option(value='3') Mediana
+                            option(value='4') Pesada
+                            option(value='5') Muy pesada
+                            option(value='6') Extra pesada
+                            option(value='7') Súper carga
+        fieldset
+            .checkbox.checkbox-warning
+                input.isAccept(type='checkbox', id="isAcceptQuotationDelivery" + formId)
+                label.checkLbel(for="isAcceptQuotationDelivery" + formId) #{legendEOL}
+        .alert.alert-warning.more-70kg
+            i.icon-circle-alert
+            span
+                | Estás cotizando una pieza de más de 70 kilos. Para realizar un envío con estas características, debes comunicarte con un ejecutivo a través de nuestro&nbsp;
+                a(href="contact.html") Formulario de contacto
+                | .
+
+    .body-footer
+        .row
+            .col-xs-8.col-sm-7.col-md-7.col-lg-8.wrapper-price
+                .total.text-left.is-national
+                    p Costo desde
+                    h4
+                        span $
+                        span.price 0
+                .total.text-left.is-international
+                    p Costo entre
+                    h4
+                        span.international-prince-box
+                            span $
+                            span.price 0
+                        span.international-prince-box
+                            span $
+                            span.price 0
+            .col-xs-4.col-sm-5.col-md-5.col-lg-4.wrapper-btn
+                button.btn.btn-block.btn-continue(disabled='disabled', type='button', data-toggle='modal', data-target='#ModalRegister')
+                    | Hacer el envío

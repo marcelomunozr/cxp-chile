@@ -1,0 +1,44 @@
+.breadcrumb {
+  padding: 0;
+  background: none;
+  margin-bottom: 24px;
+  &>li {
+    line-height: 100%;
+    vertical-align: middle;
+
+    &+li {
+      &:before {
+        font-family: "chilexpress" !important;
+        content: "\e809";
+        color: $mine-shaft;
+        padding: 0 8px;
+        font-size: 6px;
+        line-height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+    &:first-child {
+      a {
+        color: $cornflower-blue;
+        position: relative;
+        float: none;
+        top: 1px;
+        font-size: 15px;
+        line-height: 100%;
+        &:hover,
+        &:focus{
+          text-decoration: none;
+        }
+      }
+    }
+    a {
+      font-family: $font-family-sans-serif;
+      color: $cornflower-blue;
+    }
+  }
+  &>.active {
+    color: $mine-shaft;
+    font-family: $font-family-sans-serif;
+  }
+}

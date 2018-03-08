@@ -1,0 +1,58 @@
+extends _layouts/_login-register
+
+block variables
+  - var pageTitle = "Inicio de Sesión"
+  - var pageDesc = "Chilexpress, empresa de Courier Nacional e Internacional, encomiendas y envíos."
+  - var pageKeywords = "Chilexpress"
+  -var isLoginPage = true
+
+block login_register
+  .is-login
+    .login-register
+      .head.text-center
+        .back-arrow
+          a(href="#" onClick="history.go(-1); return false;")
+            span.icon-arrow-left
+        .logo
+          a.logo-link(href="javascript();")
+            span.logo-image
+      .body
+        span.title-section Ingreso
+
+        h5
+          strong ¡Bienvenido Marcelo!
+          |  Hemos detectado que tienes más de una cuenta con nosotros.
+        p
+          small ¿A qué sitio deseas ingresar?
+
+        .profiles
+          a(href="javascript:();")
+            .profile
+              figure
+                img.img-responsive.img-center(src="assets/img/profile-persona.svg", alt="Personas")
+              figcaption
+                p chilexpress.cl
+                h4 Marcelo Peña Cárcamo
+                h5 16.014.987-5
+          a(href="javascript:();")
+            .profile
+              figure
+                img.img-responsive.img-center(src="assets/img/profile-empresa.svg", alt="Personas")
+              figcaption
+                p Portal empresa
+                h4 2 Brains
+                h5 87.014.987-2
+          a(href="javascript:();")
+            .profile
+              figure
+                img.img-responsive.img-center(src="assets/img/profile-chilebox.svg", alt="Personas")
+              figcaption
+                p chilebox.cl
+                h4 Marcelo Peña Cárcamo
+                h5 16.014.987-5
+      .foot
+         
+
+        
+  //- Aqui va el footer
+  include _parts/_footer

@@ -1,0 +1,54 @@
+body {
+  background-color: $gallery;
+  color: $mine-shaft;
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+footer{
+  @include transform(translateZ(0))
+}
+
+a {
+  outline: 0;
+  color: rgba(#000, 0.7);
+  &:focus,
+  &:hover {
+    color: rgba(#000, 0.6);
+    outline: 0;
+  }
+}
+
+a.link {
+  color: $cornflower-blue;
+}
+
+a.link-block {
+  display: block;
+}
+
+a.link--underline {
+  text-decoration: underline;
+  display: block;
+}
+
+a:focus{
+  text-decoration: none;
+}
+
+input,
+textarea,
+button,
+div{
+  outline: 0;
+
+  &:focus{
+    outline: 0;
+  }
+}
+
+.btn:focus,
+.btn:active:focus{
+  outline: 0;
+}

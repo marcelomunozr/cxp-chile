@@ -1,0 +1,114 @@
+.pages-information-footer{
+  margin: 16px 0;
+  background: $white;
+  padding: 24px 16px;
+
+  @include media-mobile{
+    padding-top: 0px;
+  }
+
+  @include media-desktop{
+    padding: 24px;
+  }
+
+  .info-top{
+    @include flexbox();
+    @include flex-direction(column);
+
+    @media (min-width: $sm-device){
+      @include flex-direction(row);
+    }
+  }
+  .info{
+    @include flexbox();
+    @include align-items(center);
+    border-bottom: 1px solid $alto;
+    width: 100%;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    &:first-child{
+      padding-left: 0;
+    }
+
+    &:last-child{
+      border: 0;
+    }
+
+    @media (min-width: $sm-device){
+      width: calc(100% / 3);
+      padding-left: 31px;
+      border-right: 1px solid $alto;
+      border-bottom: 0;
+      padding-top: 6px;
+      padding-bottom: 6px;
+
+      &:last-child{
+        border: 0;
+      }
+    }
+    span.icono{
+      min-width: 30px;
+      height: 30px;
+      margin-right: 16px;
+    }
+    span.icon-envelope{
+      @include flexbox();
+      @include justify-content(center);
+      @include align-items(center);
+      background: $mine-shaft;
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      border-radius: 15px;
+      color: $white;
+      font-size: 18px;
+      line-height: 100%;
+      &:before{
+        position: relative;
+        top: 1px;
+      }
+    }
+    span.icon-circle-twitter{
+      color: $mine-shaft;
+      font-size: 30px;
+    }
+    span.icon-circle-facebook{
+      color: $mine-shaft;
+      font-size: 30px;
+    }
+  }
+  h5{
+    margin: 0;
+    color: $mine-shaft;
+    font-size: 16px;
+    font-family: $font-family-sans-serif;
+    line-height: 100%;
+    font-weight: 400;
+    @media (min-width: $sm-device){
+      line-height: 24px;
+    }
+  }
+  .info-bottom {
+    margin: 24px 0 8px;
+    @media (min-width: $sm-device){
+      margin: 27px 0 3px;
+    }
+    p.information {
+      font-size: 16px;
+      line-height: 24px;
+      color: $mine-shaft;
+      display: block;
+      float: none;
+      font-family: $font-family-sans-serif;
+      font-weight: 400;
+      margin-bottom: 0px;
+
+      strong {
+        font-weight: 700;
+      }
+    }
+    a.link{
+      display: inline;
+    }
+  }
+}

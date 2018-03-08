@@ -1,0 +1,1002 @@
+
+<div class="page-content">
+  <section id="section-slide">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="verdiv"></div>
+        <div class="tool-box" id="toolBox">
+          <div class="bdr-icon-simplebox ecommerce"><a class="no-event" href="#toolBox">
+              <div class="icon icon-simplebox"></div></a></div>
+          <div class="btn-back hidden ecommerce"><span class="icon icon-arrow-left"></span></div>
+          <div class="box withAnimation active" id="main-box"><span class="icon-close toolbox-close"></span>
+            <div class="box-search-ot">
+              <h3 class="title-main">¿Qué quieres hacer?</h3>
+              <h5 class="sub-title-main">Revisa el estado de tus envíos</h5>
+              <div class="search-ot-toolbox">
+                <input class="form-control search-ot" aria-label="Buscar OT" placeholder="Ingresa número de orden" type="number" pattern="d*"/>
+                <div class="input-group-btn">
+                  <button class="toolbox-search-btn btn btn-default rounded" aria-label="Execute search" type="button">Buscar</button>
+                </div>
+                <div class="error-ot empty"><span class="icon-warning"></span>
+                  <p>Debes ingresar un número de <strong> orden de transporte</strong></p>
+                </div>
+                <!-- input-group-btn-->
+              </div>
+              <!-- input-group--><small class="small">Ej: 1234567890. Revisa hasta 10 OT separadas por comas.</small><a class="link o-mt-xs" data-toggle="modal" data-target="#ModalOt">¿Qué es una orden de transporte?</a><a class="link o-mt-sm" data-toggle="modal" data-target="#ModalOtMultiple">¿Tienes más de una orden de transporte?</a>
+            </div>
+            <div class="box-services">
+              <ul class="list-unstyled">
+                <li><a class="toolbox-quotation-btn" data-target="#toolBox"><span class="icon icon-calculator" aria-hidden="true"></span>Quiero cotizar</a></li>
+                <li><a class="toolbox-send-package-btn" href="javascript:;"><span class="icon icon-lidded-box" aria-hidden="true"></span>Hacer un envío</a></li>
+                <li><a class="toolbox-send-document-btn" data-target="#toolBox"><span class="icon icon-dialog-truck" aria-hidden="true"></span>Solicitar un retiro</a></li>
+                <li><a class="toolbox-send-money-btn" data-target="#toolBox"><span class="icon icon-dialog-speed-square" aria-hidden="true"></span>Cotizar fulfillment</a></li>
+              </ul>
+            </div>
+            <!-- box-services-->
+          </div>
+          <!-- main-box-->
+          <div class="box form-box" id="first-box"><span class="icon-close toolbox-close"></span>
+            <div class="header-box">
+              <h4 class="header-box-title">Hacer cotización</h4>
+            </div>
+            <!-- box-header-->
+            <div class="toolbox-custom-tab">
+              <fieldset class="choice c-field toolbox-menu-tab">
+                <legend class="o-fieldset__legend">¿Qué quieres enviar?</legend>
+                <div class="btn-group" aria-label="..." role="group">
+                  <button class="btn btn-default active-tab" data-tab="first" disabled="disabled" type="button"><span class="icon icon-lidded-box"></span>Encomienda</button>
+                  <button class="btn btn-default" data-tab="second" type="button"><span class="icon icon-document"></span>Documento</button>
+                  <button class="btn btn-default" data-tab="third" type="button"><span class="icon icon-valise"></span>Valija</button>
+                </div>
+              </fieldset>
+              <div class="tab-zone first-tab">
+                <form class="form-send-package">
+                  <div class="body-box">
+                    <fieldset class="choice c-field">
+                      <legend class="o-fieldset__legend">¿Qué tipo de envío es?</legend>
+                      <div class="radio">
+                        <input class="toolbox-send-type" checked="checked" name="deliveryRadio" type="radio" value="nationalValue" id="QuotationNationalDelivery1"/>
+                        <label class="radio-label" for="QuotationNationalDelivery1">Nacional</label>
+                      </div>
+                      <div class="radio">
+                        <input class="toolbox-send-type" name="deliveryRadio" type="radio" value="internationalValue" id="QuotationInternationalDelivery1"/>
+                        <label class="radio-label" for="QuotationInternationalDelivery1">Internacional</label>
+                      </div>
+                    </fieldset>
+                    <!-- choice-->
+                    <fieldset class="choice c-field">
+                      <div class="form-vertical">
+                        <div class="form-group">
+                          <label class="o-fieldset__legend" for="originNationalDelivery1">¿Cuál es su origen?</label>
+                          <select class="select-custom national-select" name="originNationalDelivery" placeholder="Selecciona origen" id="originNationalDelivery1"></select>
+                        </div>
+                        <div class="form-group">
+                          <div class="is-national">
+                            <label class="o-fieldset__legend" for="destinyNationalDelivery1">¿Cuál es su destino?</label>
+                            <select class="select-custom national-select" name="destinyNationalDelivery" placeholder="Selecciona destino" id="destinyNationalDelivery1"></select>
+                          </div>
+                          <div class="is-international">
+                            <label class="o-fieldset__legend" for="destinyInternationalDelivery1">¿Cuál es su destino?</label>
+                            <select class="select-custom international-select" name="destinyInternationalDelivery" placeholder="Selecciona destino" id="destinyInternationalDelivery1"></select>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset class="choice c-field">
+                      <legend class="o-fieldset__legend">¿Cómo es tu pieza?</legend>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="is-national">
+                            <select class="select-custom sizes-select" name="sizeDelivery" id="sizeNationalDelivery1" placeholder="Selecciona un tamaño">
+                              <option value="" selected="selected"></option>
+                              <option data-subtext="option subtext" value="1">Muy liviana</option>
+                              <option value="2">Liviana</option>
+                              <option value="3">Mediana</option>
+                              <option value="4">Pesada</option>
+                              <option value="5">Muy pesada</option>
+                              <option value="6">Más de 15 kilos</option>
+                            </select>
+                          </div>
+                          <div class="is-international">
+                            <select class="select-custom sizes-select" name="sizeDelivery" id="sizeInternationalDelivery1" placeholder="Selecciona un tamaño">
+                              <option value="" selected="selected"></option>
+                              <option data-subtext="option subtext" value="1">Muy Liviana</option>
+                              <option value="2">Liviana</option>
+                              <option value="3">Mediana</option>
+                              <option value="4">Pesada</option>
+                              <option value="5">Muy pesada</option>
+                              <option value="6">Extra pesada</option>
+                              <option value="7">Súper carga</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <div class="checkbox checkbox-warning">
+                        <input class="isAccept" type="checkbox" id="isAcceptQuotationDelivery1"/>
+                        <label class="checkLbel" for="isAcceptQuotationDelivery1">Acepto que los precios están sujetos a variación de acuerdo a las dimensiones y pesos reales, entre otros.</label>
+                      </div>
+                    </fieldset>
+                    <div class="alert alert-warning more-70kg"><i class="icon-circle-alert"></i><span>Estás cotizando una pieza de más de 70 kilos. Para realizar un envío con estas características, debes comunicarte con un ejecutivo a través de nuestro&nbsp;<a href="contact.html">Formulario de contacto</a>.</span></div>
+                  </div>
+                  <div class="body-footer">
+                    <div class="row">
+                      <div class="col-xs-8 col-sm-7 col-md-7 col-lg-8 wrapper-price">
+                        <div class="total text-left is-national">
+                          <p>Costo desde</p>
+                          <h4><span>$</span><span class="price">0</span></h4>
+                        </div>
+                        <div class="total text-left is-international">
+                          <p>Costo entre</p>
+                          <h4><span class="international-prince-box"><span>$</span><span class="price">0</span></span><span class="international-prince-box"><span>$</span><span class="price">0</span></span></h4>
+                        </div>
+                      </div>
+                      <div class="col-xs-4 col-sm-5 col-md-5 col-lg-4 wrapper-btn">
+                        <button class="btn btn-block btn-continue" disabled="disabled" type="button" data-toggle="modal" data-target="#ModalRegister">Hacer el envío</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="tab-zone second-tab">
+                <form class="form-send-document">
+                  <div class="body-box">
+                    <fieldset class="choice c-field">
+                      <legend class="o-fieldset__legend">¿Qué tipo de envío es?</legend>
+                      <div class="radio">
+                        <input class="toolbox-send-type" checked="checked" name="documentRadio" type="radio" value="nationalValue" id="nationalDocument1"/>
+                        <label class="radio-label" for="nationalDocument1">Nacional</label>
+                      </div>
+                      <div class="radio">
+                        <input class="toolbox-send-type" name="documentRadio" type="radio" value="internationalValue" id="internationalDocument1"/>
+                        <label class="radio-label" for="internationalDocument1">Internacional</label>
+                      </div>
+                    </fieldset>
+                    <!-- choice-->
+                    <fieldset class="choice c-field">
+                      <div class="form-vertical">
+                        <div class="form-group">
+                          <label class="o-fieldset__legend" for="originNationalDocumentSend1">¿Cuál es su origen?</label>
+                          <select class="select-custom national-select" name="originNationalDocumentSend" placeholder="Selecciona origen" type="text" id="originNationalDocumentSend1"></select>
+                        </div>
+                        <div class="form-group">
+                          <div class="is-national">
+                            <label class="o-fieldset__legend" for="destinyNationalDocumentSend1">¿Cuál es su destino?</label>
+                            <select class="select-custom national-select" name="destinyNationalDocumentSend" placeholder="Selecciona destino" type="text" id="destinyNationalDocumentSend1"></select>
+                          </div>
+                          <div class="is-international">
+                            <label class="o-fieldset__legend" for="destinyInternationalDocumentSend1">¿Cuál es su destino?</label>
+                            <select class="select-custom international-select" name="destinyInternationalDocumentSend" placeholder="Selecciona destino" type="text" id="destinyInternationalDocumentSend1"></select>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset class="choice c-field">
+                      <legend class="o-fieldset__legend">¿Cómo es tu documento?</legend>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="is-national">
+                            <select class="select-custom sizes-select size-document" name="sizeDocument" id="sizeNationalDocument1" placeholder="Selecciona un tamaño">
+                              <option value="" selected="selected"></option>
+                              <option data-subtext="option subtext" value="1">Muy liviano</option>
+                              <option value="2">Liviano</option>
+                            </select>
+                          </div>
+                          <div class="is-international">
+                            <select class="select-custom sizes-select size-document" name="sizeDocument" id="sizeInternationalDocument1" placeholder="Selecciona un tamaño">
+                              <option value="" selected="selected"></option>
+                              <option data-subtext="option subtext" value="1">Muy liviano</option>
+                              <option value="2">Liviano</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <div class="checkbox checkbox-warning">
+                        <input class="isAccept" type="checkbox" id="isAcceptSendDocument1"/>
+                        <label for="isAcceptSendDocument1">Acepto que los precios están sujetos a variación de acuerdo a las dimensiones y pesos reales, entre otros.</label>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="body-footer">
+                    <div class="row">
+                      <div class="col-xs-8 col-sm-7 col-md-7 col-lg-8 wrapper-price">
+                        <div class="total text-left is-national">
+                          <p>Costo desde</p>
+                          <h4><span>$</span><span class="price">0</span></h4>
+                        </div>
+                        <div class="total text-left is-international">
+                          <p>Costo entre</p>
+                          <h4><span class="international-prince-box"><span>$</span><span class="price">0</span></span><span class="international-prince-box"><span>$</span><span class="price">0</span></span></h4>
+                        </div>
+                      </div>
+                      <div class="col-xs-4 col-sm-5 col-md-5 col-lg-4 wrapper-btn">
+                        <button class="btn btn-block btn-continue" disabled="disabled" type="button" data-toggle="modal" data-target="#ModalRegister">Hacer el envío</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="tab-zone third-tab">
+                <form class="form-send-document">
+                  <div class="body-box">
+                    <!-- choice-->
+                    <fieldset class="choice c-field">
+                      <div class="form-vertical">
+                        <div class="form-group">
+                          <label class="o-fieldset__legend" for="originNationalValiseSend1">¿Cuál es su origen?</label>
+                          <select class="select-custom national-select" name="originNationalValiseSend" placeholder="Selecciona origen" type="text" id="originNationalValiseSend1"></select>
+                        </div>
+                        <div class="form-group">
+                          <div class="is-national">
+                            <label class="o-fieldset__legend" for="destinyNationalValiseSend1">¿Cuál es su destino?</label>
+                            <select class="select-custom national-select" name="destinyNationalValiseSend" placeholder="Selecciona destino" type="text" id="destinyNationalValiseSend1"></select>
+                          </div>
+                          <div class="is-international">
+                            <label class="o-fieldset__legend" for="destinyInternationalValiseSend1">¿Cuál es su destino?</label>
+                            <select class="select-custom international-select" name="destinyInternationalValiseSend" placeholder="Selecciona destino" type="text" id="destinyInternationalValiseSend1"></select>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset class="choice c-field">
+                      <legend class="o-fieldset__legend">¿Cómo es tu valija?</legend>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="is-national">
+                            <select class="select-custom sizes-select size-valise" name="sizeValise" id="sizeNationalValise1" placeholder="Selecciona un tamaño">
+                              <option value="" selected="selected"></option>
+                              <option data-subtext="option subtext" value="1">Muy liviana</option>
+                              <option value="2">Liviana</option>
+                              <option value="3">Pesada </option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <div class="checkbox checkbox-warning">
+                        <input class="isAccept" type="checkbox" id="isAcceptSendValise1"/>
+                        <label for="isAcceptSendValise1">Acepto que los precios están sujetos a variación de acuerdo a las dimensiones y pesos reales, entre otros.</label>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="body-footer">
+                    <div class="row">
+                      <div class="col-xs-8 col-sm-7 col-md-7 col-lg-8 wrapper-price">
+                        <div class="total text-left is-national">
+                          <p>Costo desde</p>
+                          <h4><span>$</span><span class="price">0</span></h4>
+                        </div>
+                        <div class="total text-left is-international">
+                          <p>Costo entre</p>
+                          <h4><span class="international-prince-box"><span>$</span><span class="price">0</span></span><span class="international-prince-box"><span>$</span><span class="price">0</span></span></h4>
+                        </div>
+                      </div>
+                      <div class="col-xs-4 col-sm-5 col-md-5 col-lg-4 wrapper-btn">
+                        <button class="btn btn-block btn-continue" disabled="disabled" type="button" data-toggle="modal" data-target="#ModalRegister">Hacer el envío</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- body-footer-->
+          </div>
+          <!-- first-box-->
+          <div class="box form-box" id="second-box"><span class="icon-close toolbox-close"></span>
+            <div class="header-box">
+              <h4 class="header-box-title">Enviar encomienda</h4>
+            </div>
+            <form class="form-send-package">
+              <div class="body-box">
+                <fieldset class="choice c-field">
+                  <legend class="o-fieldset__legend">¿Qué tipo de envío es?</legend>
+                  <div class="radio">
+                    <input class="toolbox-send-type" checked="checked" name="deliveryRadio" type="radio" value="nationalValue" id="QuotationNationalDelivery2"/>
+                    <label class="radio-label" for="QuotationNationalDelivery2">Nacional</label>
+                  </div>
+                  <div class="radio">
+                    <input class="toolbox-send-type" name="deliveryRadio" type="radio" value="internationalValue" id="QuotationInternationalDelivery2"/>
+                    <label class="radio-label" for="QuotationInternationalDelivery2">Internacional</label>
+                  </div>
+                </fieldset>
+                <!-- choice-->
+                <fieldset class="choice c-field">
+                  <div class="form-vertical">
+                    <div class="form-group">
+                      <label class="o-fieldset__legend" for="originNationalDelivery2">¿Cuál es su origen?</label>
+                      <select class="select-custom national-select" name="originNationalDelivery" placeholder="Selecciona origen" id="originNationalDelivery2"></select>
+                    </div>
+                    <div class="form-group">
+                      <div class="is-national">
+                        <label class="o-fieldset__legend" for="destinyNationalDelivery2">¿Cuál es su destino?</label>
+                        <select class="select-custom national-select" name="destinyNationalDelivery" placeholder="Selecciona destino" id="destinyNationalDelivery2"></select>
+                      </div>
+                      <div class="is-international">
+                        <label class="o-fieldset__legend" for="destinyInternationalDelivery2">¿Cuál es su destino?</label>
+                        <select class="select-custom international-select" name="destinyInternationalDelivery" placeholder="Selecciona destino" id="destinyInternationalDelivery2"></select>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset class="choice c-field">
+                  <legend class="o-fieldset__legend">¿Cómo es tu pieza?</legend>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="is-national">
+                        <select class="select-custom sizes-select" name="sizeDelivery" id="sizeNationalDelivery2" placeholder="Selecciona un tamaño">
+                          <option value="" selected="selected"></option>
+                          <option data-subtext="option subtext" value="1">Muy liviana</option>
+                          <option value="2">Liviana</option>
+                          <option value="3">Mediana</option>
+                          <option value="4">Pesada</option>
+                          <option value="5">Muy pesada</option>
+                          <option value="6">Más de 15 kilos</option>
+                        </select>
+                      </div>
+                      <div class="is-international">
+                        <select class="select-custom sizes-select" name="sizeDelivery" id="sizeInternationalDelivery2" placeholder="Selecciona un tamaño">
+                          <option value="" selected="selected"></option>
+                          <option data-subtext="option subtext" value="1">Muy Liviana</option>
+                          <option value="2">Liviana</option>
+                          <option value="3">Mediana</option>
+                          <option value="4">Pesada</option>
+                          <option value="5">Muy pesada</option>
+                          <option value="6">Extra pesada</option>
+                          <option value="7">Súper carga</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <div class="checkbox checkbox-warning">
+                    <input class="isAccept" type="checkbox" id="isAcceptQuotationDelivery2"/>
+                    <label class="checkLbel" for="isAcceptQuotationDelivery2">Acepto que los precios están sujetos a variación de acuerdo a las dimensiones y pesos reales, entre otros.</label>
+                  </div>
+                </fieldset>
+                <div class="alert alert-warning more-70kg"><i class="icon-circle-alert"></i><span>Estás cotizando una pieza de más de 70 kilos. Para realizar un envío con estas características, debes comunicarte con un ejecutivo a través de nuestro&nbsp;<a href="contact.html">Formulario de contacto</a>.</span></div>
+              </div>
+              <div class="body-footer">
+                <div class="row">
+                  <div class="col-xs-8 col-sm-7 col-md-7 col-lg-8 wrapper-price">
+                    <div class="total text-left is-national">
+                      <p>Costo desde</p>
+                      <h4><span>$</span><span class="price">0</span></h4>
+                    </div>
+                    <div class="total text-left is-international">
+                      <p>Costo entre</p>
+                      <h4><span class="international-prince-box"><span>$</span><span class="price">0</span></span><span class="international-prince-box"><span>$</span><span class="price">0</span></span></h4>
+                    </div>
+                  </div>
+                  <div class="col-xs-4 col-sm-5 col-md-5 col-lg-4 wrapper-btn">
+                    <button class="btn btn-block btn-continue" disabled="disabled" type="button" data-toggle="modal" data-target="#ModalRegister">Hacer el envío</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- second-box-->
+          <div class="box form-box" id="third-box"><span class="icon-close toolbox-close"></span>
+            <div class="header-box">
+              <h4 class="header-box-title">Enviar documento</h4>
+            </div>
+            <form class="form-send-document">
+              <div class="body-box">
+                <fieldset class="choice c-field">
+                  <legend class="o-fieldset__legend">¿Qué tipo de envío es?</legend>
+                  <div class="radio">
+                    <input class="toolbox-send-type" checked="checked" name="documentRadio" type="radio" value="nationalValue" id="nationalDocument2"/>
+                    <label class="radio-label" for="nationalDocument2">Nacional</label>
+                  </div>
+                  <div class="radio">
+                    <input class="toolbox-send-type" name="documentRadio" type="radio" value="internationalValue" id="internationalDocument2"/>
+                    <label class="radio-label" for="internationalDocument2">Internacional</label>
+                  </div>
+                </fieldset>
+                <!-- choice-->
+                <fieldset class="choice c-field">
+                  <div class="form-vertical">
+                    <div class="form-group">
+                      <label class="o-fieldset__legend" for="originNationalDocumentSend2">¿Cuál es su origen?</label>
+                      <select class="select-custom national-select" name="originNationalDocumentSend" placeholder="Selecciona origen" type="text" id="originNationalDocumentSend2"></select>
+                    </div>
+                    <div class="form-group">
+                      <div class="is-national">
+                        <label class="o-fieldset__legend" for="destinyNationalDocumentSend2">¿Cuál es su destino?</label>
+                        <select class="select-custom national-select" name="destinyNationalDocumentSend" placeholder="Selecciona destino" type="text" id="destinyNationalDocumentSend2"></select>
+                      </div>
+                      <div class="is-international">
+                        <label class="o-fieldset__legend" for="destinyInternationalDocumentSend2">¿Cuál es su destino?</label>
+                        <select class="select-custom international-select" name="destinyInternationalDocumentSend" placeholder="Selecciona destino" type="text" id="destinyInternationalDocumentSend2"></select>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset class="choice c-field">
+                  <legend class="o-fieldset__legend">¿Cómo es tu documento?</legend>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="is-national">
+                        <select class="select-custom sizes-select size-document" name="sizeDocument" id="sizeNationalDocument2" placeholder="Selecciona un tamaño">
+                          <option value="" selected="selected"></option>
+                          <option data-subtext="option subtext" value="1">Muy liviano</option>
+                          <option value="2">Liviano</option>
+                        </select>
+                      </div>
+                      <div class="is-international">
+                        <select class="select-custom sizes-select size-document" name="sizeDocument" id="sizeInternationalDocument2" placeholder="Selecciona un tamaño">
+                          <option value="" selected="selected"></option>
+                          <option data-subtext="option subtext" value="1">Muy liviano</option>
+                          <option value="2">Liviano</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <div class="checkbox checkbox-warning">
+                    <input class="isAccept" type="checkbox" id="isAcceptSendDocument2"/>
+                    <label for="isAcceptSendDocument2">Acepto que los precios están sujetos a variación de acuerdo a las dimensiones y pesos reales, entre otros.</label>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="body-footer">
+                <div class="row">
+                  <div class="col-xs-8 col-sm-7 col-md-7 col-lg-8 wrapper-price">
+                    <div class="total text-left is-national">
+                      <p>Costo desde</p>
+                      <h4><span>$</span><span class="price">0</span></h4>
+                    </div>
+                    <div class="total text-left is-international">
+                      <p>Costo entre</p>
+                      <h4><span class="international-prince-box"><span>$</span><span class="price">0</span></span><span class="international-prince-box"><span>$</span><span class="price">0</span></span></h4>
+                    </div>
+                  </div>
+                  <div class="col-xs-4 col-sm-5 col-md-5 col-lg-4 wrapper-btn">
+                    <button class="btn btn-block btn-continue" disabled="disabled" type="button" data-toggle="modal" data-target="#ModalRegister">Hacer el envío</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- third-box-->
+          <div class="box form-box" id="fourth-box"><span class="icon-close toolbox-close"></span>
+            <div class="header-box">
+              <h4 class="header-box-title">Enviar valija</h4>
+            </div>
+            <form class="form-send-money">
+              <div class="body-box">
+                <fieldset class="choice c-field">
+                  <legend class="o-fieldset__legend">¿A dónde quieres enviar dinero?</legend>
+                  <div class="form-vertical">
+                    <div class="form-group">
+                      <select class="select-custom international-select" name="countryInput" placeholder="Selecciona país" type="text"></select>
+                    </div>
+                  </div>
+                </fieldset>
+                <!-- choice-->
+                <fieldset class="choice c-field">
+                  <legend class="o-fieldset__legend">¿Cuánto dinero quieres enviar?</legend>
+                  <div class="input-group input-group--double"><span class="input-group-addon">$</span>
+                    <input class="form-control only-prices" aria-label="Amount (to the nearest dollar)" name="moneyOne"/><span class="input-group-addon">PESOS CHILENOS</span>
+                  </div>
+                </fieldset>
+                <fieldset class="choice c-field">
+                  <legend class="o-fieldset__legend o-fieldset--bold">Esto equivale a:</legend>
+                  <div class="result-conversion"><img class="pull-left flag-icons" alt="icon flag" src="assets/img/flags/flag-icon-cl.png"/>
+                    <p class="pull-left money-change">CLP 0</p>
+                  </div>
+                </fieldset>
+                <fieldset>
+                  <div class="checkbox checkbox-warning">
+                    <input class="isAccept" type="checkbox" id="isAcceptQuotationMoney2"/>
+                    <label for="isAcceptQuotationMoney2">Acepto que los precios podrían sufrir variación de acuerdo a la ciudad o estado de destino.</label>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="body-footer">
+                <div class="row">
+                  <div class="col-xs-8 col-sm-7 col-md-7 col-lg-8 wrapper-price">
+                    <div class="total text-left">
+                      <p>Costo desde</p>
+                      <h4><span>$</span><span class="price">0</span></h4>
+                    </div>
+                  </div>
+                  <div class="col-xs-4 col-sm-5 col-md-5 col-lg-4 wrapper-btn">
+                    <button class="btn btn-block btn-continue" disabled="disabled" type="button" data-toggle="modal" data-target="#ModalRegister">Hacer el envío</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- fourth-box-->
+          <div class="box" id="fifth-box"><span class="icon-close toolbox-close"></span>
+            <div class="header-box">
+              <ul>
+                <li>Orden: <strong> Nº 645435642341</strong></li>
+                <li>Tipo: <strong> Documento</strong></li>
+                <li>Servicio: <strong> Día Hábil Siguiente</strong></li>
+                <li>Origen: <strong> Santiago</strong></li>
+                <li>Destino: <strong> Temuco</strong></li>
+                <li>Estado: <strong> <span></span> En tránsito</strong></li>
+              </ul>
+            </div>
+            <!-- box-header-->
+            <div class="body-box">
+              <div id="timeline">
+                <div class="timeline-titles">
+                  <div class="time-title-left">Fecha / Hora</div>
+                  <div class="time-title-right">Actividad</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-icon icon--now"></div>
+                  <div class="timeline-content time--time">
+                    <p>Martes 28 de mayo 12:00 hrs.</p>
+                  </div>
+                  <div class="timeline-content time--where">
+                    <p>Disponible en oficina para retiro</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-icon"></div>
+                  <div class="timeline-content time--time">
+                    <p>Martes 28 de mayo 12:00 hrs.</p>
+                  </div>
+                  <div class="timeline-content time--where">
+                    <p>Pieza en trásnsito al destino. Sucursal Chilexpress <strong>Merced Santiago</strong></p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-icon"></div>
+                  <div class="timeline-content time--time">
+                    <p>Martes 28 de mayo 12:00 hrs.</p>
+                  </div>
+                  <div class="timeline-content time--where">
+                    <p>Pieza recibida en Chilexpress</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- body-box-->
+            <div class="body-footer text-center"><a href="shipment-status.html#!/?otdetail=645435647">Ver más detalle</a></div>
+            <!-- body-footer-->
+          </div>
+          <!-- fifth-box-error-exist-->
+          <div class="box" id="fifth-box-error-exist"><span class="icon-close toolbox-close"></span>
+            <div class="header-box">
+              <h4 class="header-box-title">No hemos encontrado resultados de búsqueda para la orden de transporte <strong> "123111111111"</strong></h4>
+            </div>
+            <!-- box-header-->
+            <div class="body-box o-pt-xs">
+              <!---->
+              <div class="box-search-ot open-ot-input">
+                <div class="input-group input-group-lg input-group-full is-error">
+                  <input class="form-control search-ot only-numbers" value="123111111111" aria-label="Buscar OT" placeholder="Ingresa número de orden" type="number"/>
+                  <div class="input-group-btn full-btn">
+                    <button class="toolbox-search-btn btn btn-default rounded" aria-label="Execute search" type="button">Buscar</button>
+                  </div>
+                  <div class="error-ot empty">
+                    <p>Debes ingresar un número de <strong>orden de transporte</strong></p>
+                  </div>
+                  <div class="error-ot invalid">
+                    <p>Número de seguimiento no válido</p>
+                  </div>
+                  <!-- input-group-btn-->
+                </div>
+                <!-- input-group--><small class="small">Ej: 1234567890. Revisa hasta 10 OT separadas por comas.</small>
+                <div class="clearfix"></div>
+              </div>
+              <h6>Sugerencias:</h6>
+              <ul>
+                <li>Revisa que el número de la orden de transporte esté bien escrito.</li>
+                <li>El número de OT tiene entre 10 y 12 dígitos, sin espacios ni letras</li>
+                <li>Para más información, revisa <a class="link" href="javascript:;" data-toggle="modal" data-target="#ModalOt"> ¿Qué es una orden de transporte?</a></li>
+              </ul>
+            </div>
+            <div class="body-footer"></div>
+          </div>
+          <!-- fifth-box-exist-->
+          <!-- fifth-box-expired-->
+          <div class="box" id="fifth-box-error-expired"><span class="icon-close toolbox-close"></span>
+            <div class="header-box">
+              <h4 class="header-box-title"> La orden de transporte <strong>&nbsp;"456111111111"&nbsp;</strong>ha expirado.</h4>
+            </div>
+            <!-- box-header-->
+            <div class="body-box">
+              <!---->
+              <div class="box-search-ot open-ot-input">
+                <div class="input-group input-group-lg input-group-full is-expired">
+                  <input class="form-control search-ot only-numbers" value="456111111111" aria-label="Buscar OT" placeholder="Ingresa número de orden" type="number"/>
+                  <div class="input-group-btn full-btn">
+                    <button class="toolbox-search-btn btn btn-default rounded" aria-label="Execute search" type="button">Buscar</button>
+                  </div>
+                  <div class="error-ot empty">
+                    <p>Debes ingresar un número de<strong>orden de transporte</strong></p>
+                  </div>
+                  <div class="error-ot expired">
+                    <p>Número de seguimiento expirado</p>
+                  </div>
+                  <!-- input-group-btn-->
+                </div>
+                <!-- input-group--><small class="small">Ej: 1234567890. Revisa hasta 10 OT separadas por comas.</small>
+              </div>
+              <h6>Sugerencias:</h6>
+              <ul>
+                <li>Si realizaste el envio hace menos de tres meses, revisa que tu orden de transporte esté bien escrita.</li>
+                <li>Si la orden de transporte expiró, <a class="link" href="javascript:;"> comunícate con nosotros</a> para saber el estado de tu pieza.</li>
+              </ul>
+            </div>
+            <!-- body-box-->
+            <div class="body-footer"></div>
+            <!-- body-footer-->
+          </div>
+          <!-- fifth-box-expired-->
+        </div>
+        <!-- tool-box-->
+      </div>
+      <div class="carousel slide hidden-xs" id="carousel-cxp" data-ride="carousel">
+        <!-- Indicators-->
+        <div class="container">
+          <ol class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target="#carousel-cxp"></li>
+            <li data-slide-to="1" data-target="#carousel-cxp"></li>
+            <li data-slide-to="2" data-target="#carousel-cxp"></li>
+          </ol>
+        </div>
+        <!-- Wrapper for slides-->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <div class="fill" style="background-image:url('assets/img/04_home_portada.jpg');"></div>
+            <div class="carousel-caption">
+              <h2>Orden de transporte digital<strong>(OTD)</strong></h2>
+              <h4>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum</h4>
+            </div>
+          </div>
+          <div class="item">
+            <div class="fill" style="background-image:url('assets/img/04_home_portada.jpg');"></div>
+            <div class="carousel-caption">
+              <h2>Orden de transporte digital<strong>(OTD)</strong></h2>
+              <h4>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.</h4>
+            </div>
+          </div>
+          <div class="item">
+            <div class="fill" style="background-image:url('assets/img/04_home_portada.jpg');"></div>
+            <div class="carousel-caption">
+              <h2>Orden de transporte digital<strong>(OTD)</strong></h2>
+              <h4>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.</h4>
+            </div>
+          </div><a class="left carousel-control" data-slide="prev" data-target="#carousel-cxp" role="button"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="right carousel-control" data-slide="next" data-target="#carousel-cxp" role="button"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">Next</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-services">
+    <div class="container-fluid first">
+      <div class="container">
+        <!-- SECTION TYPES CLIENTS-->
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="text-center">Conoce más de nuestros servicios</h2>
+          </div>
+        </div>
+        <div class="type-clients center-block">
+          <ul class="responsive-tabs services nav-tabs" id="nav-tabs-services" role="tablist">
+            <li class="active" role="presentation"><a data-toggle="tab" href="#peopleService" role="tab">Cliente persona</a></li>
+            <li role="presentation"><a data-toggle="tab" href="#bussinessService" role="tab">Empresas</a></li>
+            <li role="presentation"><a class="last" data-toggle="tab" href="#entrepreneusService" role="tab">Emprendedores</a></li>
+            <li role="presentation"><a class="last" data-toggle="tab" href="#ecommerceService" role="tab">E commerce</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid last">
+      <div class="container">
+        <div class="tab-content">
+          <div class="tab-pane fade in active" id="peopleService" role="tab">
+            <div class="row services-people">
+              <div class="col-xs-12 col-sm-6 col-md-4"><img class="img-responsive image-top" alt="chilebox banner" src="assets/img/chilebox-da-banner.png"/></div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-thumbnail">
+                <div class="thumbnail"><img class="img-responsive" alt="image" src="assets/img/money-spin.jpg"/>
+                  <div class="caption">
+                    <h3>Giros de dinero</h3>
+                    <p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-4 two-images"><img class="img-responsive image-top" alt="embalaje banner" src="assets/img/package-type-da-banner.png"/><img class="img-responsive" alt="track banner" src="assets/img/track-da-banner.png"/></div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-8">
+                <div class="equal-columns services-national">
+                  <h3 class="text-left title-main">Servicios nacionales<strong>(Express)</strong></h3>
+                  <div class="row vdivide">
+                    <div class="col-sm-4 text-center col-vertical">
+                      <div class="equal-columns-image bottom"><img class="img-responsive banner" alt="" src="assets/img/svg/cycle-icon.svg"/></div>
+                      <h4>Servicios Urbanos</h4>
+                      <p>Cras quis nulla commodo</p>
+                    </div>
+                    <div class="col-sm-4 text-center col-vertical">
+                      <div class="equal-columns-image"><img class="img-responsive banner" alt="" src="assets/img/svg/clock-icon.svg"/></div>
+                      <h4>2 horas</h4>
+                      <p>Cras quis nulla commodo</p>
+                    </div>
+                    <div class="col-sm-4 text-center col-vertical">
+                      <div class="equal-columns-image"><img class="img-responsive banner" alt="" src="assets/img/svg/clouds-icon.svg"/></div>
+                      <h4>Overnight</h4>
+                      <p>Cras quis nulla commodo</p>
+                    </div>
+                  </div><a class="all-products hidden-xs" href="#">Ver todos los productos express</a>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-4">
+                <div class="services-other">
+                  <h3>Otros servicios</h3>
+                  <ul class="list-group">
+                    <li class="list-group-item first"><a href="#"><span>Equifax</span><span class="icon icon-chevron-right" aria-hidden="true"></span></a></li>
+                    <li class="list-group-item"><a href="#"><span>Pago de cuentas</span><span class="icon icon-chevron-right" aria-hidden="true"></span></a></li>
+                    <li class="list-group-item"><a href="#"><span>Recargas</span><span class="icon icon-chevron-right" aria-hidden="true"></span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade in" id="bussinessService" role="tab">
+            <div class="row services-people">
+              <div class="col-xs-12 col-sm-6 col-md-4 service-banner bottom">
+                <div class="service-banner-content">
+                  <h4 class="service-banner-title">Courier Nacional</h4>
+                  <div class="service-banner-desc">Envía documentos y encomiendas a través de nuestra cobertura en todo el territorio nacional.</div>
+                </div><img class="img-responsive image-top" alt="Courier nacional" src="assets/img/courier-national.jpg"/>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4 service-banner">
+                <div class="service-banner-content">
+                  <h4 class="service-banner-title">Courier Internacional</h4>
+                  <div class="service-banner-desc">Envía documentos y encomiendas a través de nuestra cobertura en todo el territorio nacional.</div>
+                </div><img class="img-responsive image-top" alt="Courier internacionales" src="assets/img/courier-international.jpg"/>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-4 two-images"><img class="img-responsive image-top" alt="international deliveries" src="assets/img/boussines-executive.png"/><img class="img-responsive image-top" alt="track banner" src="assets/img/chilexpress-card.png"/></div>
+            </div>
+            <div class="services">
+              <div class="row equal-heights">
+                <div class="col-xs-12 col-sm-12 col-md-8">
+                  <div class="equal-columns services-ecommerce">
+                    <h3 class="text-left">E Commerce<strong>(Express)</strong></h3>
+                    <div class="row vdivide">
+                      <div class="col-sm-4 text-center col-vertical">
+                        <div class="equal-columns-image"><img class="banner" alt="" src="assets/img/ecommerce-1.png"/></div>
+                        <h4>Fulfillment</h4>
+                        <p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.</p>
+                      </div>
+                      <div class="col-sm-4 text-center col-vertical">
+                        <div class="equal-columns-image"><img class="banner" alt="" src="assets/img/ecommerce-2.png"/></div>
+                        <h4>Gestión de órdenes</h4>
+                        <p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.</p>
+                      </div>
+                      <div class="col-sm-4 text-center col-vertical">
+                        <div class="equal-columns-image"><img class="banner" alt="" src="assets/img/ecommerce-3.png"/></div>
+                        <h4>Plataforma</h4>
+                        <p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.</p>
+                      </div>
+                    </div><a class="all-products" href="#">Saber más sobre E commerce</a>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4">
+                  <div class="thumbnail"><img class="img-responsive" alt="Envios internacionales" src="assets/img/schedule-retreat.png"/>
+                    <div class="caption">
+                      <h3>Envios internacionales</h3>
+                      <p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade in" id="entrepreneusService" role="tab">
+            <div class="row services-people equal-heights">
+              <div class="col-xs-12 col-sm-6 col-md-4"><img class="img-responsive image-top" alt="chilebox banner" src="assets/img/chilebox-da-banner.png"/></div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-thumbnail">
+                <div class="thumbnail"><img class="img-responsive" alt="image" src="assets/img/shipment-payable.png"/>
+                  <div class="caption">
+                    <h3>Envios por pagar</h3>
+                    <p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-4 two-images"><img class="img-responsive track-banner image-top" alt="track banner" src="assets/img/track-da-banner.png"/><img class="img-responsive package" alt="embalaje banner" src="assets/img/package-type-da-banner.png"/></div>
+            </div>
+            <div class="services">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="equal-columns services-testimonial">
+                    <h3 class="text-left">Servicios nacionales<strong>(Express)</strong></h3>
+                    <div class="row vdivide">
+                      <div class="col-sm-4 text-center col-vertical"><img alt="" src="assets/img/testimonial-1.png"/>
+                        <h4>La Tetera Labs</h4>
+                        <p>“Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.”</p>
+                      </div>
+                      <div class="col-sm-4 text-center col-vertical"><img alt="" src="assets/img/testimonial-2.png"/>
+                        <h4>Shikan Importadores</h4>
+                        <p>“Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.”</p>
+                      </div>
+                      <div class="col-sm-4 text-center col-vertical"><img alt="" src="assets/img/testimonial-3.png"/>
+                        <h4>Vip Pets</h4>
+                        <p>“Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.”</p>
+                      </div>
+                    </div><a class="all-products" href="#">Ver más testimonios</a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail"><img class="img-responsive" alt="image" src="assets/img/mercado-libre.png"/>
+                    <div class="caption">
+                      <h3>¿Vendes en Mercado Libre? ¡Haz tus despachos con Mercado Envíos y Chilexpress!</h3>
+                      <p>¿Eres vendedor en Mercado Libre? ¿Alguna vez te quedaste esperando durante horas a un comprador a la salida del metro o en…</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade in" id="ecommerceService" role="tab">
+            <div class="row services-people equal-heights">
+              <div class="col-xs-12 col-sm-6 col-md-4"><img class="img-responsive image-top" alt="chilebox banner" src="assets/img/chilebox-da-banner.png"/></div>
+              <div class="col-xs-12 col-sm-6 col-md-4 col-thumbnail">
+                <div class="thumbnail"><img class="img-responsive" alt="image" src="assets/img/shipment-payable.png"/>
+                  <div class="caption">
+                    <h3>Envios por pagar</h3>
+                    <p>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-4 two-images"><img class="img-responsive track-banner image-top" alt="track banner" src="assets/img/track-da-banner.png"/><img class="img-responsive package" alt="embalaje banner" src="assets/img/package-type-da-banner.png"/></div>
+            </div>
+            <div class="services">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="equal-columns services-testimonial">
+                    <h3 class="text-left">Servicios nacionales<strong>(Express)</strong></h3>
+                    <div class="row vdivide">
+                      <div class="col-sm-4 text-center col-vertical"><img alt="" src="assets/img/testimonial-1.png"/>
+                        <h4>La Tetera Labs</h4>
+                        <p>“Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.”</p>
+                      </div>
+                      <div class="col-sm-4 text-center col-vertical"><img alt="" src="assets/img/testimonial-2.png"/>
+                        <h4>Shikan Importadores</h4>
+                        <p>“Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.”</p>
+                      </div>
+                      <div class="col-sm-4 text-center col-vertical"><img alt="" src="assets/img/testimonial-3.png"/>
+                        <h4>Vip Pets</h4>
+                        <p>“Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.”</p>
+                      </div>
+                    </div><a class="all-products" href="#">Ver más testimonios</a>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail"><img class="img-responsive" alt="image" src="assets/img/mercado-libre.png"/>
+                    <div class="caption">
+                      <h3>¿Vendes en Mercado Libre? ¡Haz tus despachos con Mercado Envíos y Chilexpress!</h3>
+                      <p>¿Eres vendedor en Mercado Libre? ¿Alguna vez te quedaste esperando durante horas a un comprador a la salida del metro o en…</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="section-map">
+    <div class="container">
+      <div class="text-center">
+        <h2><img src="assets/img/icon-map.svg"/>Conoce nuestras sucursales</h2>
+        <h4>Busca tu sucursal más cercana y encuentra los productos Chilexpress que necesitas.</h4>
+      </div>
+    </div>
+    <div class="panel-map">
+      <div class="container-relative">
+        <div class="search-box-map">
+          <div class="head-search">
+            <p>Ingresa una dirección, lugar de referencia o geolocalízate.</p>
+            <div class="form-group">
+              <input class="form-control" id="searchInput" name="searchInput" placeholder="Dirección o lugar de referencia" type="text"/>
+              <label class="error" id="searchInput-error" for="searchInput">Ingresa una sucursal o dirección para hacer una búsqueda</label>
+              <button class="icon-current-location" id="geoLocate" type="button"></button>
+            </div><small class="small">EJEMPLO: PEDRO DE VALDIVIA, PROVIDENCIA</small>
+            <div class="text-center"><a class="link" href="branch-office-search.html">Ver más surcursales</a></div>
+          </div>
+          <div class="body-search">
+            <h6 class="title-results">SUCURSALES CERCANAS</h6>
+            <div class="results-locations-container" id="searchResults"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="map"></div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="container footer-content">
+    <div class="footer-col contact">
+      <h4 class="footer-title">Contáctanos</h4>
+      <ul class="footer-contact-list">
+        <li class="footer-contact-item"><i class="icon icon-mobile-phone"></i><a class="phone" href="tel:+56-22355-2500">(+56 2) 2355 2500</a></li>
+        <li class="footer-contact-item"><i class="icon icon-envelope"></i><a href="contact.html">contacto@chilexpress.cl</a></li>
+        <li class="footer-contact-item address"><i class="icon icon-pin"></i>
+          <div class="address">Av. José Joaquín Pérez 1376, Parque Industrial ENEA, Pudahuel, Santiago, Chile</div>
+        </li>
+        <li class="footer-contact-item"><a class="map" href="www.google.cl/maps/place/Jos%C3%A9+Joaqu%C3%ADn+P%C3%A9rez+1376,+Pudahuel,+Regi%C3%B3n+Metropolitana/@-33.4229792,-70.7804746,17z/data=!4m13!1m7!3m6!1s0x9662c1882696a219:0x2cf18f179fffcf7f!2sJos%C3%A9+Joaqu%C3%ADn+P%C3%A9rez+1376,+Pudahuel,+Regi%C3%B3n+Metropolitana!3b1!8m2!3d-33.4229837!4d-70.7782859!3m4!1s0x9662c1882696a219:0x2cf18f179fffcf7f!8m2!3d-33.4229837!4d-70.7782859" target="_blank">Ver mapa</a></li>
+        <li class="footer-contact-item"><i class="icon icon-phone"></i><a class="phone" href="tel:+566002000102">600 2000 102</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-nav-mobile">
+        <input id="footer-accordion-1" name="footer-accordion" type="radio" checked=""/>
+        <label class="footer-title" for="footer-accordion-1">Corporativo<span class="icon icon-chevron-right"></span></label>
+        <ul class="footer-nav">
+          <li class="footer-item"><a class="footer-link">La compañía</a></li>
+          <li class="footer-item"><a class="footer-link">Reportes de sostenibilidad</a></li>
+          <li class="footer-item"><a class="footer-link">Programa de ética y providad</a>
+            <ul class="footer-subnav">
+              <li class="footer-nav-item"><a class="footer-sublink">Canal de denuncias</a></li>
+            </ul>
+          </li>
+          <li class="footer-item"><a class="footer-link">Trabaja con nosotros</a></li>
+        </ul>
+      </div>
+      <div class="footer-nav-mobile">
+        <input id="footer-accordion-2" name="footer-accordion" type="radio"/>
+        <label class="footer-title" for="footer-accordion-2">Comunicación interna<span class="icon icon-chevron-right"></span></label>
+        <ul class="footer-nav">
+          <li class="footer-item"><a class="footer-link">Nuestra Net</a></li>
+          <li class="footer-item"><a class="footer-link">Acceso RRHH</a></li>
+          <li class="footer-item"><a class="footer-link">Mesa de ayuda</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-col footer-nav-mobile">
+      <input id="footer-accordion-3" name="footer-accordion" type="radio"/>
+      <label class="footer-title" for="footer-accordion-3">Ecosistema digital<span class="icon icon-chevron-right"></span></label>
+      <ul class="footer-nav">
+        <li class="footer-item"><a class="footer-link">Redes sociales</a></li>
+        <li class="footer-item"><a class="footer-link">Blogs</a></li>
+        <li class="footer-item"><a class="footer-link">App Móvil</a></li>
+        <li class="footer-item"><a class="footer-link">Pickup</a></li>
+        <li class="footer-item"><a class="footer-link">Voy</a>
+          <ul class="footer-subnav">
+            <li class="footer-nav-item"><a class="footer-sublink">Términos y condiciones</a></li>
+            <li class="footer-nav-item"><a class="footer-sublink">Políticas de privacidad</a></li>
+          </ul>
+        </li>
+        <li class="footer-item"><a class="footer-link">Llave única (SSO)</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-nav-mobile">
+      <input id="footer-accordion-4" name="footer-accordion" type="radio"/>
+      <label class="footer-title" for="footer-accordion-4">Servicio al cliente<span class="icon icon-chevron-right"></span></label>
+      <ul class="footer-nav">
+        <li class="footer-item"><a class="footer-link" href="branch-office-search.html">Sucursales</a></li>
+        <li class="footer-item"><a class="footer-link">Cobertura</a></li>
+        <li class="footer-item"><a class="footer-link">Preguntas frecuentes</a></li>
+        <li class="footer-item"><a class="footer-link" href="contact.html">Contacto</a></li>
+        <li class="footer-item"><a class="footer-link">Términos y condiciones</a></li>
+        <li class="footer-item"><a class="footer-link">Guía de servicios</a></li>
+        <li class="footer-item"><a class="footer-link">Tarifas</a></li>
+        <li class="footer-item"><a class="footer-link">Normas de transporte</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-col left">
+        <div class="copyright">© Chilexpress  2018.</div><a>Brand center</a>
+      </div>
+      <div class="footer-bottom-col right"><a>Políticas de privacidad</a>
+        <div class="footer-rs"><span class="footer-rs-label">Síguenos en:</span><a href="#"><span class="icon-circle-facebook"></span></a><a href="#"><span class="icon-circle-twitter"></span></a><a href="#"><span class="icon-youtube"></span></a></div>
+      </div>
+    </div>
+  </div>
+</footer>

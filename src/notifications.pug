@@ -1,0 +1,238 @@
+extends _layouts/_inicio
+
+block variables
+  - var isNotifications = true
+
+block content
+  include _parts/_modals
+  include _parts/_header
+
+  .page-content.page-notifications
+    .container.main-container
+      .page-type
+        ol.breadcrumb
+          li
+            a(href='index.html')
+              span.icon-house
+          li
+            a(href="") Mi cuenta
+          li.active Notificaciones
+
+        .page-notifications-header
+          h3.page-title Tus notificaciones
+          a(href="javascript:void(0);").notifications-config-btn
+            i.icon-gear
+            span.notifications-config-btn-title Configurar notificaciones
+
+        .filter-component
+          label.filter-component-label Ver
+          .filter-component-content
+            .filter-component-list-wrapper
+              ul.filter-component-list
+                li.active
+                  | Todos
+                  span.filter-component-badge 6
+                  i.select-icon.icon-chevron-down
+                li
+                  | No leídas
+                  span.filter-component-badge 1
+                  i.select-icon.icon-chevron-down
+                li
+                  | Encomiendas
+                  span.filter-component-badge 1
+                  i.select-icon.icon-chevron-down
+                li
+                  | Documentos
+                  span.filter-component-badge 1
+                  i.select-icon.icon-chevron-down
+                li
+                  | Giros
+                  span.filter-component-badge 1
+                  i.select-icon.icon-chevron-down
+                li
+                  | SAC
+                  span.filter-component-badge 1
+                  i.select-icon.icon-chevron-down
+                li
+                  | Generales
+                  span.filter-component-badge 1
+                  i.select-icon.icon-chevron-down
+            span.filter-component-detail
+
+        .box-no-notifications(ng-if="userNotifications==0")
+          i.box-no-notifications-icon.icon.icon-bell
+          .box-no-notifications-title No tienes ninguna notificación
+
+        ul.notification-list(ng-if="userNotifications>0")
+          li.notification-li
+            a.notification-a(href="javascript: void(0);")
+              .notification-operation-wrapper
+                i.notification-icon.icon-lidded-box
+                .notification-operation ENCOMIENDA
+              .notification-wrapper
+                .notification-date-wrapper
+                  .notification-operation ENCOMIENDA
+                .notification-title
+                  | Guantes de boxeo tailandés Nº OT: 7555899832
+                  .notification-date 23/09/2017 a las 15:37
+              .notification-status
+                .notification-status-label Estado
+                .notification-status-desc Pieza en tránsito
+              .notification-link-wrapper
+                .notification-link Ir al detalle
+
+          li.notification-li
+            a.notification-a(href="javascript: void(0);")
+              .notification-operation-wrapper
+                i.notification-icon.icon-money
+                .notification-operation GIRO
+              .notification-wrapper
+                .notification-date-wrapper
+                  .notification-operation GIRO
+                .notification-title
+                  | Nº OT: 7555899832
+                  .notification-date 23/09/2017 a las 15:37
+              .notification-status.is-success
+                .notification-status-label Estado
+                .notification-status-desc Giro recepcionado
+              .notification-link-wrapper
+                .notification-link Ir al detalle
+
+          li.notification-li
+            a.notification-a(href="javascript: void(0);")
+              .notification-operation-wrapper
+                i.notification-icon.icon-document
+                .notification-operation DOCUMENTO
+              .notification-wrapper
+                .notification-date-wrapper
+                  .notification-operation DOCUMENTO
+                .notification-title
+                  | Contratos de arrendatario Nº OT: 7555899832
+                  .notification-date 23/09/2017 a las 15:37
+              .notification-status.is-success
+                .notification-status-label Estado
+                .notification-status-desc Entregado
+              .notification-link-wrapper
+                .notification-link Ir al detalle
+
+          li.notification-li
+            a.notification-a.read(href="javascript: void(0);")
+              .notification-operation-wrapper
+                i.notification-icon.icon-lidded-box
+                .notification-operation ENCOMIENDA
+              .notification-wrapper
+                .notification-date-wrapper
+                  .notification-operation ENCOMIENDA
+                .notification-title
+                  | Mac tv Nº OT: 7555899832
+                  .notification-date 23/09/2017 a las 15:37
+              .notification-status.is-error
+                .notification-status-label Estado
+                .notification-status-desc Pieza retenida
+              .notification-link-wrapper
+                .notification-link Ir al detalle
+
+          li.notification-li
+            a.notification-a.read(href="javascript: void(0);")
+              .notification-operation-wrapper
+                i.notification-icon.icon-dotted-dialog
+                .notification-operation SAC
+              .notification-wrapper
+                .notification-date-wrapper
+                  .notification-operation SAC
+                .notification-title
+                  | Reclamo por incumplimiento de OT Nº OT: 7555899832
+                  .notification-date 23/09/2017 a las 15:37
+              .notification-status.is-received
+                .notification-status-label Estado
+                .notification-status-desc Recibido
+              .notification-link-wrapper
+                .notification-link Ir al detalle
+
+          li.notification-li
+            a.notification-a(href="javascript: void(0);")
+              .notification-operation-wrapper
+                i.notification-icon.icon-lidded-box
+                .notification-operation ENCOMIENDA
+              .notification-wrapper
+                .notification-date-wrapper
+                  .notification-operation ENCOMIENDA
+                .notification-title
+                  | Guantes de boxeo tailandés Nº OT: 7555899832
+                  .notification-date 23/09/2017 a las 15:37
+              .notification-status
+                .notification-status-label Estado
+                .notification-status-desc Pieza en tránsito
+              .notification-link-wrapper
+                .notification-link Ir al detalle
+
+          li.notification-li
+            a.notification-a(href="javascript: void(0);")
+              .notification-operation-wrapper
+                i.notification-icon.icon-money
+                .notification-operation GIRO
+              .notification-wrapper
+                .notification-date-wrapper
+                  .notification-operation GIRO
+                .notification-title
+                  | Nº OT: 7555899832
+                  .notification-date 23/09/2017 a las 15:37
+              .notification-status.is-success
+                .notification-status-label Estado
+                .notification-status-desc Giro recepcionado
+              .notification-link-wrapper
+                .notification-link Ir al detalle
+
+          li.notification-li
+            a.notification-a(href="javascript: void(0);")
+              .notification-operation-wrapper
+                i.notification-icon.icon-document
+                .notification-operation DOCUMENTO
+              .notification-wrapper
+                .notification-date-wrapper
+                  .notification-operation DOCUMENTO
+                .notification-title
+                  | Contratos de arrendatario Nº OT: 7555899832
+                  .notification-date 23/09/2017 a las 15:37
+              .notification-status.is-success
+                .notification-status-label Estado
+                .notification-status-desc Entregado
+              .notification-link-wrapper
+                .notification-link Ir al detalle
+
+          li.notification-li
+            a.notification-a.read(href="javascript: void(0);")
+              .notification-operation-wrapper
+                i.notification-icon.icon-lidded-box
+                .notification-operation ENCOMIENDA
+              .notification-wrapper
+                .notification-date-wrapper
+                  .notification-operation ENCOMIENDA
+                .notification-title
+                  | Mac tv Nº OT: 7555899832
+                  .notification-date 23/09/2017 a las 15:37
+              .notification-status.is-error
+                .notification-status-label Estado
+                .notification-status-desc Pieza retenida
+              .notification-link-wrapper
+                .notification-link Ir al detalle
+
+          li.notification-li
+            a.notification-a.read(href="javascript: void(0);")
+              .notification-operation-wrapper
+                i.notification-icon.icon-dotted-dialog
+                .notification-operation SAC
+              .notification-wrapper
+                .notification-date-wrapper
+                  .notification-operation SAC
+                .notification-title
+                  | Reclamo por incumplimiento de OT Nº OT: 7555899832
+                  .notification-date 23/09/2017 a las 15:37
+              .notification-status.is-received
+                .notification-status-label Estado
+                .notification-status-desc Recibido
+              .notification-link-wrapper
+                .notification-link Ir al detalle
+        .text-center(ng-if="userNotifications>0")
+          a(href="javascript: void(0);").load-more-btn Ver más
+  include _parts/_footer

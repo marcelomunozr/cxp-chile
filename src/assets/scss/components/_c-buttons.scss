@@ -1,0 +1,166 @@
+.c-button {
+  @include transition-property(background, border, color);
+  @include transition-timing-function(ease-out);
+  @include transition-duration(200ms);
+  font-family: $font-family-US-SemiBold;
+  border: none;
+  border-radius: 2rem;
+  color: $mine-shaft;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1;
+  height: 4rem;
+  min-width: 16rem;
+  text-transform: uppercase;
+  outline: 0;
+  padding: 1rem 1.2rem;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  vertical-align: middle;
+  appearance: none;
+  user-select: none;
+
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+.c-button--emphasis {
+  background-color: $yellow-sea;
+  border: 1px solid $yellow-sea;
+  color: $mine-shaft;
+
+  &:hover{
+    background-color: $orange-peel;
+    border-color: $orange-peel;
+  }
+
+  &:active{
+    background-color: $orange-peel;
+    border-color: $orange-peel;
+  }
+
+  &.is-disabled{
+    background-color: $nobel;
+    border-color: $nobel;
+    color: $alto;
+  }
+}
+
+.c-button--success {
+  background-color: $chelsea-cucumber;
+  border: 1px solid $chelsea-cucumber;
+  color: $white;
+
+  &:hover{
+    background-color: $sushi;
+    border-color: $sushi;
+  }
+
+  &:active{
+    background-color: $sushi;
+    border-color: $sushi;
+  }
+
+  &.is-disabled{
+    background-color: $nobel;
+    border-color: $nobel;
+    color: $alto;
+  }
+}
+
+.c-button--secondary {
+  background-color: $mine-shaft;
+  border: 1px solid $mine-shaft;
+  color: $white;
+
+  &:hover{
+    background-color: $black-c;
+    border-color: $black-c;
+  }
+
+  &:active{
+    background-color: $black-c;
+    border-color: $black-c;
+  }
+
+  &.is-disabled{
+    background-color: $nobel;
+    border-color: $nobel;
+    color: $alto;
+  }
+}
+
+.c-button--phantom {
+  background-color: $white;
+  border: 1px solid $mine-shaft;
+  color: $mine-shaft;
+
+  &:hover{
+    background-color: $gallery;
+    border-color: $black-c;
+    color: $black-c;
+  }
+
+  &:active{
+    background-color: $gallery;
+    border-color: $black-c;
+    color: $black-c;
+  }
+
+  &.is-disabled{
+    background-color: $nobel;
+    border-color: $nobel;
+    color: $alto;
+  }
+}
+
+.c-button--negative {
+  background-color: $thunderbird;
+  border: 1px solid $thunderbird;
+  color: $white;
+
+  &:hover{
+    background-color: $negative-hover;
+    border-color: $negative-hover;
+  }
+
+  &:active{
+    background-color: $negative-hover;
+    border-color: $negative-hover;
+  }
+
+  &.is-disabled{
+    background-color: $nobel;
+    border-color: $nobel;
+    color: $alto;
+  }
+}
+
+.c-button--rounded {
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  min-width: 40px;
+
+  //font-family: Uni-Sans-Regular;
+  font-size: 22px;
+  font-family: "UniSansRegularRegular",sans-serif;
+
+}
+
+.c-button--icon > .icon {
+  display: inline-block;
+  font-size: 1.4rem;
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.is-disabled {
+  background: $nobel;
+  color: $alto;
+  cursor: not-allowed;
+  pointer-events: none;
+}

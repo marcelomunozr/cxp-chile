@@ -1,0 +1,192 @@
+extends _layouts/_inicio
+
+block variables
+  - var isShipmentStatus = true
+
+block content
+  include _parts/_modals
+  include _parts/_header
+
+  .page-content.page-ot
+    .container.main-container
+      .row(ng-class="{'row-flex':totalErrors==='1'}")
+        .col-md-9.col-sm-8.ot-container
+
+          //--detalle de OT--            
+          include _parts/_ot-content-slider
+
+          .page-type.shipment-st(ng-class="{'disappear':otdetail!='' || showSliderDetails}")
+            ol.breadcrumb
+              li
+                a(href='index.html') 
+                  span.icon-house
+              li.active Estado de envíos
+            
+            .shipment-st-header
+              .shipment-st-header-title
+                h3
+                  | Estado de envíos
+              .shipment-st-header-new-btn
+                a(href='search-ot.html') Nuevo Tracking
+              .shipment-st-header-caption
+                .caption-separate
+                include _parts/_ot-status
+                div(ng-if="totalErrors!=1")
+                  | Resultados de búsqueda de
+                  b  8 órdenes de transporte
+
+
+            .ot-results(ng-if="totalErrors!=1")
+
+              //---------------OT Internacional (entregada)-----------
+              .ot-results-header(ng-click="getOtContent(7555899832,'simple', 'delivered','international')")
+                .ot-results-header-date-and-type
+                  .date 12
+                    span ene
+                  span.otType.icon.icon-document
+                .ot-results-header-info
+                  .identification
+                    span.label Nº OT:
+                    span.desc 7555899832
+                  .status.delivered
+                    span.label ESTADO
+                    span.desc Pieza entregada
+                .ot-results-header-caret
+                  span.head-caret.icon.icon-chevron-right
+
+              //---------------OT Simple (en Transito)-----------
+              .ot-results-header(ng-click="getOtContent(7555899111,'simple', 'transit')")
+                .ot-results-header-date-and-type
+                  .date 23
+                    span mar
+                  span.otType.icon.icon-lidded-box
+                .ot-results-header-info
+                  .identification
+                    span.label Nº OT: 7555899111
+                    span.desc Guantes Boxeo tailandes traido en avión
+                  .status.transit  
+                    span.label ESTADO
+                    span.desc Pieza en tránsito
+                .ot-results-header-caret
+                  span.head-caret.icon.icon-chevron-right 
+                  
+              //---------------OT Simple (entregada)-----------
+              .ot-results-header(ng-click="getOtContent(3333444222,'simple', 'delivered')")
+                .ot-results-header-date-and-type
+                  .date 24
+                    span mar
+                  span.otType.icon.icon-document
+                .ot-results-header-info
+                  .identification
+                    span.label Nº OT: 
+                    span.desc 3333444222
+                  .status.delivered  
+                    span.label ESTADO
+                    span.desc Pieza entregada
+                .ot-results-header-caret
+                  span.head-caret.icon.icon-chevron-right 
+                  
+              //---------------OT Simple (recepcionada)-----------
+              .ot-results-header(ng-click="getOtContent(9995552333,'simple', 'received')")
+                .ot-results-header-date-and-type
+                  .date 25
+                    span mar
+                  span.otType.icon.icon-lidded-box
+                .ot-results-header-info
+                  .identification
+                    span.label Nº OT: 9995552333
+                    span.desc Guantes Boxeo tailandes traido en avión
+                  .status.received  
+                    span.label ESTADO
+                    span.desc Pieza recepcionada
+                .ot-results-header-caret
+                  span.head-caret.icon.icon-chevron-right 
+                  
+              //---------------OT Simple (retenida)-----------
+              .ot-results-header(ng-click="getOtContent(7777553444,'simple', 'transit')")
+                .ot-results-header-date-and-type
+                  .date 25
+                    span mar
+                  span.otType.icon.icon-lidded-box
+                .ot-results-header-info
+                  .identification
+                    span.label Nº OT: 7777553444
+                    span.desc Mochila Gopro Finder color black EE.UU.
+                  .status.transit  
+                    span.label ESTADO
+                    span.desc Pieza en tránsito
+                .ot-results-header-caret
+                  span.head-caret.icon.icon-chevron-right    
+                
+              //----------OT Simple (retenida en primer paso intermedio)-----------
+              .ot-results-header(ng-click="getOtContent(8884449555,'simple', 'kept-between-steps-1')")  
+                .ot-results-header-date-and-type
+                  .date 25
+                    span mar
+                  span.otType.icon.icon-lidded-box
+                .ot-results-header-info
+                  .identification
+                    span.label Nº OT: 8884449555
+                    span.desc Nintendo 3DS XL
+                  .status.kept  
+                    span.label ESTADO
+                    span.desc Pieza retenida
+                .ot-results-header-caret
+                  span.head-caret.icon.icon-chevron-right                                     
+
+              //----------OT Simple (retenida en segundo paso intermedio)-----------
+              .ot-results-header(ng-click="getOtContent(2221100666,'simple', 'kept-between-steps-2')")    
+                .ot-results-header-date-and-type
+                  .date 25
+                    span mar
+                  span.otType.icon.icon-lidded-box
+                .ot-results-header-info
+                  .identification
+                    span.label Nº OT: 2221100666
+                    span.desc Consola Playstation 4 Slim 1TB 
+                  .status.kept  
+                    span.label ESTADO
+                    span.desc Pieza retenida
+                .ot-results-header-caret
+                  span.head-caret.icon.icon-chevron-right                                     
+
+              
+              //---------------OT Padre-----------    
+              .ot-results-header(ng-click="getOtContent(992233777,'parent')")  
+                .ot-results-header-date-and-type
+                  .date 26 
+                    span mar
+                  span.otType.icon.icon-pallet
+                .ot-results-header-info
+                  .identification
+                    span.label Nº OT: 992233777 - OT PADRE (750 HIJAS) 
+                    span.desc Insumos para Puerto Natales de segunda 1
+                .ot-results-header-caret
+                  span.head-caret.icon.icon-chevron-right 
+              
+              //---------------OT Padre-----------    
+              .ot-results-header(ng-click="getOtContent(555333888,'parent')")  
+                .ot-results-header-date-and-type
+                  .date 27 
+                    span mar
+                  span.otType.icon.icon-pallet
+                .ot-results-header-info
+                  .identification
+                    span.label Nº OT: 555333888 - OT PADRE (750 HIJAS) 
+                    span.desc Insumos para Punta Arenas de segunda 2 
+                .ot-results-header-caret
+                  span.head-caret.icon.icon-chevron-right
+
+
+        .col-md-3.col-sm-4
+          .sidebar-type
+            include _parts/_sidebar/_news
+            include _parts/_sidebar/_tips-tracking
+            .seeMore
+              a.blueLink Ver más
+
+    include _parts/_columns-news
+
+
+  //- Aqui va el footer
+  include _parts/_footer

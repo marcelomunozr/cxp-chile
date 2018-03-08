@@ -1,0 +1,52 @@
+extends _layouts/_inicio
+
+block variables
+  - var isBranchOfficeSearch = true
+
+block content
+  include _parts/_modals
+  include _parts/_header
+
+  .page-content.page-branch-office-search
+    .container.main-container
+      .text-center
+        h1 Sucursales
+      .page-type
+        p Contamos con
+          strong  más de 360 sucursales
+          |  a lo largo del país, las que trabajan de manera coordinada con nuestros Centros de Reparto y de Distribución, lo que nos permite entregar un servicio acorde con las necesidades de nuestros usuarios.
+        h3.page-title Encuentra una sucursal
+        .form-component
+          .form-group.geolocate
+            label(for="servicio") Dirección, ciudad o región
+            .flex-zone
+              input#searchInput.cxp-input(name='searchInput',placeholder='Ingresa una dirección, ciudad o región', type='text')
+              button.icon-current-location.show-all-offices( type='button')
+            small.small EJEMPLO: PEDRO DE VALDIVIA, PROVIDENCIA
+          .form-group
+            label(for="servicio") Sucursales
+            select#servicio.custom-select.type-office-select(name="servicio", placeholder="Selecciona un tipo de sucursal")
+            small.small EJEMPLO: OFICINAS PUDO`S
+          button.c-button.c-button--secondary.show-all-offices.is-disabled(type="button", disabled="disabled") Buscar
+
+
+    .section-filter#sectionFilter
+      .filter-office.event-none
+        span.icon.icon-filter
+        | FILTRAR POR:
+      .filter-area
+      .clear-filter.link.disabled Borrar filtros
+
+    .section-map
+      include _parts/_filter-office
+
+      .search-box-map
+        .body-search
+          h3.page-title Resultados
+          span.info-results MOSTRANDO 18 RESULTADOS:
+          h6.title-results SUCURSALES CERCANAS
+          #searchResults.results-locations-container
+      #map
+
+
+  include _parts/_footer

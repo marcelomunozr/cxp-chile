@@ -1,0 +1,39 @@
+#carousel-cxp.carousel.slide.hidden-xs(data-ride='carousel')
+  // Indicators
+  .container
+    ol.carousel-indicators
+      li.active(data-slide-to='0', data-target='#carousel-cxp')
+      li(data-slide-to='1', data-target='#carousel-cxp')
+      li(data-slide-to='2', data-target='#carousel-cxp')
+  // Wrapper for slides
+  .carousel-inner(role='listbox')
+    .item.active
+      .fill(style="background-image:url('assets/img/01_home_portada.jpg');")
+      .carousel-caption
+        h2
+          | Orden de transporte digital
+          strong (OTD)
+        h4
+          | Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum
+    .item
+      .fill(style="background-image:url('assets/img/01_home_portada.jpg');")
+      .carousel-caption
+        h2
+          | Orden de transporte digital
+          strong (OTD)
+        h4
+          | Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.
+    .item
+      .fill(style="background-image:url('assets/img/01_home_portada.jpg');")
+      .carousel-caption
+        h2
+          | Orden de transporte digital
+          strong (OTD)
+        h4
+          | Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bi.
+    a.left.carousel-control(data-slide='prev', data-target='#carousel-cxp', role='button')
+      span.glyphicon.glyphicon-menu-left(aria-hidden='true')
+      span.sr-only Previous
+    a.right.carousel-control(data-slide='next', data-target='#carousel-cxp', role='button')
+      span.glyphicon.glyphicon-menu-right(aria-hidden='true')
+      span.sr-only Next

@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9177a162-54c2-44da-8fb3-9a9937954bd2" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="chilexpress-cl" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="_head.pug" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/_parts/_head.pug">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="52" lean-forward="false" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_nav-mobile.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/scss/modules/_nav-mobile.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="16425">
+              <caret line="1095" column="18" lean-forward="false" selection-start-line="1095" selection-start-column="18" selection-end-line="1095" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_branch-oficce.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/scss/modules/_branch-oficce.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="16245">
+              <caret line="1083" column="21" lean-forward="false" selection-start-line="1083" selection-start-column="21" selection-end-line="1083" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_shipment-status.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/scss/modules/_shipment-status.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10785">
+              <caret line="719" column="48" lean-forward="false" selection-start-line="719" selection-start-column="48" selection-end-line="719" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_variables.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/scss/_variables.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="39" column="18" lean-forward="false" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_login-register.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/assets/scss/modules/_login-register.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="52" lean-forward="false" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_c-buttons.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/assets/scss/components/_c-buttons.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="153" column="25" lean-forward="false" selection-start-line="153" selection-start-column="24" selection-end-line="153" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>$gray-hover</find>
+      <find>#f2f2f2</find>
+      <find>EDECED</find>
+      <find>$disabled</find>
+      <find>#EDECED</find>
+      <find>#fcf8e3</find>
+      <find>$warning-msg</find>
+      <find>$cxp-btn</find>
+      <find>#FFAE3B</find>
+      <find>$cxp-btn-presed</find>
+      <find>#CE8E00</find>
+      <find>$select-profiles</find>
+      <find>#EDE9E5</find>
+      <find>de6c59</find>
+      <find>#DE6C59</find>
+      <find>#efefef</find>
+      <find>#81bd60</find>
+      <find>004976</find>
+      <find>#00b2b2</find>
+      <find>676767</find>
+      <find>$error-msg</find>
+      <find>#FFF8E8</find>
+      <find>font-size: 16px</find>
+      <find>#slidemenu</find>
+      <find>#</find>
+      <find>D12E12</find>
+      <find>4483e5</find>
+      <find>place</find>
+      <find>placeholder</find>
+      <find>838383</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/branch-office-single.pug" />
+        <option value="$PROJECT_DIR$/build/index.html" />
+        <option value="$PROJECT_DIR$/src/contact.pug" />
+        <option value="$PROJECT_DIR$/build/assets/js/cxp-validations.js" />
+        <option value="$PROJECT_DIR$/src/assets/js/cxp-validations.js" />
+        <option value="$PROJECT_DIR$/src/notifications.pug" />
+        <option value="$PROJECT_DIR$/src/assets/scss/modules/_slide.scss" />
+        <option value="$PROJECT_DIR$/src/_parts/_search_results/_search-form.pug" />
+        <option value="$PROJECT_DIR$/src/branch-office-search.pug" />
+        <option value="$PROJECT_DIR$/src/logged.pug" />
+        <option value="$PROJECT_DIR$/src/recovery-password.pug" />
+        <option value="$PROJECT_DIR$/src/forgot-password.pug" />
+        <option value="$PROJECT_DIR$/src/register.pug" />
+        <option value="$PROJECT_DIR$/src/assets/scss/modules/_services.scss" />
+        <option value="$PROJECT_DIR$/src/assets/scss/components/_c-checkbox.scss" />
+        <option value="$PROJECT_DIR$/src/assets/scss/_checkbox.scss" />
+        <option value="$PROJECT_DIR$/src/assets/js/load-maps.js" />
+        <option value="$PROJECT_DIR$/src/_parts/_toolbox/_send-valise.pug" />
+        <option value="$PROJECT_DIR$/src/login.pug" />
+        <option value="$PROJECT_DIR$/src/assets/scss/modules/_contact.scss" />
+        <option value="$PROJECT_DIR$/src/shipment-status.pug" />
+        <option value="$PROJECT_DIR$/src/_parts/_ot-content-slider.pug" />
+        <option value="$PROJECT_DIR$/src/assets/scss/components/c-alerts.scss" />
+        <option value="$PROJECT_DIR$/src/assets/scss/modules/_modules.scss" />
+        <option value="$PROJECT_DIR$/src/assets/scss/components/_c-modal.scss" />
+        <option value="$PROJECT_DIR$/src/_parts/_header.pug" />
+        <option value="$PROJECT_DIR$/src/assets/scss/_icon-cxp.scss" />
+        <option value="$PROJECT_DIR$/src/assets/js/app.js" />
+        <option value="$PROJECT_DIR$/src/assets/js/scripts.js" />
+        <option value="$PROJECT_DIR$/src/_parts/_tool-box-business.pug" />
+        <option value="$PROJECT_DIR$/src/_parts/_tool-box-entrepreneurs.pug" />
+        <option value="$PROJECT_DIR$/src/_parts/_tool-box-person.pug" />
+        <option value="$PROJECT_DIR$/src/_parts/_tool-box-ecommerce.pug" />
+        <option value="$PROJECT_DIR$/src/assets/scss/components/_c-forms.scss" />
+        <option value="$PROJECT_DIR$/src/assets/scss/modules/_footer.scss" />
+        <option value="$PROJECT_DIR$/src/assets/scss/components/_c-breadcrums.scss" />
+        <option value="$PROJECT_DIR$/src/assets/scss/modules/_header.scss" />
+        <option value="$PROJECT_DIR$/src/assets/scss/modules/_toolbox.scss" />
+        <option value="$PROJECT_DIR$/src/assets/scss/modules/_shipment-status.scss" />
+        <option value="$PROJECT_DIR$/src/assets/scss/modules/_notifications.scss" />
+        <option value="$PROJECT_DIR$/src/assets/scss/modules/_search.scss" />
+        <option value="$PROJECT_DIR$/src/assets/scss/modules/_sidebar.scss" />
+        <option value="$PROJECT_DIR$/src/assets/scss/components/c-information-footer.scss" />
+        <option value="$PROJECT_DIR$/src/assets/scss/main.scss" />
+        <option value="$PROJECT_DIR$/src/assets/scss/_variables.scss" />
+        <option value="$PROJECT_DIR$/src/assets/scss/components/_c-buttons.scss" />
+        <option value="$PROJECT_DIR$/src/_parts/_head.pug" />
+        <option value="$PROJECT_DIR$/src/assets/scss/modules/_map.scss" />
+        <option value="$PROJECT_DIR$/src/assets/scss/modules/_login-register.scss" />
+        <option value="$PROJECT_DIR$/src/assets/scss/modules/_nav-mobile.scss" />
+        <option value="$PROJECT_DIR$/src/assets/scss/modules/_branch-oficce.scss" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <gulpfiles>
+      <GulpfileState>
+        <gulpfile-path>$PROJECT_DIR$/gulpfile.js</gulpfile-path>
+      </GulpfileState>
+    </gulpfiles>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="22" />
+    <option name="width" value="1280" />
+    <option name="height" value="774" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>AngularJS</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="chilexpress-cl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chilexpress-cl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chilexpress-cl" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chilexpress-cl" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="SearchEverywhereHistoryKey" value="c-bu&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/components/_c-buttons.scss&#10;var&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/_variables.scss&#10;bran&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_branch-oficce.scss&#10;na&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_nav-mobile.scss&#10;login&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_login-register.scss&#10;ship&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_shipment-status.scss&#10;map&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_map.scss&#10;head&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/_parts/_head.pug&#10;mix&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/_mixins.scss&#10;lo&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_login-register.scss&#10;branc&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_branch-oficce.scss&#10;main&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/main.scss&#10;c-in&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/components/c-information-footer.scss&#10;side&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_sidebar.scss&#10;sear&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_search.scss&#10;noti&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_notifications.scss&#10;tool&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_toolbox.scss&#10;c-b&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/components/_c-buttons.scss&#10;bread&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/components/_c-breadcrums.scss&#10;header&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/_parts/_header.pug&#10;varia&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/_variables.scss&#10;branch&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_branch-oficce.scss&#10;c-for&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/components/_c-forms.scss&#10;toolbox&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/_parts/_tool-box-ecommerce.pug&#10;app&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/js/app.js&#10;scripts&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/js/scripts.js&#10;nav&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_nav-mobile.scss&#10;heade&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_header.scss&#10;conta&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_contact.scss&#10;sea&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_search.scss&#10;scri&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/js/scripts.js&#10;toolbo&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_toolbox.scss&#10;c-modal&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/components/_c-modal.scss&#10;modal&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/_parts/_modals.pug&#10;aler&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/components/c-alerts.scss&#10;modules&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_modules.scss&#10;news&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/_parts/_columns-news.pug&#10;slid&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/_parts/_ot-content-slider.pug&#10;shipm&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_shipment-status.scss&#10;notifica&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_notifications.scss&#10;c-form&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/components/_c-forms.scss&#10;contac&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_contact.scss&#10;map.s&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_map.scss&#10;MAPS&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/js/load-maps.js&#10;contact&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_contact.scss&#10;inde&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/index.pug&#10;ap&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/js/app.js&#10;script&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/js/scripts.js&#10;mobi&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/assets/scss/modules/_nav-mobile.scss&#10;send&#9;FILE&#9;file:///Users/2brains/Documents/Marcelo Munoz/chilexpress-cl/src/_parts/_toolbox/_send-valise.pug" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/js" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/img" />
+      <recent name="$PROJECT_DIR$/src/assets/img/svg" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9177a162-54c2-44da-8fb3-9a9937954bd2" name="Default" comment="" />
+      <created>1517497397039</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1517497397039</updated>
+      <workItem from="1517497402158" duration="1035000" />
+      <workItem from="1517498801657" duration="657000" />
+      <workItem from="1517500632427" duration="2000" />
+      <workItem from="1517501994463" duration="162000" />
+      <workItem from="1517502206824" duration="6000" />
+      <workItem from="1517502336617" duration="5647000" />
+      <workItem from="1517514828907" duration="103776000" />
+      <workItem from="1518441713063" duration="8724000" />
+      <workItem from="1518462292554" duration="861000" />
+      <workItem from="1518463606403" duration="6595000" />
+      <workItem from="1518537363402" duration="9417000" />
+      <workItem from="1518612974216" duration="76688000" />
+      <workItem from="1519219267108" duration="18563000" />
+      <workItem from="1519304890795" duration="9396000" />
+      <workItem from="1519325128369" duration="774000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="242303000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="22" width="1280" height="774" extended-state="0" />
+    <layout>
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25019857" sideWeight="0.49122807" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842416" sideWeight="0.5059571" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33993903" sideWeight="0.4940429" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25019857" sideWeight="0.50877196" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842416" sideWeight="0.5059571" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33993903" sideWeight="0.4940429" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25019857" sideWeight="0.49122807" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25019857" sideWeight="0.50877196" order="3" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/forgot-password.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="20" column="14" lean-forward="false" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/recovery-password.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="20" column="54" lean-forward="false" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/register.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1560">
+          <caret line="104" column="26" lean-forward="false" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_parts/services.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/modules/_services.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="230" column="5" lean-forward="false" selection-start-line="230" selection-start-column="5" selection-end-line="230" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/_checkbox.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2145">
+          <caret line="143" column="5" lean-forward="false" selection-start-line="143" selection-start-column="5" selection-end-line="143" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="55" column="20" lean-forward="false" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/components/_c-checkbox.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_parts/_toolbox/_send-valise.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="13" lean-forward="false" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/login.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="56" column="10" lean-forward="false" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/js/load-maps.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="491" column="27" lean-forward="false" selection-start-line="491" selection-start-column="27" selection-end-line="491" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_parts/_sidebar/_news.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_parts/_columns-news.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="45" lean-forward="false" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/components/c-alerts.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="89" column="12" lean-forward="false" selection-start-line="89" selection-start-column="12" selection-end-line="89" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/modules/_modules.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="814">
+          <caret line="773" column="11" lean-forward="false" selection-start-line="773" selection-start-column="11" selection-end-line="773" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shipment-status.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2059">
+          <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_parts/_modals.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="68" lean-forward="false" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/components/_c-modal.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="47" column="32" lean-forward="false" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_parts/_ot-content-slider.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="150" column="29" lean-forward="true" selection-start-line="150" selection-start-column="29" selection-end-line="150" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/modules/_contact.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/fonts/chilexpress-2.0.1/chilexpress.css" />
+    <entry file="file://$PROJECT_DIR$/src/assets/fonts/chilexpress-2.0.2/chilexpress.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/_icon-cxp.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="46" column="39" lean-forward="false" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="130" column="21" lean-forward="false" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/js/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10770">
+          <caret line="718" column="0" lean-forward="false" selection-start-line="718" selection-start-column="0" selection-end-line="718" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_parts/_tool-box-business.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_parts/_tool-box-entrepreneurs.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_parts/_tool-box-person.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_parts/_tool-box-ecommerce.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="33" column="80" lean-forward="false" selection-start-line="33" selection-start-column="80" selection-end-line="33" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_parts/_header.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="60" column="41" lean-forward="false" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/components/_c-forms.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="263" column="29" lean-forward="false" selection-start-line="263" selection-start-column="29" selection-end-line="263" selection-end-column="29" />
+          <folding>
+            <marker date="1519247353000" expanded="true" signature="645:709" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/modules/_footer.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="185" column="31" lean-forward="false" selection-start-line="185" selection-start-column="31" selection-end-line="185" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/components/_c-breadcrums.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/_selectize.default.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="18" column="15" lean-forward="false" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/modules/_header.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4040">
+          <caret line="1896" column="61" lean-forward="false" selection-start-line="1896" selection-start-column="61" selection-end-line="1896" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/modules/_toolbox.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="867" column="11" lean-forward="false" selection-start-line="867" selection-start-column="11" selection-end-line="867" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/modules/_notifications.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="481" column="22" lean-forward="false" selection-start-line="481" selection-start-column="22" selection-end-line="481" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/modules/_search.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="133" column="24" lean-forward="false" selection-start-line="133" selection-start-column="24" selection-end-line="133" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/components/c-information-footer.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="70" column="29" lean-forward="false" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="191" column="6" lean-forward="false" selection-start-line="191" selection-start-column="6" selection-end-line="191" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/_mixins.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="23" column="18" lean-forward="true" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/modules/_sidebar.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="48" column="26" lean-forward="false" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/modules/_login-register.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="52" lean-forward="false" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/modules/_shipment-status.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10785">
+          <caret line="719" column="48" lean-forward="false" selection-start-line="719" selection-start-column="48" selection-end-line="719" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/modules/_map.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-395">
+          <caret line="694" column="20" lean-forward="false" selection-start-line="694" selection-start-column="20" selection-end-line="694" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_parts/_head.pug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="52" lean-forward="false" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/modules/_nav-mobile.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16425">
+          <caret line="1095" column="18" lean-forward="false" selection-start-line="1095" selection-start-column="18" selection-end-line="1095" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/modules/_branch-oficce.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16245">
+          <caret line="1083" column="21" lean-forward="false" selection-start-line="1083" selection-start-column="21" selection-end-line="1083" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="18" lean-forward="false" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/components/_c-buttons.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="153" column="25" lean-forward="false" selection-start-line="153" selection-start-column="24" selection-end-line="153" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

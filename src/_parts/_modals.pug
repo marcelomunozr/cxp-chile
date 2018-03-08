@@ -1,0 +1,259 @@
+//- Modal Onload
+#ModalOnload.modal.fade(tabindex='-1', role='dialog', aria-labelledby='ModalOnloadTitle', ng-if="warning")
+    .modal-dialog.modal--height-medium(role='document')
+      .modal-content
+        .modal-header
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span.icon.icon-close(aria-hidden='true')
+            //- span(aria-hidden='true') ×
+          h4#ModalOnloadTitle.modal-title Información sobre nuestros servicios
+
+        .modal-body.text-center
+          .flex-zone
+            .flex-image
+              img.img-warning(src="assets/img/svg/warning-rounded.svg", alt="Warning")
+            .flex-content
+              p.text-left
+                | Informamos que debido a problemas climáticos,
+                strong  los vuelos que salían hoy viernes 21 de abril
+                |  hacia la ciudad de Antofagasta fueron suspendidos. Con motivo de esto, sus envíos realizados a ese destino sufrirán retrasos en la entrega.
+              p.text-left
+                | Agradecemos revise el estado de sus envíos www.chilexpress.cl utilizando su número de OT (Orden de transporte )
+
+              p.text-left Atte
+              p.text-left
+                strong Chilexpress
+        .modal-footer
+          //- a.c-button.c-button--secondary.btn-block(href, data-dismiss='modal') Aceptar
+          button.c-button.c-button--secondary.btn-block.back-to-top(type='submit', data-dismiss='modal') Aceptar
+
+//- Modal Que es una orden de transporte
+#ModalOt.modal.modal-ot.modal--with-image.modal--color.fade(tabindex='-1', role='dialog', aria-labelledby='ModalOtTitle')
+    .modal-dialog.modal--height-medium(role='document')
+        .modal-content
+            .modal-header
+                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span.icon.icon-close(aria-hidden='true')
+                    //- span(aria-hidden='true') ×
+                h4#ModalOtTitle.modal-title ¿Qué es una Orden de transporte (OT)?
+                .modal-bg-image
+
+            .modal-body
+                p.modal-text.text-left La Orden de Transporte (OT) es un código único de 10 a 12 dígitos que identifica a cada pieza enviada a través de Chilexpress. Puedes encontrarlo en la parte superior del Comprobante de envío y sirve para conocer el estado y los movimientos de tu pieza.
+                p.modal-text.text-center
+                    | ¿Tienes alguna duda?&nbsp;
+                    a.link(href="javascript:;") Lee nuestro blog
+            .modal-footer
+                button.c-button.c-button--secondary.btn-block(type='button', data-dismiss='modal') Continuar
+
+//- Modal Que es una  orden de transporte
+#ModalOtMultiple.modal.modal-ot--multiple.modal--with-image.modal--color.fade(tabindex='-1', role='dialog', aria-labelledby='ModalOtMultipleTitle')
+    .modal-dialog.modal--height-medium(role='document')
+        .modal-content
+            .modal-header
+                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span.icon.icon-close(aria-hidden='true')
+                    //- span(aria-hidden='true') ×
+                h4#ModalOtMultipleTitle.modal-title ¿Tienes más de una orden de transporte?
+                .modal-bg-image
+
+            .modal-body
+                .Media.Media--center
+                    figure.Media-figure
+                        span.icon.icon-circle-check
+                    .Media-body
+                        p
+                            | Puedes ingresar&nbsp;
+                            strong hasta 10 órdenes de transporte a la vez.
+                .Media.Media--center.last
+                    figure.Media-figure
+                        span.icon.icon-circle-check
+                    .Media-body
+                        p
+                            | Ingresa las OTs separadas por una&nbsp;
+                            strong coma o espacio.
+
+            .modal-footer
+                button.c-button.c-button--secondary.btn-block(type='button', data-dismiss='modal') Continuar
+
+//- Modal Register
+#ModalRegister.modal.fade.text-center.modal-register(tabindex='-1', role='dialog', aria-labelledby='ModalRegisterTitle')
+    .modal-dialog.modal--height-medium(role='document')
+        .modal-content
+            .modal-header
+                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span.icon.icon-close(aria-hidden='true')
+                    //- span(aria-hidden='true') ×
+                h4#ModalRegisterTitle.modal-title ¿Ya eres parte de Chilexpress? Regístrate
+            .modal-body
+                img.img-warning.img-md(src="assets/img/svg/register-icon.svg", alt="Register")
+                .Media.Media--center
+                    figure.Media-figure
+                        span.icon.icon-circle-check
+                    .Media-body
+                        p Haz seguimiento personalizado de tus envíos.
+                .Media.Media--center
+                    figure.Media-figure
+                        span.icon.icon-circle-check
+                    .Media-body
+                        p
+                            | Guarda direcciones frecuentes y&nbsp;
+                            strong ahorra tiempo.
+                .Media.Media--center
+                    figure.Media-figure
+                        span.icon.icon-circle-check
+                    .Media-body
+                        p
+                            strong Repite envíos&nbsp;
+                            |  que hayas realizado en el pasado, fácilmente.
+            .modal-footer
+                .modal-footer-flex-buttons
+                    a.btn.c-button.c-button--secondary.btn-block.o-mb-xs.modal-login-brn(href="login.html") Ingresar
+                    a.btn.c-button.c-button--secondary.btn-block.o-mb-xs(href="register.html") Regístrate
+                a.link.o-mt-xs.flat-link(href="javascript:;", data-dismiss='modal') Continuar, sin registrarme
+                //- button.c-button.c-button--phantom.btn-block.o-mb-s(type='submit', data-dismiss='modal') Continuar, sin registrarme
+
+if isShipmentStatus || isBranchOfficeSingle
+  //- Modal Shared OT in Tracking
+  #modalSharedTracking.modal.fade.text-center.modal-register(tabindex='-1', role='dialog', aria-labelledby='modalSharedTrackingTitle')
+    .modal-dialog.modal--height-medium.modal-shared-tracking(role='document')
+      .modal-content
+        .modal-header
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span.icon.icon-close(aria-hidden='true')
+          h4#modalSharedTrackingTitle.modal-title
+            span.icon.icon-share
+            if isBranchOfficeSingle
+              | Compartir sucursal
+            else
+              | Compartir estado del envío
+        .modal-body
+          if isShipmentStatus
+            .number-order
+              .legend Nº ORDEN DE TRANSPORTE
+              .legend--number 645435642
+          .social-share
+            a.social-link(href="#")
+              span.icon.icon-circle-facebook
+              span.desc Compartir por Facebook
+            a.social-link(href="#")
+              span.icon.icon-envelope
+              span.desc Compartir por email
+        .modal-footer
+          label.label-share Copiar link
+          form
+            .search-element
+              if isShipmentStatus
+                textarea.copy-input.search-box#inputCopy(name='copy', readonly) https://chilexpress.cl/tracking/645435642
+              else
+                textarea.copy-input.search-box#inputCopy(name='copy', readonly) https://chilexpress.cl/sucursal/382919292
+              button.button-element.copy-url(data-clipboard-target="#inputCopy") Copiar
+              span.icon-single-check
+
+if isShipmentStatus
+  //- Modal evalua nuestro servicio
+  #ModalEvalService.modal.modal-ot.fade(tabindex='-1', role='dialog', aria-labelledby='ModalEvalService')
+    .modal-dialog.modal--height-medium(role='document')
+      .modal-content
+        .modal-header
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span.icon.icon-close(aria-hidden='true')
+              //- span(aria-hidden='true') ×
+          h4#ModalOtTitle.modal-title.text-left Evalúa nuestro servicio
+          .modal-bg-image
+
+        .modal-body(ng-show="!serviceHasBeenEvaluated")
+          p.modal-text.text-left Queremos saber cómo fue tu experiencia con nuestro servicio. Esto nos ayuda a mejorar día a día y responder a tus necesidades.
+          h2.subtitle1 Número de orden de transporte: {{ot.number}}
+          h3.subtitle2.role ¿Cuál fue tu rol en el envío?
+          .twoOptions 
+            .radio
+              input#shipmentRole1(checked='checked', name='shipmentRole', type='radio', value='sender')
+              label(for='shipmentRole1') Fui el remitente del envío
+              span (Yo hice el envío)
+
+            .radio
+              input#shipmentRole2(checked='checked', name='shipmentRole', type='radio', value='receiver')
+              label(for='shipmentRole2') Fui el destinatario del envío
+              span (Yo recibí el envío)
+                      
+          h3.subtitle3.text-center ¿Cómo fue tu experiencia con el servicio entregado por Chilexpress?
+          .expressions
+            a(ng-click="evaluateOurService(1)", ng-class="{'active':getEvaluationOfOurService()==1}") 
+              span.icon.icon-anger
+              span.title-exp ¡MUY MALA!
+            a(ng-click="evaluateOurService(2)", ng-class="{'active':getEvaluationOfOurService()==2}")    
+              span.icon.icon-sad
+              span.title-exp ¡MALA!
+            a(ng-click="evaluateOurService(3)", ng-class="{'active':getEvaluationOfOurService()==3}")    
+              span.icon.icon-regular
+              span.title-exp ¡REGULAR!
+            a(ng-click="evaluateOurService(4)", ng-class="{'active':getEvaluationOfOurService()==4}")    
+              span.icon.icon-happy
+              span.title-exp ¡BUENA!
+            a(ng-click="evaluateOurService(5)", ng-class="{'active':getEvaluationOfOurService()==5}")    
+              span.icon.icon-happier
+              span.title-exp ¡MUY BUENA!
+              
+        .modal-body(ng-show="serviceHasBeenEvaluated") 
+          .component_alert.positive(ng-if="ot.status=='delivered'")
+            .icon
+              span.success.icon.icon-single-check
+            .msg
+              .msgWrapper
+                h3 ¡Gracias por compartir tu experiencia!
+                p Esta información nos ayuda a mejorar nuestro servicio.
+                  
+        .modal-footer(ng-show="!serviceHasBeenEvaluated")
+          button.c-button.c-button--secondary.btn-block(type='button', ng-click="successEvalService()", ng-disabled="evalService==undefined") Enviar
+            
+
+  //- Modal comprobante entrega
+  #ModalDeliveryCertificate.modal.modal-ot.fade(tabindex='-1', role='dialog', aria-labelledby='ModalDeliveryCertificate')
+    .modal-dialog.modal--height-medium(role='document')
+      .modal-content
+        .modal-header
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span.icon.icon-close(aria-hidden='true')
+              //- span(aria-hidden='true') ×
+          h4#ModalOtTitle.modal-title.text-left Comprobante de entrega
+          .modal-bg-image
+
+        .modal-body
+          .image-container
+            img.img-responsive(src='assets/img/signature_demo.jpg')
+        
+        .modal-footer
+          button.btn-block(type='button', data-dismiss='modal')
+            span.icon-download
+            | Descargar comprobante
+
+  //- Modal guardar OT
+  #ModalSaveOT.modal.modal-ot.fade(tabindex='-1', role='dialog', aria-labelledby='ModalSaveOT')
+    .modal-dialog.modal--height-medium.modal-shared-tracking(role='document')
+      .modal-content
+        .modal-header
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span.icon.icon-close(aria-hidden='true')
+          h4#modalSharedTrackingTitle.modal-title
+            span.icon.icon-document-check
+            | Guardar orden de transporte
+        .modal-body
+          p
+            | Puedes guardar esta orden de transporte y revisar el estado de tu envío cada vez que quieras desde la sección “Mis envíos”.
+          .number-order
+            .legend Nº ORDEN DE TRANSPORTE
+            .legend--number {{ot.number}}
+          .otCustomName
+            //TODO agregar los componentes internos
+            p.title Crear un nombre para identificar este envío
+            .form-group
+              label(for='customName') NOMBRE PERSONALIZADO
+              input#customName.cxp-input(type='text', name='customName', placeholder='Ejemplo: Batería Iphone')
+            
+            p.disclaimer INGRESA UN NOMBRE PERSONALIZADO PARA IDENTIFICAR TU ENVÍO, POR EJEMPLO: “REPUESTO BATERIA” (MÁX. 40 CARACTERES)
+          .alert
+            span.icon.icon-circle-alert
+            p Recuerda que puedes acceder al tracking de un envío hasta 3 meses después de finalizada la entrega. Luego de este tiempo el número de orden de transporte (OT) dejará de existir.  
+        .modal-footer
+          button.c-button.c-button--secondary.btn-block(type='button', data-dismiss='modal') Guardar

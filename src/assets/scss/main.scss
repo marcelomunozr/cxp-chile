@@ -1,0 +1,216 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "reset";
+@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
+@import "variables";
+@import "grid-custom";
+// @import "font-awesome";
+@import "icon-cxp";
+@import "mixins";
+@import "fonts";
+// @import "animates-scss/animate";
+@import "breakpoints";
+@import "base";
+@import "helpers";
+@import "selectize.default";
+@import "components/c-checkbox";
+@import "components/c-buttons";
+@import "components/c-forms";
+@import "components/c-modal";
+@import "components/c-alerts";
+@import "components/c-media-object";
+@import "components/c-containers";
+@import "components/c-breadcrums";
+@import "components/c-paginator";
+@import "components/c-information-footer";
+@import "modules/header";
+@import "modules/nav-mobile";
+@import "modules/slide";
+@import "modules/toolbox";
+@import "modules/timeline";
+@import "modules/services";
+@import "modules/footer";
+@import "modules/modules";
+@import "modules/map";
+@import "modules/hacks";
+@import "modules/login-register";
+@import "modules/contact";
+@import "modules/shipment-status";
+@import "modules/boxes-container";
+@import "modules/notifications";
+@import "modules/sidebar";
+@import "modules/search";
+@import "modules/search-ot";
+@import "modules/tracking-status";
+@import "modules/branch-oficce";
+
+html{
+  height: 100%;
+  overflow: inherit;
+
+  &.disabled{
+    //overflow: hidden;
+  }
+}
+body{
+  height: 100%;
+  overflow: auto;
+  position: relative;
+
+  *{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  &.disabled{
+    overflow: hidden;
+  }
+}
+
+// PRUEBA
+.nav-tab-main,
+.nav-tab-submain {
+  margin-bottom: -1px;
+  padding: 0;
+  width: 100%;
+  .navbar-default {
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+}
+
+#submenu {
+  background-color: $gallery;
+  margin-bottom: 20px;
+}
+
+// HOME
+// Input components
+.input-group {
+  position: relative;
+  width: 100%;
+}
+
+.input-group-btn .btn {
+  background-color: #4A4A4A;
+  border: 2px solid #FFFFFF;
+  border-radius: 100px !important;
+  color: #FFFFFF;
+  min-height: 40px;
+  padding: 8px 16px;
+  width: 100px;
+}
+
+// Radio Buttons
+.radio-button {
+  float: left;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]+label {
+  color: $mine-shaft;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+}
+
+input[type="radio"]+label span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: -2px 5px 0 0;
+  vertical-align: middle;
+  background: url('../img/radio-buttons.png') -32px top no-repeat;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked+label span {
+  background: url('../img/radio-buttons.png') -2px top no-repeat;
+}
+
+.container .jumbotron,
+.container-fluid .jumbotron {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.relative {
+  position: relative;
+}
+
+.main-container{
+  margin-top: 16px;
+  margin-bottom: 0;
+
+  h1{
+    font-family: $font-family-main;
+    font-size: 32px;
+    line-height: 32px;
+    margin-top: 8px;
+    margin-bottom: 24px;
+    color: $mine-shaft;
+  }
+}
+
+.page-type {
+  background: $white;
+  padding: 16px 10px;
+  position: relative;
+  display: block;
+  margin-bottom: 16px;
+  height: 100%;
+
+  @media (min-width: $xs-device){
+    padding: 16px;
+  }
+
+  @media (min-width: $md-device) {
+    padding: 16px 24px;
+  }
+}
+
+.form-group{
+  &.number{
+    input[type=number]{
+      -webkit-appearance: textfield;
+      -moz-appearance:    textfield;
+      appearance:         textfield;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+      }
+    }
+  }
+}
+
+.page-type .page-title{
+  font-family: "UniSansSemiBoldRegular",sans-serif;
+  font-size: 22px;
+  line-height: 100%;
+  color: $mine-shaft;
+  margin-top: 0;
+  margin-bottom: 21px;
+
+  @media (min-width: $tablet-size-port){
+    //margin-bottom: 24px;
+  }
+}
+
+.row-flex{
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+
+  @include media-mobile{
+    display: block;
+  }
+}
+
+.no-event{
+  pointer-events: none;
+}

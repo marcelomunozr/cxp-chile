@@ -1,0 +1,112 @@
+.ot-status{
+  @include transition-property(opacity, visibility);
+  @include transition-timing-function(ease-out);
+  @include transition-duration(200ms);
+  opacity: 1;
+  visibility: visible;
+  margin-top: -8px;
+  margin-bottom: 16px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 8px;
+
+  &.ot-invalid{
+    background: $cinderella;
+  }
+
+  &.ot-expired{
+    background: $egg-sour;
+  }
+
+  &.hide-status{
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .status-head{
+    @include flexbox();
+    @include align-items(center);
+    padding: 0 8px 5px;
+    border-bottom: 1px solid $alto;
+
+    .icon{
+      width: 20px;
+      height: 20px;
+      font-size: 20px;
+      margin-right: 16px;
+
+      align-self: baseline;
+      margin-top: 2px;
+    }
+
+    .status-desc{
+      @include flex-grow(1);
+      font-family: $font-family-sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      color: $mine-shaft;
+
+      .error-ot-list{
+        font-weight: 700;
+        font-style: normal;
+
+        @media(max-width: $sm-device ){
+          padding: 8px 0;
+        }
+
+        @media(min-width: $sm-device + 1) and (max-width: $md-device){
+          padding: 4px 0;
+        }
+
+      }
+    }
+
+    .icon-close{
+      @include align-self(flex-start);
+      color: $mine-shaft;
+      font-size: 14px;
+      width: 16px;
+      height: 16px;
+      margin-left: 16px;
+      margin-top: 2px;
+      cursor: pointer;
+      margin-right: -4px;
+    }
+  }
+
+  .status-foot{
+    padding: 8px 8px 0 8px;
+
+    @media(min-width: $tablet-size-land){
+      @include flexbox();
+      @include align-items(center);
+    }
+
+    .txt{
+      font-family: $font-family-sans-serif;
+      font-size: 14px;
+      line-height: 16px;
+      font-style: italic;
+      color: $gray;
+      padding-left: 8px;
+
+      @media(min-width: $tablet-size-land){
+        padding-left: 0;
+      }
+
+      @media(max-width: $sm-device){
+        padding-left: 0;
+      }
+
+      .sug{
+        display: inline;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-style: normal;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="16px" viewBox="0 0 18 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-toolbox</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icn-toolbox" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.000000, -1.000000)">
+        <path d="M2,15 L2,11 L5,11 C5,11.552 5.447,12 6,12 C6.553,12 7,11.552 7,11 L11,11 C11,11.552 11.447,12 12,12 C12.553,12 13,11.552 13,11 L16,11 L16,15 L2,15 Z M2,7.851 L3.48,6 L14.52,6 L16,7.851 L16,9 L13,9 C13,8.448 12.553,8 12,8 C11.447,8 11,8.448 11,9 L7,9 C7,8.448 6.553,8 6,8 C5.447,8 5,8.448 5,9 L2,9 L2,7.851 Z M8,3 L10,3 C10.552,3 11,3.449 11,4 L7,4 C7,3.449 7.448,3 8,3 Z M17.781,6.875 L15.781,4.375 C15.591,4.138 15.304,4 15,4 L13,4 C13,2.346 11.654,1 10,1 L8,1 C6.346,1 5,2.346 5,4 L3,4 C2.696,4 2.409,4.138 2.219,4.375 L0.219,6.875 C0.077,7.053 0,7.273 0,7.5 L0,16 C0,16.552 0.447,17 1,17 L17,17 C17.553,17 18,16.552 18,16 L18,7.5 C18,7.273 17.923,7.053 17.781,6.875 Z" id="icon-toolbox" fill="#FFFFFF"></path>
+    </g>
+</svg>

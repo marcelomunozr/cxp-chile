@@ -1,0 +1,223 @@
+.alert .close {
+  opacity: 1;
+  color: $mine-shaft;
+  position: relative;
+  right: 0;
+  top: 0;
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+  &.close--md {
+    display: none;
+    @include media-breakpoint-up(md) {
+      display: inline-block;
+      float: left;
+      position: initial;
+      margin-left: 24px;
+      margin-top: 16px;
+    }
+    .site-header & {
+      margin-top: 0;
+    }
+  }
+}
+
+.alert.alert-warning {
+  border: none;
+  border-radius: 0;
+  color: $mine-shaft;
+  margin-bottom: 0;
+  padding: 24px 24px 40px 24px;
+
+  @include media-breakpoint-up(md) {
+    padding: 24px 16px 16px 16px;
+  }
+  @include media-breakpoint-up(lg) {
+    padding: 24px 16px 16px 16px;
+  }
+  .container {
+    @include media-breakpoint-up(md) {
+      // max-height: 80px;
+      // width: 100%;
+    }
+  }
+  .text-message {
+    float: none;
+    position: relative;
+    display: flex;
+    .itm {}
+  }
+  .alert-title {
+    display: block;
+    font-size: 14px;
+    line-height: 1.43;
+    text-align: left;
+    text-transform: uppercase;
+    @include media-breakpoint-up(md) {
+      // display: inline-block;
+      // float: left;
+      display: block;
+      // height: 38px;
+      &:after {
+        content: "|";
+        margin: 0 10px;
+        display: none;
+      }
+    }
+  }
+  .alert-text {
+    font-size: 14px;
+    text-align: left;
+    display: block;
+    line-height: 1.36;
+    @include media-breakpoint-up(md) {
+      margin: 8px 0;
+    }
+  }
+  .itm{
+    @include flex-grow(1);
+    width: 1px;
+  }
+  .icon-circle-info {
+    font-size: 24px;
+    margin-right: 16px;
+    top: 32px;
+    left: 36px;
+    display: block;
+
+    @include media-breakpoint-up(md) {
+      display: inline-block;
+      position: relative;
+      line-height: initial;
+      top: 3px;
+      left: 0;
+    }
+  }
+  .link {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    @include media-breakpoint-up(md) {
+      display: inline-block;
+      left: 0;
+    }
+  }
+}
+
+.is-contact .alert-warning {
+  background: #FFF8E8;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(40, 40, 40, 0.1);
+  padding: 24px 24px 24px 86px;
+  position: relative;
+
+  @media (max-width: $md-device){
+    padding: 24px;
+  }
+
+  .check-register {
+    width: 40px;
+    height: 40px;
+    background: url(../img/check-register.svg) no-repeat;
+    background-size: contain;
+    display: inline-block;
+    margin: 0 0 0;
+    position: absolute;
+    left: 32px;
+
+    @media (max-width: $md-device){
+      position: relative;
+      margin: 0 auto 16px;
+      display: block;
+      left: 0;
+    }
+
+  }
+  h4 {
+    font-family: $font-family-main;
+    line-height: 21px;
+    strong {
+      font-family: $font-family-US-SemiBold;
+    }
+    span.book{
+      font-family: $font-family-main;
+
+      @media (max-width: $md-device){
+        margin-top: 16px;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+
+
+.component_alert.positive, .component_alert.negative{
+  padding: 24px;
+  background: #FFF8E8;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+
+  @include media-breakpoint-down(sm) {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .icon{
+    width: 10%;
+    text-align: center;
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      margin-bottom: 8px;
+      height: auto;
+    }
+
+    span {
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(center);
+      color:#FFF;
+      border-radius: 100%;
+      width: 24px;
+      height: 24px;
+      text-align: center;
+      margin: 0 auto;
+
+      @media(max-width: $md-device){
+        width:40px;
+        height: 40px;
+        font-size: 24px;
+      }
+    }
+    .error{
+      background-color: $thunderbird;
+    }
+    .success{
+      background-color: #81BD60;
+    }
+  }
+  .msg{
+    width: 90%;
+
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+
+    h3{
+      font-family: $font-family-main;
+      font-size: 18px;
+      color: #373737;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    p{
+      &:last-of-type{
+        margin-bottom: 0;
+      }
+    }
+  }
+}

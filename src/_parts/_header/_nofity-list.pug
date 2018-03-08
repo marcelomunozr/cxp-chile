@@ -1,0 +1,16 @@
+ul.user-menu-notify-list(ng-if="userNotifications>0")
+  li.user-menu-notify-item
+    a(href="javascript:;")
+      .user-menu-notify-title guantes de boxeo tailandés Nº OT: 7756341110
+      .user-menu-notify-status Pieza en tránsito al destino Centro de distribución Santiago.
+  li.user-menu-notify-item
+    a(href="javascript:;")
+      .user-menu-notify-title Mac Book Pro. Nº OT: 7756341110
+      .user-menu-notify-status.success Disponible en oficina para retiro
+  li.user-menu-notify-item
+    a(href="javascript:;")
+      .user-menu-notify-title guantes de boxeo tailandés Nº OT: 7756341110
+      .user-menu-notify-status Pieza en tránsito al destino Centro de distribución Santiago.
+.user-menu-no-notify(ng-if="userNotifications==0") No hay nuevas notificaciones
+.text-center
+  a(href='notifications.html').user-menu-notify-more-btn Ver todas las notificaciones

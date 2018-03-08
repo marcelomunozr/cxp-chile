@@ -1,0 +1,90 @@
+.text-right(ng-switch="pages")
+  ul.cxp-paginator(ng-switch-default)
+    li.arrow-control.left-control.disabled
+      a(href="javascript:void(0)")
+        span.icon-chevron-left
+    li.active
+      a(href="javascript:void(0)") 1
+    li
+      a(href="javascript:void(0)") 2
+    li
+      a(href="javascript:void(0)") 3
+    li
+      a(href="javascript:void(0)") 4
+    li
+      a(href="javascript:void(0)") 5
+    li.open-pagination
+      span.points ...
+      .select-pages
+        span.corner
+        .input-content
+          input(value="1", type="number", min="1", max="100")
+        button.link(type="button") IR
+    li
+      a(href="javascript:void(0)") 100
+    li.arrow-control.right-control
+      a(href="javascript:void(0)")
+        span.icon-chevron-right
+
+  ul.cxp-paginator(ng-switch-when="3")
+    li.arrow-control.left-control.disabled
+      a(href="javascript:void(0)")
+        span.icon-chevron-left
+    li.active
+      a(href="javascript:void(0)") 1
+    li
+      a(href="javascript:void(0)") 2
+    li
+      a(href="javascript:void(0)") 3
+    li.arrow-control.right-control
+      a(href="javascript:void(0)")
+        span.icon-chevron-right
+
+  ul.cxp-paginator(ng-switch-when="7")
+    li.arrow-control.left-control.disabled
+      a(href="javascript:void(0)")
+        span.icon-chevron-left
+    li.active
+      a(href="javascript:void(0)") 1
+    li
+      a(href="javascript:void(0)") 2
+    li
+      a(href="javascript:void(0)") 3
+    li
+      a(href="javascript:void(0)") 4
+    li
+      a(href="javascript:void(0)") 5
+    li
+      a(href="javascript:void(0)") 6
+    li
+      a(href="javascript:void(0)") 7
+    li.arrow-control.right-control
+      a(href="javascript:void(0)")
+        span.icon-chevron-right
+
+  ul.cxp-paginator(ng-switch-when="8")
+    li.arrow-control.left-control.disabled
+      a(href="javascript:void(0)")
+        span.icon-chevron-left
+    li.active
+      a(href="javascript:void(0)") 1
+    li
+      a(href="javascript:void(0)") 2
+    li
+      a(href="javascript:void(0)") 3
+    li
+      a(href="javascript:void(0)") 4
+    li
+      a(href="javascript:void(0)") 5
+    li.open-pagination
+      span.points ...
+      .select-pages
+        span.corner
+        .input-content
+          input(value="1", type="number", min="1", max="8")
+        button.link(type="button") IR
+    li
+      a(href="javascript:void(0)") 8
+    li.arrow-control.right-control
+      a(href="javascript:void(0)")
+        span.icon-chevron-right

@@ -1,0 +1,12 @@
+extends _layouts/_inicio
+
+block variables
+  - var pageTitle = "Bienvenido"
+  - var pageDesc = "Chilexpress, empresa de Courier Nacional e Internacional, encomiendas y envíos."
+  - var pageKeywords = "Chilexpress"
+  - var isHome = true
+
+block content
+  include _parts/_modals
+  include _parts/_header
+  div(ng-include='homeProfile();', onload="homeProfileLoad()")

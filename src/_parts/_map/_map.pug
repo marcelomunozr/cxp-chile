@@ -1,0 +1,25 @@
+//- coment
+.section-map
+  .container
+    .text-center
+      h2
+        img(src='assets/img/icon-map.svg')
+        | Conoce nuestras sucursales
+      h4
+        | Busca tu sucursal más cercana y encuentra los productos Chilexpress que necesitas.
+  .panel-map
+    .container-relative
+      .search-box-map
+        .head-search
+          p Ingresa una dirección, lugar de referencia o geolocalízate.
+          .form-group
+            input#searchInput.form-control(name='searchInput',placeholder='Dirección o lugar de referencia', type='text')
+            label#searchInput-error.error(for='searchInput') Ingresa una sucursal o dirección para hacer una búsqueda
+            button.icon-current-location#geoLocate( type='button')
+          small.small EJEMPLO: PEDRO DE VALDIVIA, PROVIDENCIA
+          .text-center
+            a.link(href='branch-office-search.html') Ver más surcursales
+        .body-search
+          h6.title-results SUCURSALES CERCANAS
+          #searchResults.results-locations-container
+  #map

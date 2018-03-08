@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="Chilexpress">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="description">
+    <meta name="keywords" content="undefined, encomiendas, envíos, nacional, internacional, courier">
+    <meta name="author" content="2Brains">
+    <meta name="format-detection" content="telephone=no">
+    <meta property="fb:app_id" content="122320888099099">
+    <meta property="og:url" content="http://www.chilexpress.com">
+    <meta property="og:title" content="Chilexpress">
+    <meta property="og:image" content="assets/img/logo.png">
+    <meta property="og:description" content="Chilexpress, empresa de Courier Nacional e Internacional, encomiendas y envíos.">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link href="assets/css/main.css?v=1.0.28" rel="stylesheet">
+    <title>Chilexpress, empresa de Courier Nacional e Internacional, encomiendas y envíos.</title>
+    <script src="assets/js/clipboard.min.js?v=1.0.28"></script>
+    <script src="assets/js/angular.js"></script>
+    <script src="assets/js/angular-route.js"></script>
+    <script src="assets/js/angular-sanitize.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <!--script(src= pathRoot + 'js/jquery-ui.min.js')-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.validate.js"></script>
+    <script src="assets/js/jquery.Rut.min.js"></script>
+    <script src="assets/js/bowser.js"></script>
+    <script src="assets/js/app.js?v=1.0.28"></script>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyAh05o_q3rKroDzoJkCRH_6nEl6Z0zFcU8&amp;libraries=places" type="text/javascript"></script>
+    <script src="assets/js/shipment-status.js?v=1.0.28"></script>
+    <script src="assets/js/selectize.js"></script>
+    <script src="assets/js/cxp-validations.js?v=1.0.28"></script>
+    <script src="assets/js/scripts.js?v=1.0.28"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+  </head>
+  <body>
+    <div class="fullheight fondo-inicio" data-role="page">
+      <div class="modal fade" id="ModalOnload" tabindex="-1" role="dialog" aria-labelledby="ModalOnloadTitle" ng-if="warning">
+        <div class="modal-dialog modal--height-medium" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="icon icon-close" aria-hidden="true"></span></button>
+              <h4 class="modal-title" id="ModalOnloadTitle">Información sobre nuestros servicios</h4>
+            </div>
+            <div class="modal-body text-center">
+              <div class="flex-zone">
+                <div class="flex-image"><img class="img-warning" src="assets/img/svg/warning-rounded.svg" alt="Warning"></div>
+                <div class="flex-content">
+                  <p class="text-left">Informamos que debido a problemas climáticos,<strong> los vuelos que salían hoy viernes 21 de abril</strong> hacia la ciudad de Antofagasta fueron suspendidos. Con motivo de esto, sus envíos realizados a ese destino sufrirán retrasos en la entrega.</p>
+                  <p class="text-left">Agradecemos revise el estado de sus envíos www.chilexpress.cl utilizando su número de OT (Orden de transporte )</p>
+                  <p class="text-left">Atte</p>
+                  <p class="text-left"><strong>Chilexpress</strong></p>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="c-button c-button--secondary btn-block back-to-top" type="submit" data-dismiss="modal">Aceptar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal modal-ot modal--with-image modal--color fade" id="ModalOt" tabindex="-1" role="dialog" aria-labelledby="ModalOtTitle">
+        <div class="modal-dialog modal--height-medium" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="icon icon-close" aria-hidden="true"></span></button>
+              <h4 class="modal-title" id="ModalOtTitle">¿Qué es una Orden de transporte (OT)?</h4>
+              <div class="modal-bg-image"></div>
+            </div>
+            <div class="modal-body">
+              <p class="modal-text text-left">La Orden de Transporte (OT) es un código único de 10 a 12 dígitos que identifica a cada pieza enviada a través de Chilexpress. Puedes encontrarlo en la parte superior del Comprobante de envío y sirve para conocer el estado y los movimientos de tu pieza.</p>
+              <p class="modal-text text-center">¿Tienes alguna duda?&nbsp;<a class="link" href="javascript:;">Lee nuestro blog</a></p>
+            </div>
+            <div class="modal-footer">
+              <button class="c-button c-button--secondary btn-block" type="button" data-dismiss="modal">Continuar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal modal-ot--multiple modal--with-image modal--color fade" id="ModalOtMultiple" tabindex="-1" role="dialog" aria-labelledby="ModalOtMultipleTitle">
+        <div class="modal-dialog modal--height-medium" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="icon icon-close" aria-hidden="true"></span></button>
+              <h4 class="modal-title" id="ModalOtMultipleTitle">¿Tienes más de una orden de transporte?</h4>
+              <div class="modal-bg-image"></div>
+            </div>
+            <div class="modal-body">
+              <div class="Media Media--center">
+                <figure class="Media-figure"><span class="icon icon-circle-check"></span></figure>
+                <div class="Media-body">
+                  <p>Puedes ingresar&nbsp;<strong>hasta 10 órdenes de transporte a la vez.</strong></p>
+                </div>
+              </div>
+              <div class="Media Media--center last">
+                <figure class="Media-figure"><span class="icon icon-circle-check"></span></figure>
+                <div class="Media-body">
+                  <p>Ingresa las OTs separadas por una&nbsp;<strong>coma o espacio.</strong></p>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="c-button c-button--secondary btn-block" type="button" data-dismiss="modal">Continuar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade text-center modal-register" id="ModalRegister" tabindex="-1" role="dialog" aria-labelledby="ModalRegisterTitle">
+        <div class="modal-dialog modal--height-medium" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="icon icon-close" aria-hidden="true"></span></button>
+              <h4 class="modal-title" id="ModalRegisterTitle">¿Ya eres parte de Chilexpress? Regístrate</h4>
+            </div>
+            <div class="modal-body"><img class="img-warning img-md" src="assets/img/svg/register-icon.svg" alt="Register">
+              <div class="Media Media--center">
+                <figure class="Media-figure"><span class="icon icon-circle-check"></span></figure>
+                <div class="Media-body">
+                  <p>Haz seguimiento personalizado de tus envíos.</p>
+                </div>
+              </div>
+              <div class="Media Media--center">
+                <figure class="Media-figure"><span class="icon icon-circle-check"></span></figure>
+                <div class="Media-body">
+                  <p>Guarda direcciones frecuentes y&nbsp;<strong>ahorra tiempo.</strong></p>
+                </div>
+              </div>
+              <div class="Media Media--center">
+                <figure class="Media-figure"><span class="icon icon-circle-check"></span></figure>
+                <div class="Media-body">
+                  <p><strong>Repite envíos&nbsp;</strong> que hayas realizado en el pasado, fácilmente.</p>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <div class="modal-footer-flex-buttons"><a class="btn c-button c-button--secondary btn-block o-mb-xs modal-login-brn" href="login.html">Ingresar</a><a class="btn c-button c-button--secondary btn-block o-mb-xs" href="register.html">Regístrate</a></div><a class="link o-mt-xs flat-link" href="javascript:;" data-dismiss="modal">Continuar, sin registrarme</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade text-center modal-register" id="modalSharedTracking" tabindex="-1" role="dialog" aria-labelledby="modalSharedTrackingTitle">
+        <div class="modal-dialog modal--height-medium modal-shared-tracking" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="icon icon-close" aria-hidden="true"></span></button>
+              <h4 class="modal-title" id="modalSharedTrackingTitle"><span class="icon icon-share"></span>Compartir estado del envío
+              </h4>
+            </div>
+            <div class="modal-body">
+              <div class="number-order">
+                <div class="legend">Nº ORDEN DE TRANSPORTE</div>
+                <div class="legend--number">645435642</div>
+              </div>
+              <div class="social-share"><a class="social-link" href="#"><span class="icon icon-circle-facebook"></span><span class="desc">Compartir por Facebook</span></a><a class="social-link" href="#"><span class="icon icon-envelope"></span><span class="desc">Compartir por email</span></a></div>
+            </div>
+            <div class="modal-footer">
+              <label class="label-share">Copiar link</label>
+              <form>
+                <div class="search-element">
+                  <textarea class="copy-input search-box" id="inputCopy" name="copy" readonly>https://chilexpress.cl/tracking/645435642</textarea>
+                  <button class="button-element copy-url" data-clipboard-target="#inputCopy">Copiar</button><span class="icon-single-check"></span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal modal-ot fade" id="ModalEvalService" tabindex="-1" role="dialog" aria-labelledby="ModalEvalService">
+        <div class="modal-dialog modal--height-medium" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="icon icon-close" aria-hidden="true"></span></button>
+              <h4 class="modal-title text-left" id="ModalOtTitle">Evalúa nuestro servicio</h4>
+              <div class="modal-bg-image"></div>
+            </div>
+            <div class="modal-body" ng-show="!serviceHasBeenEvaluated">
+              <p class="modal-text text-left">Queremos saber cómo fue tu experiencia con nuestro servicio. Esto nos ayuda a mejorar día a día y responder a tus necesidades.</p>
+              <h2 class="subtitle1">Número de orden de transporte: {{ot.number}}</h2>
+              <h3 class="subtitle2 role">¿Cuál fue tu rol en el envío?</h3>
+              <div class="twoOptions"> 
+                <div class="radio">
+                  <input id="shipmentRole1" checked="checked" name="shipmentRole" type="radio" value="sender">
+                  <label for="shipmentRole1">Fui el remitente del envío</label><span>(Yo hice el envío)</span>
+                </div>
+                <div class="radio">
+                  <input id="shipmentRole2" checked="checked" name="shipmentRole" type="radio" value="receiver">
+                  <label for="shipmentRole2">Fui el destinatario del envío</label><span>(Yo recibí el envío)</span>
+                </div>
+              </div>
+              <h3 class="subtitle3 text-center">¿Cómo fue tu experiencia con el servicio entregado por Chilexpress?</h3>
+              <div class="expressions"><a ng-click="evaluateOurService(1)" ng-class="{'active':getEvaluationOfOurService()==1}"> <span class="icon icon-anger"></span><span class="title-exp">¡MUY MALA!</span></a><a ng-click="evaluateOurService(2)" ng-class="{'active':getEvaluationOfOurService()==2}">   <span class="icon icon-sad"></span><span class="title-exp">¡MALA!</span></a><a ng-click="evaluateOurService(3)" ng-class="{'active':getEvaluationOfOurService()==3}">   <span class="icon icon-regular"></span><span class="title-exp">¡REGULAR!</span></a><a ng-click="evaluateOurService(4)" ng-class="{'active':getEvaluationOfOurService()==4}">   <span class="icon icon-happy"></span><span class="title-exp">¡BUENA!</span></a><a ng-click="evaluateOurService(5)" ng-class="{'active':getEvaluationOfOurService()==5}">   <span class="icon icon-happier"></span><span class="title-exp">¡MUY BUENA!</span></a></div>
+            </div>
+            <div class="modal-body" ng-show="serviceHasBeenEvaluated"> 
+              <div class="component_alert positive" ng-if="ot.status=='delivered'">
+                <div class="icon"><span class="success icon icon-single-check"></span></div>
+                <div class="msg">
+                  <div class="msgWrapper">
+                    <h3>¡Gracias por compartir tu experiencia!</h3>
+                    <p>Esta información nos ayuda a mejorar nuestro servicio.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer" ng-show="!serviceHasBeenEvaluated">
+              <button class="c-button c-button--secondary btn-block" type="button" ng-click="successEvalService()" ng-disabled="evalService==undefined">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal modal-ot fade" id="ModalDeliveryCertificate" tabindex="-1" role="dialog" aria-labelledby="ModalDeliveryCertificate">
+        <div class="modal-dialog modal--height-medium" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="icon icon-close" aria-hidden="true"></span></button>
+              <h4 class="modal-title text-left" id="ModalOtTitle">Comprobante de entrega</h4>
+              <div class="modal-bg-image"></div>
+            </div>
+            <div class="modal-body">
+              <div class="image-container"><img class="img-responsive" src="assets/img/signature_demo.jpg"></div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn-block" type="button" data-dismiss="modal"><span class="icon-download"></span> Descargar comprobante</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal modal-ot fade" id="ModalSaveOT" tabindex="-1" role="dialog" aria-labelledby="ModalSaveOT">
+        <div class="modal-dialog modal--height-medium modal-shared-tracking" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span class="icon icon-close" aria-hidden="true"></span></button>
+              <h4 class="modal-title" id="modalSharedTrackingTitle"><span class="icon icon-document-check"></span>Guardar orden de transporte</h4>
+            </div>
+            <div class="modal-body">
+              <p>Puedes guardar esta orden de transporte y revisar el estado de tu envío cada vez que quieras desde la sección “Mis envíos”.</p>
+              <div class="number-order">
+                <div class="legend">Nº ORDEN DE TRANSPORTE</div>
+                <div class="legend--number">{{ot.number}}</div>
+              </div>
+              <div class="otCustomName">
+                <!--TODO agregar los componentes internos-->
+                <p class="title">Crear un nombre para identificar este envío</p>
+                <div class="form-group">
+                  <label for="customName">NOMBRE PERSONALIZADO</label>
+                  <input class="cxp-input" id="customName" type="text" name="customName" placeholder="Ejemplo: Batería Iphone">
+                </div>
+                <p class="disclaimer">INGRESA UN NOMBRE PERSONALIZADO PARA IDENTIFICAR TU ENVÍO, POR EJEMPLO: “REPUESTO BATERIA” (MÁX. 40 CARACTERES)</p>
+              </div>
+              <div class="alert"><span class="icon icon-circle-alert"></span>
+                <p>Recuerda que puedes acceder al tracking de un envío hasta 3 meses después de finalizada la entrega. Luego de este tiempo el número de orden de transporte (OT) dejará de existir.  </p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="c-button c-button--secondary btn-block" type="button" data-dismiss="modal">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="overlay" id="myNav">
+        <div class="pattern"></div><a class="closebtn" href="javascript:void(0)" onclick="closeNav()">×</a>
+        <div class="overlay-content">
+          <div class="search-wrapper">
+            <form class="search-container" id="searchBox" action="search.html" method="post">
+              <input class="search-hidden" type="hidden">
+              <input class="search-box searchtize" id="search-box" name="" placeholder="¿Qué estás buscando?" type="text">
+              <div class="error-search empty"><span class="icon-circle-alert"></span>
+                <p>Debes ingresar al menos una letra&nbsp;<strong>para iniciar la búsqueda</strong></p>
+              </div>
+              <label for="search-box"><span class="icon icon-search search-icon"></span></label>
+              <input class="search-submit" id="search-submit" placeholder="Buscar" type="button" value="Buscar" on>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="site-header site-header--person header-ref" ng-class="{'logged':logged}">
+        <div class="navbar-top navbar-top--fixed" id="slide-nav" role="navigation">
+          <div class="alert alert-warning alert-dismissible o-mb-s header-alert" role="alert" ng-if="warning">
+            <div class="container">
+              <button class="close" type="button" data-dismiss="alert" aria-label="Close"><span class="icon icon-close" aria-hidden="true"></span></button>
+              <div class="text-message"><span class="icon icon-circle-info"></span>
+                <div class="itm"><strong class="alert-title">LOREM IPSUM DOLORes SIT AMET, CONSECTETUR ADIPISCING ELIT. NUNC SIT AMET NIBH SEM. SUSPENDISSE BIBENDUM ARCU A MASSA VIVERRA EUISMOD. CURABITUR INTERDUM MAXIMUS SAPIEN. ALIQUAM ERAT VOLUTPAT.</strong>
+                  <p class="alert-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet nibh sem. Suspendisse bibendum arcu a massa viverra euismod. Curabitur interdum maximus sapien. Aliquam erat volutpat.</p>
+                  <div class="text-left"><a class="link" href="javascript:;">Ver detalle</a></div>
+                </div>
+                <button class="close close--md" type="button" data-dismiss="alert" aria-label="Close"><span class="icon icon-close" aria-hidden="true"></span></button>
+              </div>
+            </div>
+          </div>
+          <div class="header-content">
+            <div class="pattern-nav"></div>
+            <div class="header-menu-top">
+              <div class="container">
+                <div class="navbar-mobile">
+                  <!-- navbar-mobile collapse 768-->
+                  <div class="btn-menu-slide">
+                    <button class="navbar-toggle" id="trigger">
+                      <div class="hamburguer" id="nav-icon-hamburguer"><span></span><span></span><span></span></div>
+                    </button>
+                  </div>
+                  <div class="logo"><a class="logo-link" href="index.html"><span class="logo-image"></span></a></div>
+                  <div class="navbar-controls pull-right">
+                    <button class="c-button c-button--secondary c-button--rounded" id="searchMobileButton" aria-label="Execute search" onclick="openNav()" type="button"><span class="icon icon-search" aria-hidden="true"></span></button><a class="c-button c-button--emphasis c-button--rounded" id="btnLoginMobile" ng-if="!logged"><span class="icon icon-person" aria-hidden="true"></span></a>
+                    <div class="dropdown pull-right user-menu" ng-if="logged">
+                      <!-- atributo avatar-letter contiene la letra del Avatar--><a class="c-button c-button--emphasis c-button--rounded" avatar-letter="J" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"><span class="badge" ng-if="userNotifications&gt;0">{{userNotifications}}</span></a>
+                      <ul class="dropdown-menu options pull-right">
+                        <li class="user-menu-header"><a class="cxp-logo" href="javascript:;"></a><a class="user-menu-close-btn"><i class="icon-close" aria-hidden="true"></i></a></li>
+                        <li class="divider" role="separator"></li>
+                        <li class="user-menu-info">
+                          <div class="pull-right text-left" avatar-letter="J" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" id="dropdownUser"><span>Hola<br><span class="name">Juan Pablo Andrés Schwarzenegger</span></span></div>
+                        </li>
+                        <li class="withNotification"><a href="javascript:;">NOTIFICACIONES<span><span class="badge">{{userNotifications}}</span><i class="icon icon-chevron-right"></i></span></a></li>
+                        <li class="divider" role="separator"></li>
+                        <li><a href="javascript:;">RESUMEN</a></li>
+                        <li><a href="javascript:;">MIS DIRECCIONES</a></li>
+                        <li><a href="javascript:;">MIS ENVÍOS</a></li>
+                        <li><a href="javascript:;">MIS PAGOS</a></li>
+                        <li><a href="javascript:;">MI CUENTA</a></li>
+                        <li class="divider" role="separator"></li>
+                        <li><a href="javascript:;"><span class="menuIcon icon icon-gear"></span>AJUSTES</a></li>
+                        <li><a href="index.html"><span class="menuIcon icon icon-circle-close"></span>CERRAR SESIÓN</a></li>
+                      </ul>
+                      <div class="user-menu-notify">
+                        <div class="user-menu-notify-header"><a class="user-menu-notify-close-btn icon icon-chevron-right"></a>
+                          <h4 class="user-menu-notify-header-title">NOTIFICACIONES</h4>
+                        </div>
+                        <ul class="user-menu-notify-list" ng-if="userNotifications&gt;0">
+                          <li class="user-menu-notify-item"><a href="javascript:;">
+                              <div class="user-menu-notify-title">guantes de boxeo tailandés Nº OT: 7756341110</div>
+                              <div class="user-menu-notify-status">Pieza en tránsito al destino Centro de distribución Santiago.</div></a></li>
+                          <li class="user-menu-notify-item"><a href="javascript:;">
+                              <div class="user-menu-notify-title">Mac Book Pro. Nº OT: 7756341110</div>
+                              <div class="user-menu-notify-status success">Disponible en oficina para retiro</div></a></li>
+                          <li class="user-menu-notify-item"><a href="javascript:;">
+                              <div class="user-menu-notify-title">guantes de boxeo tailandés Nº OT: 7756341110</div>
+                              <div class="user-menu-notify-status">Pieza en tránsito al destino Centro de distribución Santiago.</div></a></li>
+                        </ul>
+                        <div class="user-menu-no-notify" ng-if="userNotifications==0">No hay nuevas notificaciones</div>
+                        <div class="text-center"><a class="user-menu-notify-more-btn" href="notifications.html">Ver todas las notificaciones</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="main-login-wrapp is-hide" id="mainLoginWrappMobile">
+                  <div class="col-xs-6 col-sm-6"><a class="c-button c-button--secondary pull-right" href="login.html">Ingresar</a></div>
+                  <div class="col-xs-6 col-sm-6"><a class="c-button c-button--emphasis pull-left" href="register.html">Registrarse</a></div>
+                  <button class="close close--md" type="button" aria-label="Close"><span class="icon icon-close" aria-hidden="true"></span></button>
+                </div>
+                <!-- Menú mobile que aparece a los 767px de ancho de pantalla-->
+                <div class="header-top" id="slidemenu">
+                  <ul class="nav navbar-nav navbar-left">
+                    <li class="navbar-item"><span class="navbar-link navbar-not-link">Red Chilexpress</span></li>
+                    <li class="navbar-item"><a class="navbar-link with-icon" href="javascript:;"><span class="navbar-left-icon icon icon-document2" aria-hidden="true"></span>Blog</a></li>
+                    <li class="navbar-item"><a class="navbar-link with-icon" href="javascript:;"><span class="navbar-left-icon icon icon-building" aria-hidden="true"></span>Chilexpress Empresas</a></li>
+                    <li class="navbar-item"><a class="navbar-link with-icon" href="javascript:;"><span class="navbar-left-icon icon icon-airplane" aria-hidden="true"></span>ChileBox</a></li>
+                    <li class="navbar-item"><a class="navbar-link with-icon is-last" href="javascript:;"><span class="navbar-left-icon icon icon-cxp" aria-hidden="true"></span>CXP</a></li>
+                  </ul>
+                  <!--aquí empieza el menú mobile-->
+                  <div class="close-nav-mobile">
+                    <button class="close" type="button" data-dismiss="alert" aria-label="Close"><span class="icon icon-close" aria-hidden="true"></span></button>
+                  </div>
+                  <div class="mobile-profile-menu">
+                    <div class="mobile-profile-menu-head"><span class="icon-chevron-left"></span><span class="logo-menu"></span></div>
+                    <div class="mobile-profile-menu-body">
+                      <div class="selector-container"><span class="before-text">ESCOGE TIPO DE CLIENTE</span>
+                        <ul class="select-profile">
+                          <li class="profile-person" ng-class="{'active':currentProfile=='person'}" ng-click="setCurrentProfile('person', true)"><span class="text">Cliente Persona</span><span class="icon-chevron-down"></span></li>
+                          <li class="profile-business" ng-class="{'active':currentProfile=='business'}" ng-click="setCurrentProfile('business', true)"><span class="text">Empresa</span><span class="icon-chevron-down"></span></li>
+                          <li class="profile-entrepreneurs" ng-class="{'active':currentProfile=='entrepreneurs'}" ng-click="setCurrentProfile('entrepreneurs', true)"><span class="text">Emprendedores</span><span class="icon-chevron-down"></span></li>
+                          <li class="profile-ecommerce" ng-class="{'active':currentProfile=='ecommerce'}" ng-click="setCurrentProfile('ecommerce', true)"><span class="text">E-commerce</span><span class="icon-chevron-down"></span></li>
+                        </ul>
+                      </div>
+                      <div class="sub-menu-container">
+                        <!--submenu person-->
+                        <ul class="sub-menu-profile profile-person" ng-class="{'active':currentProfile=='person'}">
+                          <li><a ng-click="setCurrentProfile('person', true)">Home Cliente Persona</a></li>
+                          <li><a href="#">Servicios Nacionales</a></li>
+                          <li><a href="#">Servicios Internacionales</a></li>
+                          <li><a href="#">Embalaje</a></li>
+                          <li><a class="with-son" href="#">Otros Servicios<span class="icon-chevron-right"></span></a>
+                            <ul class="right-sub-menu">
+                              <li>Otros servicios</li>
+                              <li><a href="#">Giros</a></li>
+                              <li><a href="#">Equifax</a></li>
+                              <li><a href="#">Pago de cuentas</a></li>
+                              <li><a href="#">Recargas</a></li>
+                            </ul>
+                          </li>
+                          <li><a href="#">Buenas Prácticas</a></li>
+                        </ul>
+                        <!--submenu business-->
+                        <ul class="sub-menu-profile profile-business" ng-class="{'active':currentProfile=='business'}">
+                          <li><a ng-click="setCurrentProfile('business', true)">Home Empresas</a></li>
+                          <li><a class="with-son" href="#">Envíos<span class="icon-chevron-right"></span></a>
+                            <ul class="right-sub-menu">
+                              <li>Envíos</li>
+                              <li><a href="#">Nacionales</a></li>
+                              <li><a href="#">Internacionales</a></li>
+                              <li><a href="#">Envíos especiales</a></li>
+                              <li><a href="#">Logística y devolución</a></li>
+                            </ul>
+                          </li>
+                          <li><a href="#">Retiros</a></li>
+                          <li><a class="with-son" href="#">Otros servicios<span class="icon-chevron-right"></span></a>
+                            <ul class="right-sub-menu">
+                              <li>Otros servicios</li>
+                              <li><a href="#">Integraciones</a></li>
+                              <li><a href="#">Fullfillment</a></li>
+                              <li><a href="#">Alianzas</a></li>
+                              <li><a href="#">OTD asistida</a></li>
+                            </ul>
+                          </li>
+                          <li><a class="with-son" href="#">Beneficios cuenta CXP<span class="icon-chevron-right"></span></a>
+                            <ul class="right-sub-menu">
+                              <li>Beneficios cuenta CXP</li>
+                              <li><a href="#">Cuenta TCC</a></li>
+                              <li><a href="#">Reportería y estadísticas</a></li>
+                              <li><a href="#">Gestión TCC</a></li>
+                              <li><a href="#">Mi ejecutivo</a></li>
+                            </ul>
+                          </li>
+                          <li><a href="#">Materiales de embalaje</a></li>
+                          <li><a href="#">Buenas prácticas</a></li>
+                        </ul>
+                        <!--submenu entrepreneurs-->
+                        <ul class="sub-menu-profile profile-entrepreneurs" ng-class="{'active':currentProfile=='entrepreneurs'}">
+                          <li><a ng-click="setCurrentProfile('entrepreneurs', true)">Home Emprendedores</a></li>
+                          <li><a class="with-son" href="#">Envíos<span class="icon-chevron-right"></span></a>
+                            <ul class="right-sub-menu">
+                              <li>Envíos</li>
+                              <li><a href="#">Nacionales</a></li>
+                              <li><a href="#">Internacionales</a></li>
+                              <li><a href="#">Envíos especiales</a></li>
+                              <li><a href="#">Logística y devolución</a></li>
+                            </ul>
+                          </li>
+                          <li><a href="#">Retiros</a></li>
+                          <li><a class="with-son" href="#">Otros servicios<span class="icon-chevron-right"></span></a>
+                            <ul class="right-sub-menu">
+                              <li>Otros servicios</li>
+                              <li><a href="#">Integraciones</a></li>
+                              <li><a href="#">Fullfillment</a></li>
+                              <li><a href="#">Alianzas</a></li>
+                              <li><a href="#">OTD asistida</a></li>
+                            </ul>
+                          </li>
+                          <li><a class="with-son" href="#">Beneficios cuenta CXP<span class="icon-chevron-right"></span></a>
+                            <ul class="right-sub-menu">
+                              <li>Beneficios cuenta CXP</li>
+                              <li><a href="#">Cuenta TCC</a></li>
+                              <li><a href="#">Reportería y estadísticas</a></li>
+                              <li><a href="#">Gestión TCC</a></li>
+                              <li><a href="#">Mi ejecutivo</a></li>
+                            </ul>
+                          </li>
+                          <li><a href="#">Materiales de embalaje</a></li>
+                          <li><a href="#">Buenas prácticas</a></li>
+                        </ul>
+                        <!--submenu ecommerce-->
+                        <ul class="sub-menu-profile profile-ecommerce" ng-class="{'active':currentProfile=='ecommerce'}">
+                          <li><a ng-click="setCurrentProfile('ecommerce', true)">Home Ecommerce</a></li>
+                          <li><a class="with-son" href="#">Iníciate como E-commerce<span class="icon-chevron-right"></span></a>
+                            <ul class="right-sub-menu">
+                              <li>Iníciate como E-commerce</li>
+                              <li><a href="#">Envíos</a></li>
+                              <li><a href="#">Retiros</a></li>
+                              <li><a href="#">Tracking</a></li>
+                              <li><a href="#">Gestión del fallo</a></li>
+                            </ul>
+                          </li>
+                          <li><a class="with-son" href="#">Optimiza tus ventas<span class="icon-chevron-right"></span></a>
+                            <ul class="right-sub-menu">
+                              <li>Optimiza tus ventas</li>
+                              <li><a href="#">Fullfillment</a></li>
+                              <li><a href="#">Entregas programadas</a></li>
+                              <li><a href="#">Big ticket</a></li>
+                              <li><a href="#">Logística y devolución</a></li>
+                              <li><a href="#">PUDO</a></li>
+                              <li><a href="#">Integraciones</a></li>
+                            </ul>
+                          </li>
+                          <li><a class="with-son" href="#">Beneficios cuenta CXP<span class="icon-chevron-right"></span></a>
+                            <ul class="right-sub-menu">
+                              <li>Beneficios cuenta CXP</li>
+                              <li><a href="#">Cuenta TCC</a></li>
+                              <li><a href="#">Reportería y estadísticas</a></li>
+                              <li><a href="#">Gestión TCC</a></li>
+                              <li><a href="#">Mi ejecutivo</a></li>
+                            </ul>
+                          </li>
+                          <li><a href="#">Consejos para E-commerce</a></li>
+                          <li><a href="#">Buenas prácticas</a></li>
+                        </ul>
+                      </div>
+                      <div class="sub-menu-container">
+                        <ul class="sub-menu-assistant active">
+                          <li><a class="with-son" href="#"><span class="icon-toolbox icon-section"></span>Herramientas<span class="icon-chevron-right"></span></a>
+                            <ul class="right-sub-menu">
+                              <li>Herramientas</li>
+                              <li><a href="#">Herramientas Personas</a></li>
+                              <li><a href="#">Herramientas Empresas</a></li>
+                              <li><a href="#">Herramientas Emprendedores</a></li>
+                              <li><a href="#">Herramientas E-commerce</a></li>
+                            </ul>
+                          </li>
+                          <li><a href="branch-office-search.html"><span class="icon-map icon-section"></span>Sucursales</a></li>
+                          <li><a class="with-son" href="#"><span class="icon-dotted-dialog icon-section"></span>Servicio al cliente<span class="icon-chevron-right"></span></a>
+                            <ul class="right-sub-menu">
+                              <li>Servicio al cliente</li>
+                              <li><a href="#">Preguntas frecuentes</a></li>
+                              <li><a href="search-ot.html">Revisa estado de envío</a></li>
+                              <li><a href="branch-office-search.html">Sucursales</a></li>
+                              <li><a href="#">Realiza un envío</a></li>
+                              <li><a href="#">Normas de transporte</a></li>
+                              <li><a href="#">Guía de servicios</a></li>
+                              <li><a href="#">Términos y condiciones</a></li>
+                              <li><a href="contact.html">Contáctanos</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!--finaliza menu mobile-->
+                  <ul class="nav navbar-nav nav-mobile hide">
+                    <li class="last with-child">
+                      <div class="btn-group service-cli"><a class="dropdown-toggle" href="#"><span class="icon icon-toolbox"></span><span class="txt">Herramientas</span></a>
+                        <ul class="dropdown-menu">
+                          <li><a class="menu-back" href="javascript:;"><span class="class logo-menu"></span></a></li>
+                          <li><span class="title-child">Herramientas</span></li>
+                          <li><a href="javascript:;">Herramientas Persona</a></li>
+                          <li><a href="search-ot.html">Herramientas Empresa</a></li>
+                          <li><a href="branch-office-search.html">Herramientas E-commerce</a></li>
+                          <li><a href="branch-office-search.html">Herramientas Emprendedores</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="last">
+                      <div class="btn-group"><a href="branch-office-search.html"><span class="icon icon-map" aria-hidden="true"></span><span class="txt">Sucursales</span></a></div>
+                    </li>
+                    <li class="last with-child">
+                      <div class="btn-group service-cli"><a class="dropdown-toggle" href="javascript:;"><span class="icon icon-dotted-dialog" aria-hidden="true"></span><span class="txt">Servicio al cliente</span></a>
+                        <ul class="dropdown-menu">
+                          <li><a class="menu-back" href="javascript:;"><span class="class logo-menu"></span></a></li>
+                          <li><span class="title-child">Servicio al cliente</span></li>
+                          <li><a href="javascript:;">Preguntas frecuentes</a></li>
+                          <li><a href="search-ot.html">Revisa estado de envío</a></li>
+                          <li><a href="branch-office-search.html">Sucursales</a></li>
+                          <li><a href="javascript:;">Realiza un envío</a></li>
+                          <li><a href="javascript:;">Normas de transporte</a></li>
+                          <li><a href="javascript:;">Guía de servicios</a></li>
+                          <li><a href="javascript:;">Términos y condiciones</a></li>
+                          <li><a href="contact.html">Contáctanos</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                  <!-- menu desktop-->
+                  <ul class="nav navbar-nav navbar-right">
+                    <li class="navbar-item navbar-item-left">
+                      <div class="dropdown">
+                        <button class="navbar-right-link" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button"><span class="icon icon-toolbox"></span>Herramientas</button>
+                        <ul class="dropdown-menu tools">
+                          <li><a href="javascript:;">Herramientas Cliente Persona<span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a></li>
+                          <li><a href="search-ot.html">Herramientas Empresa<span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a></li>
+                          <li><a href="javascript:;">Herramientas E-commerce<span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a></li>
+                          <li><a href="javascript:;">Herramientas Emprendedores<span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="navbar-item navbar-item-left"><a class="navbar-right-link" href="branch-office-search.html"><span class="icon icon-map" aria-hidden="true"></span>              Sucursales</a></li>
+                    <li class="navbar-item navbar-item-right">
+                      <div class="dropdown">
+                        <button class="navbar-right-link service-client" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button"><span class="icon icon-dotted-dialog" aria-hidden="true"></span>                Servicio al cliente<span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="javascript:;">Preguntas frecuentes<span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a></li>
+                          <li><a href="search-ot.html">Revisa estado de envío<span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a></li>
+                          <li><a href="branch-office-search.html">Sucursales<span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a></li>
+                          <li><a href="javascript:;">Realiza un envío<span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a></li>
+                          <li><a href="javascript:;">Normas de transporte<span class="glyphicon glyphicon-menu-right pull-right"></span></a></li>
+                          <li><a href="javascript:;">Guía de servicios<span class="glyphicon glyphicon-menu-right pull-right"></span></a></li>
+                          <li><a href="javascript:;">Términos y condiciones<span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a></li>
+                          <li><a href="contact.html">Contáctanos<span class="glyphicon glyphicon-menu-right pull-right" aria-hidden="true"></span></a></li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- menu desktop superior 991-->
+            <div class="nav-menu">
+              <div class="pattern-nav hidden-md-down"></div>
+              <div class="container relative hidden-sm-down">
+                <div class="row">
+                  <div id="mainMenuWrapp">
+                    <div class="col-sm-2 col-md-2">
+                      <div class="logo"><a class="logo-link" href="index.html"><span class="logo-image"></span></a></div>
+                      <div class="logo pull-left"></div>
+                    </div>
+                    <!-- col-md-2-->
+                    <div class="col-sm-7 col-md-6 principal-menu">
+                      <!-- Nav tabs-->
+                      <div class="nav-main">
+                        <ul class="nav nav-tabs nav-main-tabs" role="tablist">
+                          <li class="main-tab-item active" role="presentation"><a class="main-tab-link" id="personTab" aria-controls="home" data-toggle="tab" data-target="#personTabPane" role="tab" ng-click="setCurrentProfile('person', false)">Cliente Persona</a></li>
+                          <li class="main-tab-item" role="presentation"><a class="main-tab-link" id="businessTab" aria-controls="profile" data-toggle="tab" data-target="#businessTabPane" role="tab" ng-click="setCurrentProfile('business', false)">Empresa</a></li>
+                          <li class="main-tab-item" role="presentation"><a class="main-tab-link" id="entrepreneursTab" aria-controls="messages" data-toggle="tab" data-target="#entrepreneursTabPane" role="tab" ng-click="setCurrentProfile('entrepreneurs', false)">Emprendedores</a></li>
+                          <li class="main-tab-item" role="presentation"><a class="main-tab-link" id="ecommerceTab" aria-controls="ecommerce" data-toggle="tab" data-target="#ecommerceTabPane" role="tab" ng-click="setCurrentProfile('ecommerce', false)">E commerce</a></li>
+                        </ul>
+                        <div class="active-marker active-triangle-person"></div>
+                      </div>
+                    </div>
+                    <!-- col-md-6-->
+                    <div class="col-sm-3 col-md-4 login-search"><a class="btn btn-login c-button c-button--emphasis pull-right" href="register.html" ng-if="!logged">Regístrate</a><a class="btn btn-login c-button c-button--secondary pull-right" href="login.html" ng-if="!logged">Ingresar</a>
+                      <div class="dropdown" ng-if="logged">
+                        <!-- atributo avatar-letter contiene la letra del Avatar--><a class="pull-right text-left" avatar-letter="J" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" id="dropdownUser"><span>Hola<br><span class="name">Juan Pablo Andrés Schwarzenegger</span><span class="badge" ng-if="userNotifications&gt;0">{{userNotifications}}</span></span></a><span class="dropdown-menu-arrow"></span><span class="dropdown-menu-border"></span>
+                        <ul class="dropdown-menu options pull-right">
+                          <li class="withNotification"><a href="notifications.html">NOTIFICACIONES<span class="badge" ng-if="userNotifications&gt;0">{{userNotifications}}</span></a></li>
+                          <li class="divider" role="separator"></li>
+                          <li><a href="javascript:;">RESUMEN</a></li>
+                          <li><a href="javascript:;">MIS DIRECCIONES</a></li>
+                          <li><a href="javascript:;">MIS ENVÍOS</a></li>
+                          <li><a href="javascript:;">MIS PAGOS</a></li>
+                          <li><a href="javascript:;">MI CUENTA</a></li>
+                          <li class="divider" role="separator"></li>
+                          <li><a href="javascript:;"><span class="menuIcon icon icon-gear"></span>AJUSTES</a></li>
+                          <li><a href="index.html"><span class="menuIcon icon icon-circle-close"></span>CERRAR SESIÓN</a></li>
+                        </ul>
+                      </div>
+                      <div class="search-wrapper pull-right">
+                        <form class="search-container" id="searchBoxDesktop" action="search.html" method="post">
+                          <input class="search-hidden" type="hidden">
+                          <input class="searchtize search-box" id="search-box-desktop" name="" placeholder="¿Qué estás buscando?" type="text">
+                          <label for="search-box"><span class="icon icon-search search-icon"></span></label>
+                          <button class="search-submit" id="search-submit-desktop" placeholder="Buscar" type="button" value=""><span class="text">Buscar</span></button>
+                          <div class="error-search empty is-desktop"><span class="icon-circle-alert"></span>
+                            <p>Debes ingresar al menos una letra&nbsp;<strong>para iniciar la búsqueda</strong></p>
+                          </div>
+                        </form>
+                      </div>
+                      <!-- search-wrapper-->
+                    </div>
+                    <!-- login-search-->
+                    <div class="navbar-controls pull-right">
+                      <button class="c-button c-button--secondary c-button--rounded" id="searchMobileButton" aria-label="Execute search" onclick="openNav()" type="button"><span class="icon icon-search" aria-hidden="true"></span></button><a class="c-button c-button--emphasis c-button--rounded" id="btnLoginMobile" ng-if="!logged"><span class="icon icon-person" aria-hidden="true"></span></a>
+                      <div class="dropdown pull-right user-menu" ng-if="logged">
+                        <!-- atributo avatar-letter contiene la letra del Avatar--><a class="c-button c-button--emphasis c-button--rounded" avatar-letter="J" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown"><span class="badge" ng-if="userNotifications&gt;0">{{userNotifications}}</span></a>
+                        <ul class="dropdown-menu options pull-right">
+                          <li class="user-menu-header"><a class="cxp-logo" href="javascript:;"></a><a class="user-menu-close-btn"><i class="icon-close" aria-hidden="true"></i></a></li>
+                          <li class="divider" role="separator"></li>
+                          <li class="user-menu-info">
+                            <div class="pull-right text-left" avatar-letter="J" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" id="dropdownUser"><span>Hola<br><span class="name">Juan Pablo Andrés Schwarzenegger</span></span></div>
+                          </li>
+                          <li class="withNotification"><a href="javascript:;">NOTIFICACIONES<span><span class="badge">{{userNotifications}}</span><i class="icon icon-chevron-right"></i></span></a></li>
+                          <li class="divider" role="separator"></li>
+                          <li><a href="javascript:;">RESUMEN</a></li>
+                          <li><a href="javascript:;">MIS DIRECCIONES</a></li>
+                          <li><a href="javascript:;">MIS ENVÍOS</a></li>
+                          <li><a href="javascript:;">MIS PAGOS</a></li>
+                          <li><a href="javascript:;">MI CUENTA</a></li>
+                          <li class="divider" role="separator"></li>
+                          <li><a href="javascript:;"><span class="menuIcon icon icon-gear"></span>AJUSTES</a></li>
+                          <li><a href="index.html"><span class="menuIcon icon icon-circle-close"></span>CERRAR SESIÓN</a></li>
+                        </ul>
+                        <div class="user-menu-notify">
+                          <div class="user-menu-notify-header"><a class="user-menu-notify-close-btn icon icon-chevron-right"></a>
+                            <h4 class="user-menu-notify-header-title">NOTIFICACIONES</h4>
+                          </div>
+                          <ul class="user-menu-notify-list" ng-if="userNotifications&gt;0">
+                            <li class="user-menu-notify-item"><a href="javascript:;">
+                                <div class="user-menu-notify-title">guantes de boxeo tailandés Nº OT: 7756341110</div>
+                                <div class="user-menu-notify-status">Pieza en tránsito al destino Centro de distribución Santiago.</div></a></li>
+                            <li class="user-menu-notify-item"><a href="javascript:;">
+                                <div class="user-menu-notify-title">Mac Book Pro. Nº OT: 7756341110</div>
+                                <div class="user-menu-notify-status success">Disponible en oficina para retiro</div></a></li>
+                            <li class="user-menu-notify-item"><a href="javascript:;">
+                                <div class="user-menu-notify-title">guantes de boxeo tailandés Nº OT: 7756341110</div>
+                                <div class="user-menu-notify-status">Pieza en tránsito al destino Centro de distribución Santiago.</div></a></li>
+                          </ul>
+                          <div class="user-menu-no-notify" ng-if="userNotifications==0">No hay nuevas notificaciones</div>
+                          <div class="text-center"><a class="user-menu-notify-more-btn" href="notifications.html">Ver todas las notificaciones</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="main-login-wrapp is-hide" id="mainLoginWrapp">
+                    <div class="col-xs-6 col-sm-6"><a class="c-button c-button--secondary pull-right" href="login.html">Ingresar</a></div>
+                    <div class="col-xs-6 col-sm-6"><a class="c-button c-button--emphasis pull-left" href="register.html">Registrarse</a></div>
+                    <button class="close close--md" type="button" aria-label="Close"><span class="icon icon-close" aria-hidden="true"></span></button>
+                  </div>
+                </div>
+              </div>
+              <div class="container relative">
+                <button class="icon icon-simplebox internal-icon"></button>
+                <div class="sub-toolbox">
+                  <div class="verdiv"></div>
+                  <div class="tool-box" id="toolBox">
+                    <!--if isHome-->
+                    <div class="bdr-icon-simplebox person"><a class="no-event" href="#toolBox">
+                        <div class="icon icon-simplebox"></div></a></div>
+                    <div class="btn-back hidden person"><span class="icon icon-arrow-left"></span></div>
+                    <div class="box withAnimation active" id="main-box"><span class="icon-close toolbox-close"></span>
+                      <div class="box-search-ot">
+                        <h3 class="title-main">¿Qué quieres hacer?</h3>
+                        <h5 class="sub-title-main">Revisa el estado de tus envíos</h5>
+                        <div class="search-ot-toolbox">
+                          <input class="form-control search-ot" aria-label="Buscar OT" placeholder="Ingresa número de orden" type="number" pattern="d*">
+                          <div class="input-group-btn">
+                            <button class="toolbox-search-btn btn btn-default rounded" aria-label="Execute search" type="button">Buscar</button>
+                          </div>
+                          <div class="error-ot empty"><span class="icon-warning"></span>
+                            <p>Debes ingresar un número de<strong> orden de transporte</strong></p>
+                          </div>
+                          <!-- input-group-btn-->
+                        </div>
+                        <!-- input-group--><small class="small">Ej: 1234567890. Revisa hasta 10 OT separadas por comas.</small><a class="link o-mt-xs" data-toggle="modal" data-target="#ModalOt">¿Qué es una orden de transporte?</a><a class="link o-mt-sm" data-toggle="modal" data-target="#ModalOtMultiple">¿Tienes más de una orden de transporte?</a>
+                      </div>
+                      <div class="box-services">
+                        <ul class="list-unstyled">
+                          <li><a class="toolbox-quotation-btn" data-target="#toolBox"><span class="icon icon-calculator" aria-hidden="true"></span>Quiero cotizar</a></li>
+                          <li><a class="toolbox-send-package-btn" href="javascript:;"><span class="icon icon-lidded-box" aria-hidden="true"></span>Enviar encomienda</a></li>
+                          <li><a class="toolbox-send-document-btn" data-target="#toolBox"><span class="icon icon-document" aria-hidden="true"></span>Enviar documento</a></li>
+                          <li><a class="toolbox-send-money-btn" data-target="#toolBox"><span class="icon icon-money" aria-hidden="true"></span>Enviar dinero</a></li>
+                        </ul>
+                      </div>
+                      <!-- box-services-->
+                    </div>
+                    <!-- main-box-->
+                    <div class="box form-box" id="first-box"><span class="icon-close toolbox-close"></span>
+                      <div class="header-box">
+                        <h4 class="header-box-title">Hacer cotización</h4>
+                      </div>
+                      <!-- box-header-->
+                      <div class="toolbox-custom-tab">
+                        <fieldset class="choice c-field toolbox-menu-tab">
+                          <legend class="o-fieldset__legend">¿Qué quieres enviar?</legend>
+                          <div class="btn-group" aria-label="..." role="group">
+                            <button class="btn btn-default active-tab" data-tab="first" disabled="disabled" type="button"><span class="icon icon-lidded-box"></span>Encomienda</button>
+                            <button class="btn btn-default" data-tab="second" type="button"><span class="icon icon-document"></span>Documento</button>
+                            <button class="btn btn-default" data-tab="third" type="button"><span class="icon icon-money"></span>Dinero</button>
+                          </div>
+                        </fieldset>
+                        <div class="tab-zone first-tab">
+                          <form class="form-send-package">
+                            <div class="body-box">
+                              <fieldset class="choice c-field">
+                                <legend class="o-fieldset__legend">¿Qué tipo de envío es?</legend>
+                                <div class="radio">
+                                  <input class="toolbox-send-type" checked="checked" name="deliveryRadio" type="radio" value="nationalValue" id="QuotationNationalDelivery1">
+                                  <label class="radio-label" for="QuotationNationalDelivery1">Nacional</label>
+                                </div>
+                                <div class="radio">
+                                  <input class="toolbox-send-type" name="deliveryRadio" type="radio" value="internationalValue" id="QuotationInternationalDelivery1">
+                                  <label class="radio-label" for="QuotationInternationalDelivery1">Internacional</label>
+                                </div>
+                              </fieldset>
+                              <!-- choice-->
+                              <fieldset class="choice c-field">
+                                <div class="form-vertical">
+                                  <div class="form-group">
+                                    <label class="o-fieldset__legend" for="originNationalDelivery1">¿Cuál es su origen?</label>
+                                    <select class="select-custom national-select" name="originNationalDelivery" placeholder="Selecciona origen" id="originNationalDelivery1"></select>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="is-national">
+                                      <label class="o-fieldset__legend" for="destinyNationalDelivery1">¿Cuál es su destino?</label>
+                                      <select class="select-custom national-select" name="destinyNationalDelivery" placeholder="Selecciona destino" id="destinyNationalDelivery1"></select>
+                                    </div>
+                                    <div class="is-international">
+                                      <label class="o-fieldset__legend" for="destinyInternationalDelivery1">¿Cuál es su destino?</label>
+                                      <select class="select-custom international-select" name="destinyInternationalDelivery" placeholder="Selecciona destino" id="destinyInternationalDelivery1"></select>
+                                    </div>
+                                  </div>
+                                </div>
+                              </fieldset>
+                              <fieldset class="choice c-field">
+                                <legend class="o-fieldset__legend">¿Cómo es tu pieza?</legend>
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <div class="is-national">
+                                      <select class="select-custom sizes-select" name="sizeDelivery" id="sizeNationalDelivery1" placeholder="Selecciona un tamaño">
+                                        <option value="" selected="selected"></option>
+                                        <option data-subtext="option subtext" value="1">Muy liviana</option>
+                                        <option value="2">Liviana</option>
+                                        <option value="3">Mediana</option>
+                                        <option value="4">Pesada</option>
+                                        <option value="5">Muy pesada</option>
+                                        <option value="6">Más de 15 kilos</option>
+                                      </select>
+                                    </div>
+                                    <div class="is-international">
+                                      <select class="select-custom sizes-select" name="sizeDelivery" id="sizeInternationalDelivery1" placeholder="Selecciona un tamaño">
+                                        <option value="" selected="selected"></option>
+                                        <option data-subtext="option subtext" value="1">Muy Liviana</option>
+                                        <option value="2">Liviana</option>
+                                        <option value="3">Mediana</option>
+                                        <option value="4">Pesada</option>
+                                        <option value="5">Muy pesada</option>
+                                        <option value="6">Extra pesada</option>
+                                        <option value="7">Súper carga</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                              </fieldset>
+                              <fieldset>
+                                <div class="checkbox checkbox-warning">
+                                  <input class="isAccept" type="checkbox" id="isAcceptQuotationDelivery1">
+                                  <label class="checkLbel" for="isAcceptQuotationDelivery1">Acepto que los precios están sujetos a variación de acuerdo a las dimensiones y pesos reales, entre otros.</label>
+                                </div>
+                              </fieldset>
+                              <div class="alert alert-warning more-70kg"><i class="icon-circle-alert"></i><span>Estás cotizando una pieza de más de 70 kilos. Para realizar un envío con estas características, debes comunicarte con un ejecutivo a través de nuestro&nbsp;<a href="contact.html">Formulario de contacto</a>.</span></div>
+                            </div>
+                            <div class="body-footer">
+                              <div class="row">
+                                <div class="col-xs-8 col-sm-7 col-md-7 col-lg-8 wrapper-price">
+                                  <div class="total text-left is-national">
+                                    <p>Costo desde</p>
+                                    <h4><span>$</span><span class="price">0</span></h4>
+                                  </div>
+                                  <div class="total text-left is-international">
+                                    <p>Costo entre</p>
+                                    <h4><span class="international-prince-box"><span>$</span><span class="price">0</span></span><span class="international-prince-box"><span>$</span><span class="price">0</span></span></h4>
+                                  </div>
+                                </div>
+                                <div class="col-xs-4 col-sm-5 col-md-5 col-lg-4 wrapper-btn">
+                                  <button class="btn btn-block btn-continue" disabled="disabled" type="button" data-toggle="modal" data-target="#ModalRegister">Hacer el envío</button>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="tab-zone second-tab">
+                          <form class="form-send-document">
+                            <div class="body-box">
+                              <fieldset class="choice c-field">
+                                <legend class="o-fieldset__legend">¿Qué tipo de envío es?</legend>
+                                <div class="radio">
+                                  <input class="toolbox-send-type" checked="checked" name="documentRadio" type="radio" value="nationalValue" id="nationalDocument1">
+                                  <label class="radio-label" for="nationalDocument1">Nacional</label>
+                                </div>
+                                <div class="radio">
+                                  <input class="toolbox-send-type" name="documentRadio" type="radio" value="internationalValue" id="internationalDocument1">
+                                  <label class="radio-label" for="internationalDocument1">Internacional</label>
+                                </div>
+                              </fieldset>
+                              <!-- choice-->
+                              <fieldset class="choice c-field">
+                                <div class="form-vertical">
+                                  <div class="form-group">
+                                    <label class="o-fieldset__legend" for="originNationalDocumentSend1">¿Cuál es su origen?</label>
+                                    <select class="select-custom national-select" name="originNationalDocumentSend" placeholder="Selecciona origen" type="text" id="originNationalDocumentSend1"></select>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="is-national">
+                                      <label class="o-fieldset__legend" for="destinyNationalDocumentSend1">¿Cuál es su destino?</label>
+                                      <select class="select-custom national-select" name="destinyNationalDocumentSend" placeholder="Selecciona destino" type="text" id="destinyNationalDocumentSend1"></select>
+                                    </div>
+                                    <div class="is-international">
+                                      <label class="o-fieldset__legend" for="destinyInternationalDocumentSend1">¿Cuál es su destino?</label>
+                                      <select class="select-custom international-select" name="destinyInternationalDocumentSend" placeholder="Selecciona destino" type="text" id="destinyInternationalDocumentSend1"></select>
+                                    </div>
+                                  </div>
+                                </div>
+                              </fieldset>
+                              <fieldset class="choice c-field">
+                                <legend class="o-fieldset__legend">¿Cómo es tu documento?</legend>
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <div class="is-national">
+                                      <select class="select-custom sizes-select size-document" name="sizeDocument" id="sizeNationalDocument1" placeholder="Selecciona un tamaño">
+                                        <option value="" selected="selected"></option>
+                                        <option data-subtext="option subtext" value="1">Muy liviano</option>
+                                        <option value="2">Liviano</option>
+                                      </select>
+                                    </div>
+                                    <div class="is-international">
+                                      <select class="select-custom sizes-select size-document" name="sizeDocument" id="sizeInternationalDocument1" placeholder="Selecciona un tamaño">
+                                        <option value="" selected="selected"></option>
+                                        <option data-subtext="option subtext" value="1">Muy liviano</option>
+                                        <option value="2">Liviano</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                              </fieldset>
+                              <fieldset>
+                                <div class="checkbox checkbox-warning">
+                                  <input class="isAccept" type="checkbox" id="isAcceptSendDocument1">
+                                  <label for="isAcceptSendDocument1">Acepto que los precios están sujetos a variación de acuerdo a las dimensiones y pesos reales, entre otros.</label>
+                                </div>
+                              </fieldset>
+                            </div>
+                            <div class="body-footer">
+                              <div class="row">
+                                <div class="col-xs-8 col-sm-7 col-md-7 col-lg-8 wrapper-price">
+                                  <div class="total text-left is-national">
+                                    <p>Costo desde</p>
+                                    <h4><span>$</span><span class="price">0</span></h4>
+                                  </div>
+                                  <div class="total text-left is-international">
+                                    <p>Costo entre</p>
+                                    <h4><span class="international-prince-box"><span>$</span><span class="price">0</span></span><span class="international-prince-box"><span>$</span><span class="price">0</span></span></h4>
+                                  </div>
+                                </div>
+                                <div class="col-xs-4 col-sm-5 col-md-5 col-lg-4 wrapper-btn">
+                                  <button class="btn btn-block btn-continue" disabled="disabled" type="button" data-toggle="modal" data-target="#ModalRegister">Hacer el envío</button>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="tab-zone third-tab">
+                          <form class="form-send-money">
+                            <div class="body-box">
+                              <fieldset class="choice c-field">
+                                <legend class="o-fieldset__legend">¿A dónde quieres enviar dinero?</legend>
+                                <div class="form-vertical">
+                                  <div class="form-group">
+                                    <select class="select-custom international-select" name="countryInput" placeholder="Selecciona país" type="text"></select>
+                                  </div>
+                                </div>
+                              </fieldset>
+                              <!-- choice-->
+                              <fieldset class="choice c-field">
+                                <legend class="o-fieldset__legend">¿Cuánto dinero quieres enviar?</legend>
+                                <div class="input-group input-group--double"><span class="input-group-addon">$</span>
+                                  <input class="form-control only-prices" aria-label="Amount (to the nearest dollar)" name="moneyOne"><span class="input-group-addon">PESOS CHILENOS</span>
+                                </div>
+                              </fieldset>
+                              <fieldset class="choice c-field">
+                                <legend class="o-fieldset__legend o-fieldset--bold">Esto equivale a:</legend>
+                                <div class="result-conversion"><img class="pull-left flag-icons" alt="icon flag" src="assets/img/flags/flag-icon-cl.png">
+                                  <p class="pull-left money-change">CLP 0</p>
+                                </div>
+                              </fieldset>
+                              <fieldset>
+                                <div class="checkbox checkbox-warning">
+                                  <input class="isAccept" type="checkbox" id="isAcceptQuotationMoney1">
+                                  <label for="isAcceptQuotationMoney1">Acepto que los precios podrían sufrir variación de acuerdo a la ciudad o estado de destino.</label>
+                                </div>
+                              </fieldset>
+                            </div>
+                            <div class="body-footer">
+                              <div class="row">
+                                <div class="col-xs-8 col-sm-7 col-md-7 col-lg-8 wrapper-price">
+                                  <div class="total text-left">
+                                    <p>Costo desde</p>
+                                    <h4><span>$</span><span class="price">0</span></h4>
+                                  </div>
+                                </div>
+                                <div class="col-xs-4 col-sm-5 col-md-5 col-lg-4 wrapper-btn">
+                                  <button class="btn btn-block btn-continue" disabled="disabled" type="button" data-toggle="modal" data-target="#ModalRegister">Hacer el envío</button>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <!-- body-footer-->
+                    </div>
+                    <!-- first-box-->
+                    <div class="box form-box" id="second-box"><span class="icon-close toolbox-close"></span>
+                      <div class="header-box">
+                        <h4 class="header-box-title">Enviar encomienda</h4>
+                      </div>
+                      <form class="form-send-package">
+                        <div class="body-box">
+                          <fieldset class="choice c-field">
+                            <legend class="o-fieldset__legend">¿Qué tipo de envío es?</legend>
+                            <div class="radio">
+                              <input class="toolbox-send-type" checked="checked" name="deliveryRadio" type="radio" value="nationalValue" id="QuotationNationalDelivery2">
+                              <label class="radio-label" for="QuotationNationalDelivery2">Nacional</label>
+                            </div>
+                            <div class="radio">
+                              <input class="toolbox-send-type" name="deliveryRadio" type="radio" value="internationalValue" id="QuotationInternationalDelivery2">
+                              <label class="radio-label" for="QuotationInternationalDelivery2">Internacional</label>
+                            </div>
+                          </fieldset>
+                          <!-- choice-->
+                          <fieldset class="choice c-field">
+                            <div class="form-vertical">
+                              <div class="form-group">
+                                <label class="o-fieldset__legend" for="originNationalDelivery2">¿Cuál es su origen?</label>
+                                <select class="select-custom national-select" name="originNationalDelivery" placeholder="Selecciona origen" id="originNationalDelivery2"></select>
+                              </div>
+                              <div class="form-group">
+                                <div class="is-national">
+                                  <label class="o-fieldset__legend" for="destinyNationalDelivery2">¿Cuál es su destino?</label>
+                                  <select class="select-custom national-select" name="destinyNationalDelivery" placeholder="Selecciona destino" id="destinyNationalDelivery2"></select>
+                                </div>
+                                <div class="is-international">
+                                  <label class="o-fieldset__legend" for="destinyInternationalDelivery2">¿Cuál es su destino?</label>
+                                  <select class="select-custom international-select" name="destinyInternationalDelivery" placeholder="Selecciona destino" id="destinyInternationalDelivery2"></select>
+                                </div>
+                              </div>
+                            </div>
+                          </fieldset>
+                          <fieldset class="choice c-field">
+                            <legend class="o-fieldset__legend">¿Cómo es tu pieza?</legend>
+                            <div class="row">
+                              <div class="col-md-12">
+                                <div class="is-national">
+                                  <select class="select-custom sizes-select" name="sizeDelivery" id="sizeNationalDelivery2" placeholder="Selecciona un tamaño">
+                                    <option value="" selected="selected"></option>
+                                    <option data-subtext="option subtext" value="1">Muy liviana</option>
+                                    <option value="2">Liviana</option>
+                                    <option value="3">Mediana</option>
+                                    <option value="4">Pesada</option>
+                                    <option value="5">Muy pesada</option>
+                                    <option value="6">Más de 15 kilos</option>
+                                  </select>
+                                </div>
+                                <div class="is-international">
+                                  <select class="select-custom sizes-select" name="sizeDelivery" id="sizeInternationalDelivery2" placeholder="Selecciona un tamaño">
+                                    <option value="" selected="selected"></option>
+                                    <option data-subtext="option subtext" value="1">Muy Liviana</option>
+                                    <option value="2">Liviana</option>
+                                    <option value="3">Mediana</option>
+                                    <option value="4">Pesada</option>
+                                    <option value="5">Muy pesada</option>
+                                    <option value="6">Extra pesada</option>
+                                    <option value="7">Súper carga</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </fieldset>
+                          <fieldset>
+                            <div class="checkbox checkbox-warning">
+                              <input class="isAccept" type="checkbox" id="isAcceptQuotationDelivery2">
+                              <label class="checkLbel" for="isAcceptQuotationDelivery2">Acepto que los precios están sujetos a variación de acuerdo a las dimensiones y pesos reales, entre otros.</label>
+                            </div>
+                          </fieldset>
+                          <div class="alert alert-warning more-70kg"><i class="icon-circle-alert"></i><span>Estás cotizando una pieza de más de 70 kilos. Para realizar un envío con estas características, debes comunicarte con un ejecutivo a través de nuestro&nbsp;<a href="contact.html">Formulario de contacto</a>.</span></div>
+                        </div>
+                        <div class="body-footer">
+                          <div class="row">
+                            <div class="col-xs-8 col-sm-7 col-md-7 col-lg-8 wrapper-price">
+                              <div class="total text-left is-national">
+                                <p>Costo desde</p>
+                                <h4><span>$</span><span class="price">0</span></h4>
+                              </div>
+                              <div class="total text-left is-international">
+                                <p>Costo entre</p>
+                                <h4><span class="international-prince-box"><span>$</span><span class="price">0</span></span><span class="international-prince-box"><span>$</span><span class="price">0</span></span></h4>
+                              </div>
+                            </div>
+                            <div class="col-xs-4 col-sm-5 col-md-5 col-lg-4 wrapper-btn">
+                              <button class="btn btn-block btn-continue" disabled="disabled" type="button" data-toggle="modal" data-target="#ModalRegister">Hacer el envío</button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <!-- second-box-->
+                    <div class="box form-box" id="third-box"><span class="icon-close toolbox-close"></span>
+                      <div class="header-box">
+                        <h4 class="header-box-title">Enviar documento</h4>
+                      </div>
+                      <form class="form-send-document">
+                        <div class="body-box">
+                          <fieldset class="choice c-field">
+                            <legend class="o-fieldset__legend">¿Qué tipo de envío es?</legend>
+                            <div class="radio">
+                              <input class="toolbox-send-type" checked="checked" name="documentRadio" type="radio" value="nationalValue" id="nationalDocument2">
+                              <label class="radio-label" for="nationalDocument2">Nacional</label>
+                            </div>
+                            <div class="radio">
+                              <input class="toolbox-send-type" name="documentRadio" type="radio" value="internationalValue" id="internationalDocument2">
+                              <label class="radio-label" for="internationalDocument2">Internacional</label>
+                            </div>
+                          </fieldset>
+                          <!-- choice-->
+                          <fieldset class="choice c-field">
+                            <div class="form-vertical">
+                              <div class="form-group">
+                                <label class="o-fieldset__legend" for="originNationalDocumentSend2">¿Cuál es su origen?</label>
+                                <select class="select-custom national-select" name="originNationalDocumentSend" placeholder="Selecciona origen" type="text" id="originNationalDocumentSend2"></select>
+                              </div>
+                              <div class="form-group">
+                                <div class="is-national">
+                                  <label class="o-fieldset__legend" for="destinyNationalDocumentSend2">¿Cuál es su destino?</label>
+                                  <select class="select-custom national-select" name="destinyNationalDocumentSend" placeholder="Selecciona destino" type="text" id="destinyNationalDocumentSend2"></select>
+                                </div>
+                                <div class="is-international">
+                                  <label class="o-fieldset__legend" for="destinyInternationalDocumentSend2">¿Cuál es su destino?</label>
+                                  <select class="select-custom international-select" name="destinyInternationalDocumentSend" placeholder="Selecciona destino" type="text" id="destinyInternationalDocumentSend2"></select>
+                                </div>
+                              </div>
+                            </div>
+                          </fieldset>
+                          <fieldset class="choice c-field">
+                            <legend class="o-fieldset__legend">¿Cómo es tu documento?</legend>
+                            <div class="row">
+                              <div class="col-md-12">
+                                <div class="is-national">
+                                  <select class="select-custom sizes-select size-document" name="sizeDocument" id="sizeNationalDocument2" placeholder="Selecciona un tamaño">
+                                    <option value="" selected="selected"></option>
+                                    <option data-subtext="option subtext" value="1">Muy liviano</option>
+                                    <option value="2">Liviano</option>
+                                  </select>
+                                </div>
+                                <div class="is-international">
+                                  <select class="select-custom sizes-select size-document" name="sizeDocument" id="sizeInternationalDocument2" placeholder="Selecciona un tamaño">
+                                    <option value="" selected="selected"></option>
+                                    <option data-subtext="option subtext" value="1">Muy liviano</option>
+                                    <option value="2">Liviano</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </fieldset>
+                          <fieldset>
+                            <div class="checkbox checkbox-warning">
+                              <input class="isAccept" type="checkbox" id="isAcceptSendDocument2">
+                              <label for="isAcceptSendDocument2">Acepto que los precios están sujetos a variación de acuerdo a las dimensiones y pesos reales, entre otros.</label>
+                            </div>
+                          </fieldset>
+                        </div>
+                        <div class="body-footer">
+                          <div class="row">
+                            <div class="col-xs-8 col-sm-7 col-md-7 col-lg-8 wrapper-price">
+                              <div class="total text-left is-national">
+                                <p>Costo desde</p>
+                                <h4><span>$</span><span class="price">0</span></h4>
+                              </div>
+                              <div class="total text-left is-international">
+                                <p>Costo entre</p>
+                                <h4><span class="international-prince-box"><span>$</span><span class="price">0</span></span><span class="international-prince-box"><span>$</span><span class="price">0</span></span></h4>
+                              </div>
+                            </div>
+                            <div class="col-xs-4 col-sm-5 col-md-5 col-lg-4 wrapper-btn">
+                              <button class="btn btn-block btn-continue" disabled="disabled" type="button" data-toggle="modal" data-target="#ModalRegister">Hacer el envío</button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <!-- third-box-->
+                    <div class="box form-box" id="fourth-box"><span class="icon-close toolbox-close"></span>
+                      <div class="header-box">
+                        <h4 class="header-box-title">Enviar dinero</h4>
+                      </div>
+                      <form class="form-send-money">
+                        <div class="body-box">
+                          <fieldset class="choice c-field">
+                            <legend class="o-fieldset__legend">¿A dónde quieres enviar dinero?</legend>
+                            <div class="form-vertical">
+                              <div class="form-group">
+                                <select class="select-custom international-select" name="countryInput" placeholder="Selecciona país" type="text"></select>
+                              </div>
+                            </div>
+                          </fieldset>
+                          <!-- choice-->
+                          <fieldset class="choice c-field">
+                            <legend class="o-fieldset__legend">¿Cuánto dinero quieres enviar?</legend>
+                            <div class="input-group input-group--double"><span class="input-group-addon">$</span>
+                              <input class="form-control only-prices" aria-label="Amount (to the nearest dollar)" name="moneyOne"><span class="input-group-addon">PESOS CHILENOS</span>
+                            </div>
+                          </fieldset>
+                          <fieldset class="choice c-field">
+                            <legend class="o-fieldset__legend o-fieldset--bold">Esto equivale a:</legend>
+                            <div class="result-conversion"><img class="pull-left flag-icons" alt="icon flag" src="assets/img/flags/flag-icon-cl.png">
+                              <p class="pull-left money-change">CLP 0</p>
+                            </div>
+                          </fieldset>
+                          <fieldset>
+                            <div class="checkbox checkbox-warning">
+                              <input class="isAccept" type="checkbox" id="isAcceptQuotationMoney2">
+                              <label for="isAcceptQuotationMoney2">Acepto que los precios podrían sufrir variación de acuerdo a la ciudad o estado de destino.</label>
+                            </div>
+                          </fieldset>
+                        </div>
+                        <div class="body-footer">
+                          <div class="row">
+                            <div class="col-xs-8 col-sm-7 col-md-7 col-lg-8 wrapper-price">
+                              <div class="total text-left">
+                                <p>Costo desde</p>
+                                <h4><span>$</span><span class="price">0</span></h4>
+                              </div>
+                            </div>
+                            <div class="col-xs-4 col-sm-5 col-md-5 col-lg-4 wrapper-btn">
+                              <button class="btn btn-block btn-continue" disabled="disabled" type="button" data-toggle="modal" data-target="#ModalRegister">Hacer el envío</button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <!-- fourth-box-->
+                    <div class="box" id="fifth-box"><span class="icon-close toolbox-close"></span>
+                      <div class="header-box">
+                        <ul>
+                          <li>Orden:<strong> Nº 645435642341</strong></li>
+                          <li>Tipo:<strong> Documento</strong></li>
+                          <li>Servicio:<strong> Día Hábil Siguiente</strong></li>
+                          <li>Origen:<strong> Santiago</strong></li>
+                          <li>Destino:<strong> Temuco</strong></li>
+                          <li>Estado:<strong><span></span> En tránsito</strong></li>
+                        </ul>
+                      </div>
+                      <!-- box-header-->
+                      <div class="body-box">
+                        <div id="timeline">
+                          <div class="timeline-titles">
+                            <div class="time-title-left">Fecha / Hora</div>
+                            <div class="time-title-right">Actividad</div>
+                          </div>
+                          <div class="timeline-item">
+                            <div class="timeline-icon icon--now"></div>
+                            <div class="timeline-content time--time">
+                              <p>Martes 28 de mayo 12:00 hrs.</p>
+                            </div>
+                            <div class="timeline-content time--where">
+                              <p>Disponible en oficina para retiro</p>
+                            </div>
+                          </div>
+                          <div class="timeline-item">
+                            <div class="timeline-icon"></div>
+                            <div class="timeline-content time--time">
+                              <p>Martes 28 de mayo 12:00 hrs.</p>
+                            </div>
+                            <div class="timeline-content time--where">
+                              <p>Pieza en trásnsito al destino. Sucursal Chilexpress<strong>Merced Santiago</strong></p>
+                            </div>
+                          </div>
+                          <div class="timeline-item">
+                            <div class="timeline-icon"></div>
+                            <div class="timeline-content time--time">
+                              <p>Martes 28 de mayo 12:00 hrs.</p>
+                            </div>
+                            <div class="timeline-content time--where">
+                              <p>Pieza recibida en Chilexpress</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- body-box-->
+                      <div class="body-footer text-center"><a href="shipment-status.html#!/?otdetail=645435647">Ver más detalle</a></div>
+                      <!-- body-footer-->
+                    </div>
+                    <!-- fifth-box-error-exist-->
+                    <div class="box" id="fifth-box-error-exist"><span class="icon-close toolbox-close"></span>
+                      <div class="header-box">
+                        <h4 class="header-box-title">No hemos encontrado resultados de búsqueda para la orden de transporte<strong> "123111111111"</strong></h4>
+                      </div>
+                      <!-- box-header-->
+                      <div class="body-box o-pt-xs">
+                        <!---->
+                        <div class="box-search-ot open-ot-input">
+                          <div class="input-group input-group-lg input-group-full is-error">
+                            <input class="form-control search-ot only-numbers" value="123111111111" aria-label="Buscar OT" placeholder="Ingresa número de orden" type="number">
+                            <div class="input-group-btn full-btn">
+                              <button class="toolbox-search-btn btn btn-default rounded" aria-label="Execute search" type="button">Buscar</button>
+                            </div>
+                            <div class="error-ot empty">
+                              <p>Debes ingresar un número de<strong>orden de transporte</strong></p>
+                            </div>
+                            <div class="error-ot invalid">
+                              <p>Número de seguimiento no válido</p>
+                            </div>
+                            <!-- input-group-btn-->
+                          </div>
+                          <!-- input-group--><small class="small">Ej: 1234567890. Revisa hasta 10 OT separadas por comas.</small>
+                          <div class="clearfix"></div>
+                        </div>
+                        <h6>Sugerencias:</h6>
+                        <ul>
+                          <li>Revisa que el número de la orden de transporte esté bien escrito.</li>
+                          <li>El número de OT tiene entre 10 y 12 dígitos, sin espacios ni letras</li>
+                          <li>Para más información, revisa<a class="link" href="javascript:;" data-toggle="modal" data-target="#ModalOt"> ¿Qué es una orden de transporte?</a></li>
+                        </ul>
+                      </div>
+                      <div class="body-footer"></div>
+                    </div>
+                    <!-- fifth-box-exist-->
+                    <!-- fifth-box-expired-->
+                    <div class="box" id="fifth-box-error-expired"><span class="icon-close toolbox-close"></span>
+                      <div class="header-box">
+                        <h4 class="header-box-title"> La orden de transporte<strong>&nbsp;"456111111111"&nbsp;</strong>ha expirado.</h4>
+                      </div>
+                      <!-- box-header-->
+                      <div class="body-box">
+                        <!---->
+                        <div class="box-search-ot open-ot-input">
+                          <div class="input-group input-group-lg input-group-full is-expired">
+                            <input class="form-control search-ot only-numbers" value="456111111111" aria-label="Buscar OT" placeholder="Ingresa número de orden" type="number">
+                            <div class="input-group-btn full-btn">
+                              <button class="toolbox-search-btn btn btn-default rounded" aria-label="Execute search" type="button">Buscar</button>
+                            </div>
+                            <div class="error-ot empty">
+                              <p>Debes ingresar un número de<strong>orden de transporte</strong></p>
+                            </div>
+                            <div class="error-ot expired">
+                              <p>Número de seguimiento expirado</p>
+                            </div>
+                            <!-- input-group-btn-->
+                          </div>
+                          <!-- input-group--><small class="small">Ej: 1234567890. Revisa hasta 10 OT separadas por comas.</small>
+                        </div>
+                        <h6>Sugerencias:</h6>
+                        <ul>
+                          <li>Si realizaste el envio hace menos de tres meses, revisa que tu orden de transporte esté bien escrita.</li>
+                          <li>Si la orden de transporte expiró,<a class="link" href="javascript:;"> comunícate con nosotros</a> para saber el estado de tu pieza.</li>
+                        </ul>
+                      </div>
+                      <!-- body-box-->
+                      <div class="body-footer"></div>
+                      <!-- body-footer-->
+                    </div>
+                    <!-- fifth-box-expired-->
+                  </div>
+                  <!-- tool-box-->
+                </div>
+              </div>
+              <!-- Tab panes-->
+              <div class="subnav hidden-sm-down">
+                <div class="container">
+                  <div class="menu-center">
+                    <div class="tab-menu tab-content" id="tabMenuMain">
+                      <div class="tab-pane tab--persons active" id="personTabPane" role="tabpanel"><a class="tab-menu-link" href="javascript:;">Servicios Nacionales</a><a class="tab-menu-link link--lg" href="javascript:;">Servicios internacionales</a><a class="tab-menu-link link--ow" href="javascript:;">Embalaje</a>
+                        <div class="btn-group">
+                          <button class="btn btn-default dropdown-toggle tab-menu-link" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button">Otros servicios<span class="glyphicon glyphicon-menu-down"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a class="first" href="javascript:;">Giros</a></li>
+                            <li><a href="javascript:;">Equifax</a></li>
+                            <li><a href="javascript:;">Pago de cuentas</a></li>
+                            <li><a href="javascript:;">Recargas</a></li>
+                          </ul>
+                        </div><a class="tab-menu-link" href="javascript:;">Buenas prácticas</a>
+                      </div>
+                      <div class="tab-pane tab--business" id="businessTabPane" role="tabpanel">
+                        <div class="btn-group">
+                          <button class="btn btn-default dropdown-toggle tab-menu-link" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button">Envíos<span class="glyphicon glyphicon-menu-down"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a href="javascript:;">Nacionales</a></li>
+                            <li><a href="javascript:;">Internacionales</a></li>
+                            <li><a href="javascript:;">Envíos especiales</a></li>
+                            <li><a href="javascript:;">Logística y devolución</a></li>
+                          </ul>
+                        </div><a class="tab-menu-link link--lg" href="javascript:;">Retiros</a>
+                        <div class="btn-group">
+                          <button class="btn btn-default dropdown-toggle tab-menu-link" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button">Otros servicios<span class="glyphicon glyphicon-menu-down"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a href="javascript:;">Integraciones</a></li>
+                            <li><a href="javascript:;">Fullfillment</a></li>
+                            <li><a href="javascript:;">Alianzas</a></li>
+                            <li><a href="javascript:;">OTD asistida</a></li>
+                          </ul>
+                        </div>
+                        <div class="btn-group">
+                          <button class="btn btn-default dropdown-toggle tab-menu-link" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button">Beneficios cuenta CXP<span class="glyphicon glyphicon-menu-down"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a href="javascript:;">Cuenta TCC</a></li>
+                            <li><a href="javascript:;">Reportería y estadísticas</a></li>
+                            <li><a href="javascript:;">Gestión TCC</a></li>
+                            <li><a href="javascript:;">Mi ejecutivo</a></li>
+                          </ul>
+                        </div><a class="tab-menu-link" href="javascript:;">Materiales de embalaje</a><a class="tab-menu-link" href="javascript:;">Buenas práctivas</a>
+                      </div>
+                      <div class="tab-pane tab--entrepreneurs" id="entrepreneursTabPane" role="tabpanel">
+                        <div class="btn-group">
+                          <button class="btn btn-default dropdown-toggle tab-menu-link" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button">Envíos<span class="glyphicon glyphicon-menu-down"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a href="javascript:;">Nacionales</a></li>
+                            <li><a href="javascript:;">Internacionales</a></li>
+                            <li><a href="javascript:;">Envíos especiales</a></li>
+                            <li><a href="javascript:;">Logística y devolución</a></li>
+                          </ul>
+                        </div><a class="tab-menu-link link--lg" href="javascript:;">Retiros</a>
+                        <div class="btn-group">
+                          <button class="btn btn-default dropdown-toggle tab-menu-link" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button">Otros servicios<span class="glyphicon glyphicon-menu-down"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a href="javascript:;">Integraciones</a></li>
+                            <li><a href="javascript:;">Fullfillment</a></li>
+                            <li><a href="javascript:;">Alianzas</a></li>
+                            <li><a href="javascript:;">OTD asistida</a></li>
+                          </ul>
+                        </div>
+                        <div class="btn-group">
+                          <button class="btn btn-default dropdown-toggle tab-menu-link" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button">Beneficios cuenta CXP<span class="glyphicon glyphicon-menu-down"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a href="javascript:;">Cuenta TCC</a></li>
+                            <li><a href="javascript:;">Reportería y estadísticas</a></li>
+                            <li><a href="javascript:;">Gestión TCC</a></li>
+                            <li><a href="javascript:;">Mi ejecutivo</a></li>
+                          </ul>
+                        </div><a class="tab-menu-link" href="javascript:;">Materiales de embalaje</a><a class="tab-menu-link" href="javascript:;">Buenas práctivas</a>
+                      </div>
+                      <div class="tab-pane tab-ecommerce" id="ecommerceTabPane" role="tabpanel">
+                        <div class="btn-group">
+                          <button class="btn btn-default dropdown-toggle tab-menu-link" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button">Iníciate como E-commerce<span class="glyphicon glyphicon-menu-down"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a href="javascript:;">Envíos</a></li>
+                            <li><a href="javascript:;">Retiros</a></li>
+                            <li><a href="javascript:;">Tracking</a></li>
+                            <li><a href="javascript:;">Gestión del fallo</a></li>
+                          </ul>
+                        </div>
+                        <div class="btn-group">
+                          <button class="btn btn-default dropdown-toggle tab-menu-link" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button">Optimiza tus ventas<span class="glyphicon glyphicon-menu-down"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a href="javascript:;">Fullfillment</a></li>
+                            <li><a href="javascript:;">Entregas programadas</a></li>
+                            <li><a href="javascript:;">Big ticket</a></li>
+                            <li><a href="javascript:;">Logística y devolución</a></li>
+                            <li><a href="javascript:;">PUDO</a></li>
+                            <li><a href="javascript:;">Integraciones</a></li>
+                          </ul>
+                        </div>
+                        <div class="btn-group">
+                          <button class="btn btn-default dropdown-toggle tab-menu-link" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button">Beneficios cuenta CXP<span class="glyphicon glyphicon-menu-down"></span></button>
+                          <ul class="dropdown-menu">
+                            <li><a href="javascript:;">Cuenta TCC</a></li>
+                            <li><a href="javascript:;">Reportería y estadísticas</a></li>
+                            <li><a href="javascript:;">Gestión TCC</a></li>
+                            <li><a href="javascript:;">Mi ejecutivo</a></li>
+                          </ul>
+                        </div><a class="tab-menu-link" href="javascript:;">Consejos para E-commerce</a><a class="tab-menu-link" href="javascript:;">Buenas prácticas</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-content page-ot">
+        <div class="container main-container">
+          <div class="row" ng-class="{'row-flex':totalErrors==='1'}">
+            <div class="col-md-9 col-sm-8 ot-container">
+              <div class="ot-content-slider" ng-class="{'appear':otdetail!='' || showSliderDetails}"> 
+                <div class="otDetailsBlock" ng-if="ot.type=='simple' || ot.type=='child' || otdetail!=''"> <a class="goBack blueLink" ng-if="otdetail=='' &amp;&amp; ot.type=='simple'" ng-click="gobackToOTList()"><span class="icon icon-chevron-left"></span>Volver</a>
+                  <!--este vuelve a la busqueda y no a una lista inicial  --><a class="goBack toIndex blueLink" ng-if="otdetail!=''" href="index.html"><span class="icon icon-chevron-left"></span>Volver</a>
+                  <!--este vuelve a la lista de ot hijas --><a class="goBack toIndex blueLink" ng-if="ot.type=='child'" ng-click="getOtContent(992233777,'parent')"><span class="icon icon-chevron-left"></span>Volver</a>
+                  <div class="ot-results">
+                    <div class="ot-results-header headerOfList" ng-if="ot.type=='child'">
+                      <div class="ot-results-header-date-and-type">
+                        <div class="date">26 <span>mar</span></div><span class="otType icon icon-pallet"></span>
+                      </div>
+                      <div class="ot-results-header-info"> 
+                        <div class="identification"><span class="label">Nº OT: {{ot.number}} - OT PADRE </span><span class="desc">Insumos para Puerto Natales de segunda 1</span></div>
+                      </div>
+                    </div>
+                    <div class="ot-results-header headerOfList" ng-class="{'isAChild':ot.type=='child'}">
+                      <div class="ot-results-header-date-and-type">
+                        <div class="date" ng-if="ot.type!='child'">12 <span>ene</span></div><span class="otType icon icon-lidded-box"></span>
+                      </div>
+                      <div class="ot-results-header-info"> 
+                        <div class="identification"><span class="label">Nº OT: </span><span class="desc">{{ot.number}}<span ng-if="otdetail!=''">645435647</span><span class="head-caret icon icon-pencil"></span></span></div>
+                        <div class="status {{ot.status}}" ng-class="{'kept-between-steps-2':otdetail!=''}"><span class="label">ESTADO</span><span class="desc"><span ng-if="ot.status=='transit'">En tránsito</span><span ng-if="ot.status=='received'">Recepcionada</span><span ng-if="ot.status=='delivered'">Entregada</span><span ng-if="ot.status=='kept-between-steps-1' || ot.status=='kept-between-steps-2' || ot.status.indexOf('kept')!=-1">Pieza retenida  </span></span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ot-detail-container">
+                    <div class="positive-alert-msg" ng-if="ot.status=='delivered'"> 
+                      <div class="icon"><span class="success icon icon-single-check"></span></div>
+                      <div class="msg">
+                        <div class="msgWrapper">
+                          <h3>Tu envío fue entregado al destinatario.</h3>
+                          <p>Gracias por preferirnos</p>
+                        </div>
+                        <div class="eval text-right"><a class="blueLink" data-toggle="modal" data-target="#ModalDeliveryCertificate" ng-if="logged">Ver certificado de entrega</a><a class="blueLink" data-toggle="modal" data-target="#ModalEvalService">Evalúa nuestro servicio</a></div>
+                      </div>
+                    </div>
+                    <div class="negative-alert-msg" ng-if="ot.status.indexOf('kept')!=-1">
+                      <div class="icon"><span class="error icon icon-alert"></span></div>
+                      <div class="msg">
+                        <h3>Tu envío ha sido retenido en el centro de distribución.</h3>
+                        <p>Escríbenos a <a class="blueLink" href="mailto:chilexpress@chilexpress.cl">chilexpress@chilexpress.cl </a>agregando el número de orden de transporte para poder entregarte más información.</p>
+                      </div>
+                    </div>
+                    <div class="timeline">
+                      <!--Div .steps debe llegar clase con el estado (received/transit/delivered)-->
+                      <div class="steps {{ot.status}} {{ot.destiny}}" ng-class="{'kept-between-steps-2':otdetail!=''}">
+                        <div class="stepWrapper"><span class="step"><span class="indicator"></span></span>
+                          <div class="desc">Recepcionado</div>
+                        </div>
+                        <div class="stepWrapper"><span class="point icon-single-check"></span>
+                          <div class="desc">Al centro de distribución</div>
+                        </div>
+                        <div class="stepWrapper"><span class="step"><span class="indicator"></span></span>
+                          <div class="desc" ng-if="ot.destiny != 'international'">En tránsito</div>
+                          <div class="desc" ng-if="ot.destiny === 'international'">En tránsito al destino<strong> área internacional</strong></div>
+                        </div>
+                        <div class="stepWrapper"><span class="point icon-single-check"></span>
+                          <div class="desc">Al centro de distribución</div>
+                        </div>
+                        <div class="stepWrapper"><span class="step" ng-class="{'international':ot.destiny==='international'}"><span class="indicator"></span></span>
+                          <div class="desc" ng-if="ot.destiny != 'international'">Entregado</div>
+                          <div class="desc international" ng-if="ot.destiny === 'international'">Entregado a<br class="hide-md"> Courier Internacional</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="otMap">
+                      <div class="otMapDetails">
+                        <div class="title">Origen y destino</div>
+                        <label class="ot-label">Origen</label>
+                        <p ng-if="ot.destiny != 'international'">Los Payares, 890, Arica, Arica y Parinacota, Chile</p>
+                        <p ng-if="ot.destiny === 'international'">Miami, West Park, 3309</p>
+                        <label class="ot-label">Destino</label>
+                        <p>Oficina Chilexpress MERCED, Santiago</p>
+                        <p class="timeLeftDelivery"><span class="icon icon-clock"></span>Tiempo estimado de entrega 5 días</p>
+                      </div>
+                      <div class="routeMap">
+                        <div class="title">LA RUTA INDICADA ES REFERENCIAL</div>
+                        <div id="routeMap" ng-bind="getOtRouteMap(-33.4408767, -70.6521545)"> </div>
+                      </div>
+                    </div>
+                    <hr class="sep">
+                    <div class="ot-timeline-header">
+                      <div class="title">
+                        <label class="ot-label">Fecha / Hora</label>
+                      </div>
+                      <div class="title">
+                        <label class="ot-label">Actividad</label>
+                      </div>
+                    </div>
+                    <div class="ot-timeline-dates">
+                      <div class="event-date selected">Martes 28 de mayo
+                        <div class="event-date-hour">12:00 hrs.</div>
+                      </div>
+                      <div class="event-desc">Condimentum Cursus Egestas Risus Nibh Vestibulum id ligula porta felis euismod semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</div>
+                      <div class="event-date">Martes 28 de Enero
+                        <div class="event-date-hour">12:00 hrs.</div>
+                      </div>
+                      <div class="event-desc">Ornare Sollicitudin Parturient Nullam Nibh</div>
+                      <div class="event-date">Martes 28 de Septiembre
+                        <div class="event-date-hour">12:00 hrs.</div>
+                      </div>
+                      <div class="event-desc" ng-class="{'last-remove':ot.destiny!='international'}">Parturient Vehicula Inceptos Consectetur Sollicitudin</div>
+                    </div>
+                    <!--tracking international status-->
+                    <div class="ot-timeline-dates international-tracking" ng-if="ot.destiny === 'international'">
+                      <div class="float-link"><a class="link" href="#">VER ESTADO EN COURIER INTERNACIONAL<span class="icon-chevron-right"></span></a></div>
+                      <div class="event-date">Martes 28 de mayo
+                        <div class="event-date-hour">12:00 hrs.</div>
+                      </div>
+                      <div class="event-desc">Condimentum Cursus Egestas Risus Nibh Vestibulum id ligula porta felis euismod semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</div>
+                      <div class="event-date">Martes 28 de Enero
+                        <div class="event-date-hour">12:00 hrs.</div>
+                      </div>
+                      <div class="event-desc">Ornare Sollicitudin Parturient Nullam Nibh</div>
+                      <div class="event-date">Martes 28 de Septiembre
+                        <div class="event-date-hour">12:00 hrs.</div>
+                      </div>
+                      <div class="event-desc">Parturient Vehicula Inceptos Consectetur Sollicitudin</div>
+                    </div>
+                    <div class="ot-timeline-dates" ng-if="ot.destiny === 'international'">
+                      <div class="event-date">Martes 28 de mayo
+                        <div class="event-date-hour">12:00 hrs.</div>
+                      </div>
+                      <div class="event-desc">Condimentum Cursus Egestas Risus Nibh Vestibulum id ligula porta felis euismod semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</div>
+                      <div class="event-date">Martes 28 de Enero
+                        <div class="event-date-hour">12:00 hrs.</div>
+                      </div>
+                      <div class="event-desc">Ornare Sollicitudin Parturient Nullam Nibh</div>
+                      <div class="event-date">Martes 28 de Septiembre
+                        <div class="event-date-hour">12:00 hrs.</div>
+                      </div>
+                      <div class="event-desc">Parturient Vehicula Inceptos Consectetur Sollicitudin</div>
+                    </div>
+                    <hr class="sep">
+                    <div class="ot-summary">
+                      <div class="ot-summary-col ot-type">
+                        <label class="ot-label mobile">producto</label>
+                        <div class="wrapper"><img src="assets/img/tracking/doc_tracking-big.svg"></div>
+                        <div class="wrapper">
+                          <label class="ot-label desktop">producto</label>
+                          <div class="field">Documento</div>
+                          <div class="field">20 cm x 34 cm</div>
+                          <div class="field">0,1 kg.</div>
+                        </div>
+                      </div>
+                      <div class="ot-summary-col">
+                        <label class="ot-label">Nº ORDEN TANSPORTE</label>
+                        <div class="field">645435642</div>
+                        <label class="ot-label">SERVICIO</label>
+                        <div class="field">Día hábil siguiente</div>
+                      </div>
+                      <div class="ot-summary-col">
+                        <label class="ot-label">CONTACTO</label>
+                        <div class="field">Fernando Blanco<br>fernandoblancov@gmail.com</div>
+                      </div>
+                    </div>
+                    <div class="save-and-share"><a class="blueLink save" data-toggle="modal" data-target="#ModalSaveOT"><span class="icon icon-document-check"></span>GUARDAR</a><a class="blueLink share" data-toggle="modal" data-target="#modalSharedTracking"><span class="icon icon-share"></span>COMPARTIR</a></div>
+                  </div>
+                </div>
+                <div class="oTchildrenListBlock" ng-if="ot.type=='parent'"><a class="goBack blueLink" ng-click="gobackToOTList()"><span class="icon icon-chevron-left"></span>Volver</a>
+                  <div class="listWrapper">
+                    <div class="ot-results">
+                      <div class="ot-results-header headerOfList">
+                        <div class="ot-results-header-date-and-type">
+                          <div class="date">26 <span>mar</span></div><span class="otType icon icon-pallet"></span>
+                        </div>
+                        <div class="ot-results-header-info"> 
+                          <div class="identification"><span class="label">Nº OT: {{ot.number}} - OT PADRE </span><span class="desc">Insumos para Puerto Natales de segunda 1<span class="head-caret icon icon-pencil"></span></span></div>
+                        </div>
+                      </div>
+                      <div class="filter-component">
+                        <label class="filter-component-label">Ver</label>
+                        <div class="filter-component-content">
+                          <div class="filter-component-list-wrapper">
+                            <ul class="filter-component-list">
+                              <li class="active">Todos<span class="filter-component-badge">750</span><i class="select-icon icon-chevron-down"></i></li>
+                              <li>Recepcionadas<span class="filter-component-badge">238</span><i class="select-icon icon-chevron-down"></i></li>
+                              <li>Entregadas<span class="filter-component-badge">404</span><i class="select-icon icon-chevron-down"></i></li>
+                              <li>En tránsito<span class="filter-component-badge">108</span><i class="select-icon icon-chevron-down"></i></li>
+                              <li>Retenidas<span class="filter-component-badge">108</span><i class="select-icon icon-chevron-down"></i></li>
+                            </ul>
+                          </div><span class="filter-component-detail"></span>
+                        </div>
+                      </div>
+                      <p>Mostrando <b> 15 </b>OT´s de<b> 750</b></p>
+                      <div class="ot-results-header" ng-click="getOtContent(5555511111,'child', 'transit')"> 
+                        <div class="ot-results-header-date-and-type"><span class="otType icon icon-document"></span></div>
+                        <div class="ot-results-header-info"> 
+                          <div class="identification"><span class="label">Nº OT: </span><span class="desc">5555511111</span></div>
+                          <div class="status transit"> <span class="label">ESTADO</span><span class="desc">Pieza en tránsito</span></div>
+                        </div>
+                        <div class="ot-results-header-caret"><span class="head-caret icon icon-chevron-right"></span></div>
+                      </div>
+                      <div class="ot-results-header" ng-click="getOtContent(8888855555,'child', 'received')">
+                        <div class="ot-results-header-date-and-type"><span class="otType icon icon-lidded-box"></span></div>
+                        <div class="ot-results-header-info"> 
+                          <div class="identification"><span class="label">Nº OT: 8888855555</span><span class="desc">Insumos para Puerto Natales de segunda 1</span></div>
+                          <div class="status received"> <span class="label">ESTADO</span><span class="desc">Pieza recepcionada</span></div>
+                        </div>
+                        <div class="ot-results-header-caret"><span class="head-caret icon icon-chevron-right"></span></div>
+                      </div>
+                      <div class="ot-results-header" ng-click="getOtContent(7777755555,'child', 'transit')">
+                        <div class="ot-results-header-date-and-type"><span class="otType icon icon-lidded-box"></span></div>
+                        <div class="ot-results-header-info"> 
+                          <div class="identification"><span class="label">Nº OT: 7777755555</span><span class="desc">Insumos para Puerto Natales de segunda 1</span></div>
+                          <div class="status transit"> <span class="label">ESTADO</span><span class="desc">Pieza en tránsito</span></div>
+                        </div>
+                        <div class="ot-results-header-caret"><span class="head-caret icon icon-chevron-right"></span></div>
+                      </div>
+                      <div class="ot-results-header" ng-click="getOtContent(9999900000,'child', 'received')">
+                        <div class="ot-results-header-date-and-type"><span class="otType icon icon-lidded-box"></span></div>
+                        <div class="ot-results-header-info"> 
+                          <div class="identification"><span class="label">Nº OT: 9999900000</span><span class="desc">Insumos para Puerto Natales de segunda 1</span></div>
+                          <div class="status received"> <span class="label">ESTADO</span><span class="desc">Pieza recepcionada</span></div>
+                        </div>
+                        <div class="ot-results-header-caret"><span class="head-caret icon icon-chevron-right"></span></div>
+                      </div>
+                      <div class="ot-results-header" ng-click="getOtContent(3333377777,'child', 'transit')">
+                        <div class="ot-results-header-date-and-type"><span class="otType icon icon-lidded-box"></span></div>
+                        <div class="ot-results-header-info"> 
+                          <div class="identification"><span class="label">Nº OT: 3333377777</span><span class="desc">Insumos para Puerto Natales de segunda 1</span></div>
+                          <div class="status transit"> <span class="label">ESTADO</span><span class="desc">Pieza en tránsito</span></div>
+                        </div>
+                        <div class="ot-results-header-caret"><span class="head-caret icon icon-chevron-right"></span></div>
+                      </div>
+                      <div class="ot-results-header" ng-click="getOtContent(2222233333,'child', 'transit')">
+                        <div class="ot-results-header-date-and-type"><span class="otType icon icon-lidded-box"></span></div>
+                        <div class="ot-results-header-info"> 
+                          <div class="identification"><span class="label">Nº OT: 2222233333</span><span class="desc">Insumos para Puerto Natales de segunda 1</span></div>
+                          <div class="status transit"> <span class="label">ESTADO</span><span class="desc">Pieza en tránsito</span></div>
+                        </div>
+                        <div class="ot-results-header-caret"><span class="head-caret icon icon-chevron-right"></span></div>
+                      </div>
+                      <div class="ot-results-header" ng-click="getOtContent(4444477777,'child', 'received')">
+                        <div class="ot-results-header-date-and-type"><span class="otType icon icon-lidded-box"></span></div>
+                        <div class="ot-results-header-info"> 
+                          <div class="identification"><span class="label">Nº OT: 4444477777</span><span class="desc">Insumos para Puerto Natales de segunda 1</span></div>
+                          <div class="status received"> <span class="label">ESTADO</span><span class="desc">Pieza recepcionada</span></div>
+                        </div>
+                        <div class="ot-results-header-caret"><span class="head-caret icon icon-chevron-right"></span></div>
+                      </div>
+                      <div class="ot-results-header" ng-click="getOtContent(8888811111,'child', 'delivered')">
+                        <div class="ot-results-header-date-and-type"><span class="otType icon icon-lidded-box"></span></div>
+                        <div class="ot-results-header-info"> 
+                          <div class="identification"><span class="label">Nº OT: 8888811111</span><span class="desc">Insumos para Puerto Natales de segunda 1</span></div>
+                          <div class="status delivered"> <span class="label">ESTADO</span><span class="desc">Pieza entegada</span></div>
+                        </div>
+                        <div class="ot-results-header-caret"><span class="head-caret icon icon-chevron-right"></span></div>
+                      </div>
+                      <div class="ot-results-header" ng-click="getOtContent(8888811111,'child', 'transit')">
+                        <div class="ot-results-header-date-and-type"><span class="otType icon icon-lidded-box"></span></div>
+                        <div class="ot-results-header-info"> 
+                          <div class="identification"><span class="label">Nº OT: 8888811111</span><span class="desc">Insumos para Puerto Natales de segunda 1</span></div>
+                          <div class="status transit"> <span class="label">ESTADO</span><span class="desc">Pieza en tránsito</span></div>
+                        </div>
+                        <div class="ot-results-header-caret"><span class="head-caret icon icon-chevron-right"></span></div>
+                      </div>
+                      <div class="ot-results-header" ng-click="getOtContent(7777766666,'child', 'received')">
+                        <div class="ot-results-header-date-and-type"><span class="otType icon icon-lidded-box"></span></div>
+                        <div class="ot-results-header-info"> 
+                          <div class="identification"><span class="label">Nº OT: 7777766666</span><span class="desc">Insumos para Puerto Natales de segunda 1</span></div>
+                          <div class="status received"> <span class="label">ESTADO</span><span class="desc">Pieza recepcionada</span></div>
+                        </div>
+                        <div class="ot-results-header-caret"><span class="head-caret icon icon-chevron-right"></span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="text-right" ng-switch="pages">
+                    <ul class="cxp-paginator" ng-switch-default>
+                      <li class="arrow-control left-control disabled"><a href="javascript:void(0)"><span class="icon-chevron-left"></span></a></li>
+                      <li class="active"><a href="javascript:void(0)">1</a></li>
+                      <li><a href="javascript:void(0)">2</a></li>
+                      <li><a href="javascript:void(0)">3</a></li>
+                      <li><a href="javascript:void(0)">4</a></li>
+                      <li><a href="javascript:void(0)">5</a></li>
+                      <li class="open-pagination"><span class="points">...</span>
+                        <div class="select-pages"><span class="corner"></span>
+                          <div class="input-content">
+                            <input value="1" type="number" min="1" max="100">
+                          </div>
+                          <button class="link" type="button">IR</button>
+                        </div>
+                      </li>
+                      <li><a href="javascript:void(0)">100</a></li>
+                      <li class="arrow-control right-control"><a href="javascript:void(0)"><span class="icon-chevron-right"></span></a></li>
+                    </ul>
+                    <ul class="cxp-paginator" ng-switch-when="3">
+                      <li class="arrow-control left-control disabled"><a href="javascript:void(0)"><span class="icon-chevron-left"></span></a></li>
+                      <li class="active"><a href="javascript:void(0)">1</a></li>
+                      <li><a href="javascript:void(0)">2</a></li>
+                      <li><a href="javascript:void(0)">3</a></li>
+                      <li class="arrow-control right-control"><a href="javascript:void(0)"><span class="icon-chevron-right"></span></a></li>
+                    </ul>
+                    <ul class="cxp-paginator" ng-switch-when="7">
+                      <li class="arrow-control left-control disabled"><a href="javascript:void(0)"><span class="icon-chevron-left"></span></a></li>
+                      <li class="active"><a href="javascript:void(0)">1</a></li>
+                      <li><a href="javascript:void(0)">2</a></li>
+                      <li><a href="javascript:void(0)">3</a></li>
+                      <li><a href="javascript:void(0)">4</a></li>
+                      <li><a href="javascript:void(0)">5</a></li>
+                      <li><a href="javascript:void(0)">6</a></li>
+                      <li><a href="javascript:void(0)">7</a></li>
+                      <li class="arrow-control right-control"><a href="javascript:void(0)"><span class="icon-chevron-right"></span></a></li>
+                    </ul>
+                    <ul class="cxp-paginator" ng-switch-when="8">
+                      <li class="arrow-control left-control disabled"><a href="javascript:void(0)"><span class="icon-chevron-left"></span></a></li>
+                      <li class="active"><a href="javascript:void(0)">1</a></li>
+                      <li><a href="javascript:void(0)">2</a></li>
+                      <li><a href="javascript:void(0)">3</a></li>
+                      <li><a href="javascript:void(0)">4</a></li>
+                      <li><a href="javascript:void(0)">5</a></li>
+                      <li class="open-pagination"><span class="points">...</span>
+                        <div class="select-pages"><span class="corner"></span>
+                          <div class="input-content">
+                            <input value="1" type="number" min="1" max="8">
+                          </div>
+                          <button class="link" type="button">IR</button>
+                        </div>
+                      </li>
+                      <li><a href="javascript:void(0)">8</a></li>
+                      <li class="arrow-control right-control"><a href="javascript:void(0)"><span class="icon-chevron-right"></span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="page-type shipment-st" ng-class="{'disappear':otdetail!='' || showSliderDetails}">
+                <ol class="breadcrumb">
+                  <li><a href="index.html"> <span class="icon-house"></span></a></li>
+                  <li class="active">Estado de envíos</li>
+                </ol>
+                <div class="shipment-st-header">
+                  <div class="shipment-st-header-title">
+                    <h3>Estado de envíos</h3>
+                  </div>
+                  <div class="shipment-st-header-new-btn"><a href="search-ot.html">Nuevo Tracking</a></div>
+                  <div class="shipment-st-header-caption">
+                    <div class="caption-separate"></div>
+                    <div class="ot-status ot-invalid" ng-if="errorCase.indexOf('invalid') != -1">
+                      <div class="status-head"><span class="icon icon-octagon-ban"></span>
+                        <div class="status-desc"><span ng-if="totalErrors!=1">No hemos encontrado resultados de búsqueda para las órdenes de transporte:</span><span ng-if="totalErrors==1">No hemos encontrado resultados de búsqueda para la orden de transporte: </span>
+                          <div class="error-ot-list" ng-if="totalErrors!=1">“730009432842” “730009432842” “730009432842” “730009432842” “730009432842” “730009432842” “730009432842” “730009432842” “730009432842” “730009432842”.</div>
+                          <div class="error-ot-list" ng-if="totalErrors==1">“730009432842”</div>
+                        </div><span class="icon-close close-status" ng-if="totalErrors!=1"></span>
+                      </div>
+                      <div class="status-foot">
+                        <div class="txt">
+                          <div class="sug">Sugerencia: </div>Revisa que el número esté bien escrito. El número de OT tiene entre 10 y 12 dígitos, sin espacios ni letras.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ot-status ot-expired" ng-if="errorCase.indexOf('expired') != -1">
+                      <div class="status-head"><span class="icon icon-circle-alert"></span>
+                        <div class="status-desc"><span ng-if="totalErrors!=1">Las siguientes órdenes de transporte han expirado:</span><span ng-if="totalErrors==1">La órden de transporte ha expirado:  </span>
+                          <div class="error-ot-list" ng-if="totalErrors!=1">730009432” “943000043”</div>
+                          <div class="error-ot-list" ng-if="totalErrors==1">"730009432”</div>
+                        </div><span class="icon-close close-status" ng-if="totalErrors!=1"></span>
+                      </div>
+                      <div class="status-foot">
+                        <div class="txt">
+                          <div class="sug">Sugerencia: </div>Las ordenes de transporte tienen una duración de tres meses. Si la orden de transporte expiró, <a class="link" href="#"> comunícate con nosotros.</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div ng-if="totalErrors!=1">Resultados de búsqueda de<b> 8 órdenes de transporte</b></div>
+                  </div>
+                </div>
+                <div class="ot-results" ng-if="totalErrors!=1">
+                  <div class="ot-results-header" ng-click="getOtContent(7555899832,'simple', 'delivered','international')">
+                    <div class="ot-results-header-date-and-type">
+                      <div class="date">12<span>ene</span></div><span class="otType icon icon-document"></span>
+                    </div>
+                    <div class="ot-results-header-info">
+                      <div class="identification"><span class="label">Nº OT:</span><span class="desc">7555899832</span></div>
+                      <div class="status delivered"><span class="label">ESTADO</span><span class="desc">Pieza entregada</span></div>
+                    </div>
+                    <div class="ot-results-header-caret"><span class="head-caret icon icon-chevron-right"></span></div>
+                  </div>
+                  <div class="ot-results-header" ng-click="getOtContent(7555899111,'simple', 'transit')">
+                    <div class="ot-results-header-date-and-type">
+                      <div class="date">23<span>mar</span></div><span class="otType icon icon-lidded-box"></span>
+                    </div>
+                    <div class="ot-results-header-info">
+                      <div class="identification"><span class="label">Nº OT: 7555899111</span><span class="desc">Guantes Boxeo tailandes traido en avión</span></div>
+                      <div class="status transit"> <span class="label">ESTADO</span><span class="desc">Pieza en tránsito</span></div>
+                    </div>
+                    <div class="ot-results-header-caret"><span class="head-caret icon icon-chevron-right"> </span></div>
+                  </div>
+                  <div class="ot-results-header" ng-click="getOtContent(3333444222,'simple', 'delivered')">
+                    <div class="ot-results-header-date-and-type">
+                      <div class="date">24<span>mar</span></div><span class="otType icon icon-document"></span>
+                    </div>
+                    <div class="ot-results-header-info">
+                      <div class="identification"><span class="label">Nº OT: </span><span class="desc">3333444222</span></div>
+                      <div class="status delivered"> <span class="label">ESTADO</span><span class="desc">Pieza entregada</span></div>
+                    </div>
+                    <div class="ot-results-header-caret"><span class="head-caret icon icon-chevron-right"> </span></div>
+                  </div>
+                  <div class="ot-results-header" ng-click="getOtContent(9995552333,'simple', 'received')">
+                    <div class="ot-results-header-date-and-type">
+                      <div class="date">25<span>mar</span></div><span class="otType icon icon-lidded-box"></span>
+                    </div>
+                    <div class="ot-results-header-info">
+                      <div class="identification"><span class="label">Nº OT: 9995552333</span><span class="desc">Guantes Boxeo tailandes traido en avión</span></div>
+                      <div class="status received"> <span class="label">ESTADO</span><span class="desc">Pieza recepcionada</span></div>
+                    </div>
+                    <div class="ot-results-header-caret"><span class="head-caret icon icon-chevron-right"> </span></div>
+                  </div>
+                  <div class="ot-results-header" ng-click="getOtContent(7777553444,'simple', 'transit')">
+                    <div class="ot-results-header-date-and-type">
+                      <div class="date">25<span>mar</span></div><span class="otType icon icon-lidded-box"></span>
+                    </div>
+                    <div class="ot-results-header-info">
+                      <div class="identification"><span class="label">Nº OT: 7777553444</span><span class="desc">Mochila Gopro Finder color black EE.UU.</span></div>
+                      <div class="status transit"> <span class="label">ESTADO</span><span class="desc">Pieza en tránsito</span></div>
+                    </div>
+                    <div class="ot-results-header-caret"><span class="head-caret icon icon-chevron-right">   </span></div>
+                  </div>
+                  <div class="ot-results-header" ng-click="getOtContent(8884449555,'simple', 'kept-between-steps-1')"> 
+                    <div class="ot-results-header-date-and-type">
+                      <div class="date">25<span>mar</span></div><span class="otType icon icon-lidded-box"></span>
+                    </div>
+                    <div class="ot-results-header-info">
+                      <div class="identification"><span class="label">Nº OT: 8884449555</span><span class="desc">Nintendo 3DS XL</span></div>
+                      <div class="status kept"> <span class="label">ESTADO</span><span class="desc">Pieza retenida</span></div>
+                    </div>
+                    <div class="ot-results-header-caret"><span class="head-caret icon icon-chevron-right">                                    </span></div>
+                  </div>
+                  <div class="ot-results-header" ng-click="getOtContent(2221100666,'simple', 'kept-between-steps-2')">   
+                    <div class="ot-results-header-date-and-type">
+                      <div class="date">25<span>mar</span></div><span class="otType icon icon-lidded-box"></span>
+                    </div>
+                    <div class="ot-results-header-info">
+                      <div class="identification"><span class="label">Nº OT: 2221100666</span><span class="desc">Consola Playstation 4 Slim 1TB </span></div>
+                      <div class="status kept"> <span class="label">ESTADO</span><span class="desc">Pieza retenida</span></div>
+                    </div>
+                    <div class="ot-results-header-caret"><span class="head-caret icon icon-chevron-right">                                    </span></div>
+                  </div>
+                  <div class="ot-results-header" ng-click="getOtContent(992233777,'parent')"> 
+                    <div class="ot-results-header-date-and-type">
+                      <div class="date">26 <span>mar</span></div><span class="otType icon icon-pallet"></span>
+                    </div>
+                    <div class="ot-results-header-info">
+                      <div class="identification"><span class="label">Nº OT: 992233777 - OT PADRE (750 HIJAS) </span><span class="desc">Insumos para Puerto Natales de segunda 1</span></div>
+                    </div>
+                    <div class="ot-results-header-caret"><span class="head-caret icon icon-chevron-right"> </span></div>
+                  </div>
+                  <div class="ot-results-header" ng-click="getOtContent(555333888,'parent')"> 
+                    <div class="ot-results-header-date-and-type">
+                      <div class="date">27 <span>mar</span></div><span class="otType icon icon-pallet"></span>
+                    </div>
+                    <div class="ot-results-header-info">
+                      <div class="identification"><span class="label">Nº OT: 555333888 - OT PADRE (750 HIJAS) </span><span class="desc">Insumos para Punta Arenas de segunda 2 </span></div>
+                    </div>
+                    <div class="ot-results-header-caret"><span class="head-caret icon icon-chevron-right"></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-4">
+              <div class="sidebar-type">
+                <div class="sidebar-row sidebar-news">
+                  <figure class="figure"><img class="img-responsive" src="assets/img/sidebar-img.jpg"></figure>
+                  <figcaption class="caption">
+                    <h3>Conoce nuestra nueva App</h3>
+                    <p>Ahora cotizar y revisar el estado de tu envío es más cómodo que nunca.</p>
+                  </figcaption>
+                </div>
+                <div class="sidebar-tabs">
+                  <div class="faq-panel is-active">
+                    <h3>Tips sobre tracking</h3>
+                    <div class="side-faqs" id="tips-tracking" role="tablist" aria-multiselectable="true">
+                      <div class="panel">
+                        <div class="head" role="tab">
+                          <h4 data-toggle="collapse" data-parent="#tips-tracking" data-target="#collapsePersona1" aria-expanded="false" aria-controls="collapsePersona1">¿Cómo puedo hacer seguimiento de un envío?<span class="icon-circle-arrow-down"></span></h4>
+                        </div>
+                        <div class="collapse" id="collapsePersona1" role="tabpanel">
+                          <p>Sí. Necesitas el nombre de destinatario, fecha de envío y ciudad de origen o destino. Este seguimiento debes hacerlo a través de nuestro Call Center.    </p>
+                        </div>
+                      </div>
+                      <div class="panel">
+                        <div class="head" role="tab">
+                          <h4 data-toggle="collapse" data-parent="#tips-tracking" data-target="#collapsePersona2" aria-expanded="false" aria-controls="collapsePersona2">¿Cuál es el plazo para retirar mi envío en una sucursal?<span class="icon-circle-arrow-down"></span></h4>
+                        </div>
+                        <div class="collapse" id="collapsePersona2" role="tabpanel">
+                          <p>Sí. Necesitas el nombre de destinatario, fecha de envío y ciudad de origen o destino. Este seguimiento debes hacerlo a través de nuestro Call Center.    </p>
+                        </div>
+                      </div>
+                      <div class="panel">
+                        <div class="head" role="tab">
+                          <h4 data-toggle="collapse" data-parent="#tips-tracking" data-target="#collapsePersona3" aria-expanded="false" aria-controls="collapsePersona3">¿Puedo hacer seguimiento de un envío sin la orden de transporte?<span class="icon-circle-arrow-down"></span></h4>
+                        </div>
+                        <div class="collapse" id="collapsePersona3" role="tabpanel">
+                          <p>Sí. Necesitas el nombre de destinatario, fecha de envío y ciudad de origen o destino. Este seguimiento debes hacerlo a través de nuestro Call Center.    </p>
+                        </div>
+                      </div>
+                      <div class="panel">
+                        <div class="head" role="tab">
+                          <h4 data-toggle="collapse" data-parent="#tips-tracking" data-target="#collapsePersona4" aria-expanded="false" aria-controls="collapsePersona4">¿Cómo puedo hacer seguimiento de un envío?<span class="icon-circle-arrow-down"></span></h4>
+                        </div>
+                        <div class="collapse" id="collapsePersona4" role="tabpanel">
+                          <p>Sí. Necesitas el nombre de destinatario, fecha de envío y ciudad de origen o destino. Este seguimiento debes hacerlo a través de nuestro Call Center.</p>
+                        </div>
+                      </div>
+                      <div class="panel">
+                        <div class="head" role="tab">
+                          <h4 data-toggle="collapse" data-parent="#tips-tracking" data-target="#collapsePersona5" aria-expanded="false" aria-controls="collapsePersona5">¿Cuál es el plazo para retirar mi envío en una sucursal?<span class="icon-circle-arrow-down"></span></h4>
+                        </div>
+                        <div class="collapse" id="collapsePersona5" role="tabpanel">
+                          <p>Sí. Necesitas el nombre de destinatario, fecha de envío y ciudad de origen o destino. Este seguimiento debes hacerlo a través de nuestro Call Center.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="seeMore"><a class="blueLink">Ver más</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="boxes-container">
+          <div class="container">
+            <div class="text-center">
+              <h1>Utiliza las opciones de tracking avanzado</h1>
+            </div>
+            <div class="row-boxes">
+              <div class="box-single">
+                <div class="card-container">
+                  <figure class="bg1"><img src="assets/img/img-boxes.svg"></figure>
+                  <figcaption>
+                    <h2>Guardar tus números de tracking avanzado</h2>
+                    <p>Al guardar los números no tendrás que ingresarlos cada vez que quieras consultarlos.</p>
+                  </figcaption>
+                </div>
+              </div>
+              <div class="box-single">
+                <div class="card-container">
+                  <figure class="bg2"></figure>
+                  <figcaption>
+                    <h2>Identifica tus envíos</h2>
+                    <p>Crea nombres para tus envíos con palabras clave para identificarlos fácilmente.</p>
+                  </figcaption>
+                </div>
+              </div>
+              <div class="box-single">
+                <div class="card-container">
+                  <figure class="bg3"></figure>
+                  <figcaption>
+                    <h2>Alerta sobre tus envíos</h2>
+                    <p>Solicita envíos de alertas sobre el cambio de estado de tus enviós.</p>
+                  </figcaption>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container footer-content">
+          <div class="footer-col contact">
+            <h4 class="footer-title">Contáctanos</h4>
+            <ul class="footer-contact-list">
+              <li class="footer-contact-item"><i class="icon icon-mobile-phone"></i><a class="phone" href="tel:+56-22355-2500">(+56 2) 2355 2500</a></li>
+              <li class="footer-contact-item"><i class="icon icon-envelope"></i><a href="contact.html">contacto@chilexpress.cl</a></li>
+              <li class="footer-contact-item address"><i class="icon icon-pin"></i>
+                <div class="address">Av. José Joaquín Pérez 1376, Parque Industrial ENEA, Pudahuel, Santiago, Chile</div>
+              </li>
+              <li class="footer-contact-item"><a class="map" href="www.google.cl/maps/place/Jos%C3%A9+Joaqu%C3%ADn+P%C3%A9rez+1376,+Pudahuel,+Regi%C3%B3n+Metropolitana/@-33.4229792,-70.7804746,17z/data=!4m13!1m7!3m6!1s0x9662c1882696a219:0x2cf18f179fffcf7f!2sJos%C3%A9+Joaqu%C3%ADn+P%C3%A9rez+1376,+Pudahuel,+Regi%C3%B3n+Metropolitana!3b1!8m2!3d-33.4229837!4d-70.7782859!3m4!1s0x9662c1882696a219:0x2cf18f179fffcf7f!8m2!3d-33.4229837!4d-70.7782859" target="_blank">Ver mapa</a></li>
+              <li class="footer-contact-item"><i class="icon icon-phone"></i><a class="phone" href="tel:+566002000102">600 2000 102</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <div class="footer-nav-mobile">
+              <input id="footer-accordion-1" name="footer-accordion" type="radio" checked="">
+              <label class="footer-title" for="footer-accordion-1">Corporativo<span class="icon icon-chevron-right"></span></label>
+              <ul class="footer-nav">
+                <li class="footer-item"><a class="footer-link">La compañía</a></li>
+                <li class="footer-item"><a class="footer-link">Reportes de sostenibilidad</a></li>
+                <li class="footer-item"><a class="footer-link">Programa de ética y providad</a>
+                  <ul class="footer-subnav">
+                    <li class="footer-nav-item"><a class="footer-sublink">Canal de denuncias</a></li>
+                  </ul>
+                </li>
+                <li class="footer-item"><a class="footer-link">Trabaja con nosotros</a></li>
+              </ul>
+            </div>
+            <div class="footer-nav-mobile">
+              <input id="footer-accordion-2" name="footer-accordion" type="radio">
+              <label class="footer-title" for="footer-accordion-2">Comunicación interna<span class="icon icon-chevron-right"></span></label>
+              <ul class="footer-nav">
+                <li class="footer-item"><a class="footer-link">Nuestra Net</a></li>
+                <li class="footer-item"><a class="footer-link">Acceso RRHH</a></li>
+                <li class="footer-item"><a class="footer-link">Mesa de ayuda</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-col footer-nav-mobile">
+            <input id="footer-accordion-3" name="footer-accordion" type="radio">
+            <label class="footer-title" for="footer-accordion-3">Ecosistema digital<span class="icon icon-chevron-right"></span></label>
+            <ul class="footer-nav">
+              <li class="footer-item"><a class="footer-link">Redes sociales</a></li>
+              <li class="footer-item"><a class="footer-link">Blogs</a></li>
+              <li class="footer-item"><a class="footer-link">App Móvil</a></li>
+              <li class="footer-item"><a class="footer-link">Pickup</a></li>
+              <li class="footer-item"><a class="footer-link">Voy</a>
+                <ul class="footer-subnav">
+                  <li class="footer-nav-item"><a class="footer-sublink">Términos y condiciones</a></li>
+                  <li class="footer-nav-item"><a class="footer-sublink">Políticas de privacidad</a></li>
+                </ul>
+              </li>
+              <li class="footer-item"><a class="footer-link">Llave única (SSO)</a></li>
+            </ul>
+          </div>
+          <div class="footer-col footer-nav-mobile">
+            <input id="footer-accordion-4" name="footer-accordion" type="radio">
+            <label class="footer-title" for="footer-accordion-4">Servicio al cliente<span class="icon icon-chevron-right"></span></label>
+            <ul class="footer-nav">
+              <li class="footer-item"><a class="footer-link" href="branch-office-search.html">Sucursales</a></li>
+              <li class="footer-item"><a class="footer-link">Cobertura</a></li>
+              <li class="footer-item"><a class="footer-link">Preguntas frecuentes</a></li>
+              <li class="footer-item"><a class="footer-link" href="contact.html">Contacto</a></li>
+              <li class="footer-item"><a class="footer-link">Términos y condiciones</a></li>
+              <li class="footer-item"><a class="footer-link">Guía de servicios</a></li>
+              <li class="footer-item"><a class="footer-link">Tarifas</a></li>
+              <li class="footer-item"><a class="footer-link">Normas de transporte</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="footer-bottom-col left">
+              <div class="copyright">© Chilexpress  2018.</div><a>Brand center</a>
+            </div>
+            <div class="footer-bottom-col right"><a>Políticas de privacidad</a>
+              <div class="footer-rs"><span class="footer-rs-label">Síguenos en:</span><a href="#"><span class="icon-circle-facebook"></span></a><a href="#"><span class="icon-circle-twitter"></span></a><a href="#"><span class="icon-youtube"></span></a></div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <ng-view></ng-view>
+  </body>
+</html>

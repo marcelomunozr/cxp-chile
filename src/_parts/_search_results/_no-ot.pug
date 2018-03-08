@@ -1,0 +1,13 @@
+- var resultado = "{{search}}"
+h3.results-title No se han encontrado resultados para
+  strong  “#{resultado}”
+p.text-msg Lo sentimos, no hemos encontrado resultados para tu búsqueda. Por favor ingresa una palabra o concepto para buscar nuevamente.
+
+if resultado == '123456789' || resultado == 'marciano1'
+  .search-component-parent
+    include _search-form
+else
+  include _search-form
+
+h4.subtitle Contenido sugerido
+include _suggest

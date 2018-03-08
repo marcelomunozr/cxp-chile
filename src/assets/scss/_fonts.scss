@@ -1,0 +1,124 @@
+/* Fonts & Icons CXP-FONT */
+@include font-face("Roboto", "../fonts/roboto/Roboto-Light", normal, 300);
+@include font-face("Roboto", "../fonts/roboto/Roboto-LightItalic", italic, 300);
+@include font-face("Roboto", "../fonts/roboto/Roboto-Regular", normal, normal);
+@include font-face("Roboto", "../fonts/roboto/Roboto-Italic", italic, normal);
+@include font-face("Roboto", "../fonts/roboto/Roboto-Bold", normal, bold);
+@include font-face("Roboto", "../fonts/roboto/Roboto-BoldItalic", italic, bold);
+@include font-face("Roboto", "../fonts/roboto/Roboto-Medium", normal, 500);
+@include font-face("Roboto", "../fonts/roboto/Roboto-MediumItalic", italic, 500);
+
+
+@font-face {
+  font-family: 'UniSansBoldRegular';
+  src: url('../fonts/unisans_bold_spanish/Uni_Sans_Bold-webfont.eot');
+  src: url('../fonts/unisans_bold_spanish/Uni_Sans_Bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/unisans_bold_spanish/Uni_Sans_Bold-webfont.woff') format('woff'), url('../fonts/unisans_bold_spanish/Uni_Sans_Bold-webfont.ttf') format('truetype'), url('../fonts/unisans_bold_spanish/Uni_Sans_Bold-webfont.svg#UniSansBoldRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UniSansBoldItalicItalic';
+  src: url('../fonts/unisans_bolditalic_spanish/Uni_Sans_BoldItalic-webfont.eot');
+  src: url('../fonts/unisans_bolditalic_spanish/Uni_Sans_BoldItalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/unisans_bolditalic_spanish/Uni_Sans_BoldItalic-webfont.woff') format('woff'), url('../fonts/unisans_bolditalic_spanish/Uni_Sans_BoldItalic-webfont.ttf') format('truetype'), url('../fonts/unisans_bolditalic_spanish/Uni_Sans_BoldItalic-webfont.svg#UniSansBoldItalicItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UniSansBookRegular';
+  src: url('../fonts/unisans_book_spanish/Uni_Sans_Book-webfont.eot');
+  src: url('../fonts/unisans_book_spanish/Uni_Sans_Book-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/unisans_book_spanish/Uni_Sans_Book-webfont.woff') format('woff'), url('../fonts/unisans_book_spanish/Uni_Sans_Book-webfont.ttf') format('truetype'), url('../fonts/unisans_book_spanish/Uni_Sans_Book-webfont.svg#UniSansBookRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UniSansBookItalicItalic';
+  src: url('../fonts/unisans_bookitalic_spanish/Uni_Sans_BookItalic-webfont.eot');
+  src: url('../fonts/unisans_bookitalic_spanish/Uni_Sans_BookItalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/unisans_bookitalic_spanish/Uni_Sans_BookItalic-webfont.woff') format('woff'), url('../fonts/unisans_bookitalic_spanish/Uni_Sans_BookItalic-webfont.ttf') format('truetype'), url('../fonts/unisans_bookitalic_spanish/Uni_Sans_BookItalic-webfont.svg#UniSansBookItalicItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UniSansHeavyRegular';
+  src: url('../fonts/unisans_heavy_spanish/Uni_Sans_Heavy-webfont.eot');
+  src: url('../fonts/unisans_heavy_spanish/Uni_Sans_Heavy-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/unisans_heavy_spanish/Uni_Sans_Heavy-webfont.woff') format('woff'), url('../fonts/unisans_heavy_spanish/Uni_Sans_Heavy-webfont.ttf') format('truetype'), url('../fonts/unisans_heavy_spanish/Uni_Sans_Heavy-webfont.svg#UniSansHeavyRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UniSansHeavyItalicItalic';
+  src: url('../fonts/unisans_heavyitalic_spanish/Uni_Sans_HeavyItalic-webfont.eot');
+  src: url('../fonts/unisans_heavyitalic_spanish/Uni_Sans_HeavyItalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/unisans_heavyitalic_spanish/Uni_Sans_HeavyItalic-webfont.woff') format('woff'), url('../fonts/unisans_heavyitalic_spanish/Uni_Sans_HeavyItalic-webfont.ttf') format('truetype'), url('../fonts/unisans_heavyitalic_spanish/Uni_Sans_HeavyItalic-webfont.svg#UniSansHeavyItalicItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UniSansRegularItalicItalic';
+  src: url('../fonts/unisans_italic_spanish/Uni_Sans_RegularItalic-webfont.eot');
+  src: url('../fonts/unisans_italic_spanish/Uni_Sans_RegularItalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/unisans_italic_spanish/Uni_Sans_RegularItalic-webfont.woff') format('woff'), url('../fonts/unisans_italic_spanish/Uni_Sans_RegularItalic-webfont.ttf') format('truetype'), url('../fonts/unisans_italic_spanish/Uni_Sans_RegularItalic-webfont.svg#UniSansRegularItalicItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UniSansLightRegular';
+  src: url('../fonts/unisans_light_spanish/Uni_Sans_Light-webfont.eot');
+  src: url('../fonts/unisans_light_spanish/Uni_Sans_Light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/unisans_light_spanish/Uni_Sans_Light-webfont.woff') format('woff'), url('../fonts/unisans_light_spanish/Uni_Sans_Light-webfont.ttf') format('truetype'), url('../fonts/unisans_light_spanish/Uni_Sans_Light-webfont.svg#UniSansLightRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UniSansLightItalicItalic';
+  src: url('../fonts/unisans_lightitalic_spanish/Uni_Sans_LightItalic-webfont.eot');
+  src: url('../fonts/unisans_lightitalic_spanish/Uni_Sans_LightItalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/unisans_lightitalic_spanish/Uni_Sans_LightItalic-webfont.woff') format('woff'), url('../fonts/unisans_lightitalic_spanish/Uni_Sans_LightItalic-webfont.ttf') format('truetype'), url('../fonts/unisans_lightitalic_spanish/Uni_Sans_LightItalic-webfont.svg#UniSansLightItalicItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UniSansRegularRegular';
+  src: url('../fonts/unisans_regular_spanish/Uni_Sans_Regular-webfont.eot');
+  src: url('../fonts/unisans_regular_spanish/Uni_Sans_Regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/unisans_regular_spanish/Uni_Sans_Regular-webfont.woff') format('woff'), url('../fonts/unisans_regular_spanish/Uni_Sans_Regular-webfont.ttf') format('truetype'), url('../fonts/unisans_regular_spanish/Uni_Sans_Regular-webfont.svg#UniSansRegularRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UniSansSemiBoldRegular';
+  src: url('../fonts/unisans_semibold_spanish/Uni_Sans_Semi_Bold-webfont.eot');
+  src: url('../fonts/unisans_semibold_spanish/Uni_Sans_Semi_Bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/unisans_semibold_spanish/Uni_Sans_Semi_Bold-webfont.woff') format('woff'), url('../fonts/unisans_semibold_spanish/Uni_Sans_Semi_Bold-webfont.ttf') format('truetype'), url('../fonts/unisans_semibold_spanish/Uni_Sans_Semi_Bold-webfont.svg#UniSansSemiBoldRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UniSansSemiBoldItalicItalic';
+  src: url('../fonts/unisans_semibolditalic_spanish/Uni_Sans_SemiBoldItalic-webfont.eot');
+  src: url('../fonts/unisans_semibolditalic_spanish/Uni_Sans_SemiBoldItalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/unisans_semibolditalic_spanish/Uni_Sans_SemiBoldItalic-webfont.woff') format('woff'), url('../fonts/unisans_semibolditalic_spanish/Uni_Sans_SemiBoldItalic-webfont.ttf') format('truetype'), url('../fonts/unisans_semibolditalic_spanish/Uni_Sans_SemiBoldItalic-webfont.svg#UniSansSemiBoldItalicItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UniSansThinRegular';
+  src: url('../fonts/unisans_thin_spanish/Uni_Sans_Thin-webfont.eot');
+  src: url('../fonts/unisans_thin_spanish/Uni_Sans_Thin-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/unisans_thin_spanish/Uni_Sans_Thin-webfont.woff') format('woff'), url('../fonts/unisans_thin_spanish/Uni_Sans_Thin-webfont.ttf') format('truetype'), url('../fonts/unisans_thin_spanish/Uni_Sans_Thin-webfont.svg#UniSansThinRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'UniSansThinItalicItalic';
+  src: url('../fonts/unisans_thinitalic_spanish/Uni_Sans_ThinItalic-webfont.eot');
+  src: url('../fonts/unisans_thinitalic_spanish/Uni_Sans_ThinItalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/unisans_thinitalic_spanish/Uni_Sans_ThinItalic-webfont.woff') format('woff'), url('../fonts/unisans_thinitalic_spanish/Uni_Sans_ThinItalic-webfont.ttf') format('truetype'), url('../fonts/unisans_thinitalic_spanish/Uni_Sans_ThinItalic-webfont.svg#UniSansThinItalicItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'UniSansThinItalicItalic';
+  src: url('../fonts/unisans_thinitalic_spanish/Uni_Sans_ThinItalic-webfont.eot');
+  src: url('../fonts/unisans_thinitalic_spanish/Uni_Sans_ThinItalic-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/unisans_thinitalic_spanish/Uni_Sans_ThinItalic-webfont.woff') format('woff'), url('../fonts/unisans_thinitalic_spanish/Uni_Sans_ThinItalic-webfont.ttf') format('truetype'), url('../fonts/unisans_thinitalic_spanish/Uni_Sans_ThinItalic-webfont.svg#UniSansThinItalicItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Glyphicons Halflings
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}

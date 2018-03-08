@@ -1,0 +1,35 @@
+form.form-send-money
+    .body-box
+        fieldset.choice.c-field
+            legend.o-fieldset__legend ¿A dónde quieres enviar dinero?
+            .form-vertical
+                .form-group
+                    select.select-custom.international-select(name='countryInput', placeholder='Selecciona país', type='text')
+        // choice
+        fieldset.choice.c-field
+            legend.o-fieldset__legend ¿Cuánto dinero quieres enviar?
+            .input-group.input-group--double
+                span.input-group-addon $
+                input.form-control.only-prices(aria-label='Amount (to the nearest dollar)', name='moneyOne')
+                span.input-group-addon PESOS CHILENOS
+        fieldset.choice.c-field
+            legend.o-fieldset__legend.o-fieldset--bold Esto equivale a:
+            .result-conversion
+                img.pull-left.flag-icons(alt='icon flag', src='assets/img/flags/flag-icon-cl.png')
+                p.pull-left.money-change CLP 0
+        fieldset
+            .checkbox.checkbox-warning
+                input.isAccept(type='checkbox', id="isAcceptQuotationMoney" + formId)
+                label(for="isAcceptQuotationMoney" + formId) #{legendGOL}
+
+    .body-footer
+        .row
+            .col-xs-8.col-sm-7.col-md-7.col-lg-8.wrapper-price
+                .total.text-left
+                    p Costo desde
+                    h4
+                        span $
+                        span.price 0
+            .col-xs-4.col-sm-5.col-md-5.col-lg-4.wrapper-btn
+                button.btn.btn-block.btn-continue(disabled='disabled', type='button', data-toggle='modal', data-target='#ModalRegister')
+                    | Hacer el envío
